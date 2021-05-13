@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aleksandar Luković</title>
+    <link rel="stylesheet" href="css/stil.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="div-a a0">
+
+            <div>
+            <p>Odaberite JSON niz | Vrednosti paketa Wireshark I/O grafika: </p>
+            </div> 
+
+            <div>
+
+            <input type="file">
+            <textarea id="txtA"></textarea>
+
+            </div>  
+
+            <div class="dugmad">
+
+            <button id="btnPrikazNiza" onclick="prikazNiza()">Prikaz niza</button>
+            <button id="btnPrikazNeNulaElemenataNiza" onclick="prikazNeNulaElemenata()">Prikaz elemenata različitih od nule</button>
+            <button id="btnBrisanje" onclick="brisanje()">Brisanje</button>
+
+            </div>
+
+        </div>
+
+        <div class="div-a a1">
+
+            <p>Elementi JSON niza | Vrednosti Wireshark I/O grafika: </p>
+            <textarea id="txtB"></textarea>
+            <p id="brElNiza"></p>
+
+            <hr>
+        </div>
+
+        <div class="div-a a2">
+
+            <div id="dugmad2">
+                <button id="btnNoviNiz" onclick="noviNiz()">Niz elemenata</button>
+                <button id="btnPodelaNiza">Podela niza</button>
+            </div>
+
+            <div>
+                <p>Niz sa datim vrednstima paketa:  </p>
+                <textarea id="txtC"></textarea>
+            </div>
+
+        </div>
+
+        <div class="div-a a3">
+
+        </div>
+
+    </div>
+
+    <script src="kod.js"></script>
+</body>
+</html>

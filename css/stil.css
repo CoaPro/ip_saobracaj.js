@@ -1,0 +1,59 @@
+.container{
+    display: flex;
+    width: 40em;
+    flex-direction: column;
+    margin: 0 auto; 
+    padding: 0;
+    align-items: center;
+    color:rgb(71, 97, 245);
+    border: 3px solid rgb(71, 97, 245);
+    border-radius: 2em;
+}
+
+.div-a{
+    height: 20em;
+    width: 27em;
+    border-radius: 10px;
+}
+
+textarea{
+    height: 15em;
+    width: 30em;
+    margin: 0 auto;
+}
+
+button{
+    padding: 0.7em;
+    color: white;
+    background-color: rgb(71, 97, 245);
+    border-radius: 5px; 
+    border: none;
+}
+
+input {
+    padding: 0.1em;
+    color: white;
+    background-color: rgb(71, 97, 245);
+    border-radius: 5px; 
+    border: none;
+    width: 23em;
+    margin-left: 10%;
+    margin-bottom: 0.1em;
+}
+
+.dugmad{
+    margin: 0 auto;
+    width: 25em;
+}
+
+#btnPrikazNiza{
+    background-color: rgb(52, 172, 58);
+}
+
+#btnBrisanje{
+    background-color: crimson;
+}
+
+input:hover, #btnPrikazNiza:hover, #btnPrikazNeNulaElemenataNiza:hover, #btnBrisanje:hover{
+    opacity: 0.9;
+}
