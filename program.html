@@ -43,14 +43,32 @@
 
         <div class="div-a a2">
 
-            <div id="dugmad2">
-                <button id="btnNoviNiz" onclick="noviNiz()">Niz elemenata</button>
-                <button id="btnPodelaNiza">Podela niza</button>
+            <div >
+
+                <!-- 
+                <button id="btnNoviNiz" onclick="noviNiz()">Niz svih elemenata</button>
+                <button id="btnPodelaNiza" onclick="podelaNiza()">Podela niza</button>
+
+                <button id="btnNniz" onclick="nNiz()">Niz elemenata različitih od nule</button>
+                <button id="btnPodelaNniza" onclick="podelaNniza()">Podela niza elemenata različitih od nule</button>
+                -->
+
+                <ul class="dugmad2">
+
+                    <li id="liNoviNiz" onclick="noviNiz()">Niz svih elemenata</li>
+                    <li id="liPodelaNiza" onclick="podelaNiza()">Podela niza</li>
+
+                    <li id="linNniz" onclick="nNiz()">Niz elemenata različitih od nule</li>
+                    <li id="linPodelaNniza" onclick="podelaNniza()">Podela niza elemenata različitih od nule</li>
+
+                </ul>
+                
             </div>
 
             <div>
                 <p>Niz sa datim vrednstima paketa:  </p>
                 <textarea id="txtC"></textarea>
+                <p id="brPodnizova"></p>
             </div>
 
         </div>

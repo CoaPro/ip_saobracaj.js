@@ -96,6 +96,7 @@ A elementi bi trebalo biti:
 (b)
 */
 
+//Prikaz niza sa svim elementima
 const noviNiz = () => {
     
     const niz = JSON.parse(txtA.value);
@@ -104,4 +105,32 @@ const noviNiz = () => {
     console.log(noviNiz);
     };
 
+// Podela niza sa svim elementima na podnizove sa četiri elementa
+function podelaNiza(){
 
+    const niz = JSON.parse(txtA.value);
+    const noviNiz = niz.map(({'All Packets': vrednost}) => vrednost );
+    
+    let i = 0;
+    let br = -1;
+    let br2 = 0;
+    let a = new Array();
+    let b = new Array();
+    let brPodnizova = document.getElementById('brPodnizova');
+    let a_str = '';
+    for(let i = 0; i <= noviNiz.length; i++){
+        br++;
+        if(i % 4 == 0){
+            br2++;
+            a[i] = noviNiz.slice(i, i+4);
+            //console.log(a[i]);
+            a_str += a[i] + '\n';
+            txtC.value = a_str;
+        }
+    }
+
+    console.log(`Broj nizova je ${br2}`);
+    brPodnizova.innerHTML = `Broj podnizova je: ${br2}`;
+
+
+}
