@@ -132,5 +132,21 @@ function podelaNiza(){
     console.log(`Broj nizova je ${br2}`);
     brPodnizova.innerHTML = `Broj podnizova je: ${br2}`;
 
-
 }
+
+//Prikaz elemenata niza koji su različiti od nule
+
+const nNiz = () => {
+
+    txtC.value = 'Funkcija je još uvek u fazi izrade.';
+
+};
+
+//Podela niza (nNiz), koji poseduje elemente različite od nule na 
+//podnizove sa četiri elementa
+
+const podelaNniza = () => {
+
+    txtC.value = 'Funkcija je još uvek u fazi izrade...';
+
+};

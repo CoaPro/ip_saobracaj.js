@@ -75,11 +75,11 @@ input:hover, #btnPrikazNiza:hover, #btnPrikazNeNulaElemenataNiza:hover, #btnBris
     padding: 0.5em;
     color: white;
     border-radius: 10px;
-    background-color: rgb(52, 172, 58);
+    background-color: rgb(33, 146, 40);
     border: 1px solid rgb(255, 255, 255);
 
 }
 
 .dugmad2 li:hover{
-    opacity: 0.8;
+    opacity: 0.91;
 }
