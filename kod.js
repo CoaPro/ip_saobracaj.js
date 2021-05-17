@@ -135,10 +135,12 @@ function podelaNiza(){
 
 }
 
+//17.5.2021. Pon. Srećan Svetski dan telekomunikacija i informacionog društva
+
 //Prikaz elemenata niza koji su različiti od nule
 
 const nNiz = () => {
- 
+    
     const niz = JSON.parse(txtA.value);
     const nNizz = niz.map(({'All Packets': element}) => element);
 
