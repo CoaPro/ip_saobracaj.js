@@ -103,6 +103,7 @@ const noviNiz = () => {
     const noviNiz = niz.map(({'All Packets': vrednost}) => vrednost );
     txtC.value = noviNiz;
     console.log(noviNiz);
+    document.getElementById('brPodnizova').innerHTML = `Broj elemenata niza je:  ${noviNiz.length}`;
     };
 
 // Podela niza sa svim elementima na podnizove sa četiri elementa
@@ -137,8 +138,18 @@ function podelaNiza(){
 //Prikaz elemenata niza koji su različiti od nule
 
 const nNiz = () => {
+ 
+    const niz = JSON.parse(txtA.value);
+    const nNizz = niz.map(({'All Packets': element}) => element);
 
-    txtC.value = 'Funkcija je još uvek u fazi izrade.';
+    const neNulti = (a) => {
+        return a > 0;
+    };
+
+    const novNeNultiNiz = nNizz.filter(neNulti);
+    console.log(novNeNultiNiz);
+    txtC.value = novNeNultiNiz; 
+    document.getElementById('brPodnizova').innerHTML = `Broj elemenata niza sada je:  ${novNeNultiNiz.length}`;
 
 };
 
