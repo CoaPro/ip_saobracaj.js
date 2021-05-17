@@ -115,10 +115,10 @@ function podelaNiza(){
     let i = 0;
     let br = -1;
     let br2 = 0;
-    let a = new Array();
-    let b = new Array();
-    let brPodnizova = document.getElementById('brPodnizova');
     let a_str = '';
+    let a = new Array();
+    let brPodnizova = document.getElementById('brPodnizova');
+
     for(let i = 0; i <= noviNiz.length; i++){
         br++;
         if(i % 4 == 0){
@@ -135,7 +135,7 @@ function podelaNiza(){
 
 }
 
-//17.5.2021. Pon. Srećan Svetski dan telekomunikacija i informacionog društva
+//Rad: 17.5.2021. Pon. Srećan Svetski dan telekomunikacija i informacionog društva
 
 //Prikaz elemenata niza koji su različiti od nule
 
@@ -148,10 +148,10 @@ const nNiz = () => {
         return a > 0;
     };
 
-    const novNeNultiNiz = nNizz.filter(neNulti);
-    console.log(novNeNultiNiz);
-    txtC.value = novNeNultiNiz; 
-    document.getElementById('brPodnizova').innerHTML = `Broj elemenata niza sada je:  ${novNeNultiNiz.length}`;
+    const noviNeNultiNiz = nNizz.filter(neNulti);
+    console.log(noviNeNultiNiz);
+    txtC.value = noviNeNultiNiz; 
+    document.getElementById('brPodnizova').innerHTML = `Broj elemenata niza sada je:  ${noviNeNultiNiz.length}`;
 
 };
 
@@ -160,6 +160,63 @@ const nNiz = () => {
 
 const podelaNniza = () => {
 
-    txtC.value = 'Funkcija je još uvek u fazi izrade...';
+    const niz = JSON.parse(txtA.value);
+    const nNizz = niz.map(({'All Packets': element}) => element);
+
+    let a = new Array();
+    let aStr = '';
+    let br = 0;
+
+    const neNulti = (a) => {
+        return a > 0;
+    };
+
+    const noviNeNultiNiz = nNizz.filter(neNulti);
+
+    for(let i = 0; i < noviNeNultiNiz.length; i++){
+
+        if(i % 4 === 0){
+            br++;
+            a[i] = noviNeNultiNiz.slice(i, i+4);
+            aStr += a[i] + '\n';
+            //console.log(aStr);
+            txtC.value = aStr; 
+        }
+        
+    }
+
+    /*
+
+    Ideja funkcionisanja podnizova: 
+
+    a[0] = noviNeNultiNiz.slice(0, 0+4);
+    a[4] = noviNeNultiNiz.slice(4, 4+4);
+    a[8] = noviNeNultiNiz.slice(8, 8+4);
+    a[12] = noviNeNultiNiz.slice(12, 12+4);
+    a[16] = noviNeNultiNiz.slice(16, 16+4);
+    ...
+
+    tj.
+
+    a[0] = noviNeNultiNiz.slice(0, 4);
+    a[4] = noviNeNultiNiz.slice(4, 8);
+    a[8] = noviNeNultiNiz.slice(8, 12);
+    a[12] = noviNeNultiNiz.slice(12, 16);
+    a[16] = noviNeNultiNiz.slice(16, 20);
+
+     
+     */
+
+    //Test
+
+    console.log(noviNeNultiNiz.slice(0, 4));
+    console.log(noviNeNultiNiz.slice(4, 8));
+    console.log(noviNeNultiNiz.slice(12, 16));
+    console.log(noviNeNultiNiz.slice(16, 20));
+    console.log(noviNeNultiNiz.slice(20, 24));
+    console.log(noviNeNultiNiz.slice(24, 28));
+    
+    console.log(`Broj podnizova je ${br}`);
+    document.getElementById('brPodnizova').innerHTML = `Broj podnizova je sada:  ${br}`;
 
 };
