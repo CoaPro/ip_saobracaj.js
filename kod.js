@@ -2,6 +2,7 @@
 let txtA = document.getElementById('txtA');
 let txtB = document.getElementById('txtB');
 let txtC = document.getElementById('txtC');
+let txtD = document.getElementById('txtD');
 let input = document.querySelector('input');
 
 input.addEventListener('change', () => {
@@ -219,4 +220,20 @@ const podelaNniza = () => {
     console.log(`Broj podnizova je ${br}`);
     document.getElementById('brPodnizova').innerHTML = `Broj podnizova je sada:  ${br}`;
 
+};
+
+//18.5.2021. Uto. Drugi deo projekta
+
+/* 
+
+Definisanje delova koda i funkcija koje su potrebne za izračunavanje Hurstovog parametra 
+(kroz 6 koraka) i vizuelizacija podataka...
+
+*/
+
+
+//Funkcija proračun 
+
+const proracun = () => {
+    txtD.value = 'Funkcija je u fazi izrade...';
 };

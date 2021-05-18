@@ -11,7 +11,9 @@
 }
 
 .div-a{
-    height: 20em;
+    padding-bottom: 1em;
+    margin: 0;
+    /* height: 20em; */
     width: 27em;
     border-radius: 10px;
 }
@@ -20,6 +22,7 @@ textarea{
     height: 15em;
     width: 30em;
     margin: 0 auto;
+    /* resize: none; */
 }
 
 button{
@@ -82,4 +85,13 @@ input:hover, #btnPrikazNiza:hover, #btnPrikazNeNulaElemenataNiza:hover, #btnBris
 
 .dugmad2 li:hover{
     opacity: 0.91;
+}
+
+.div-a a2 {
+    width: 10em;
+    border: 1px solid black;
+}
+
+#btnProracun {
+    margin-bottom: 0.4em;
 }
