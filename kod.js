@@ -230,12 +230,12 @@ const podelaNniza = () => {
 
 };
 
-//18.5.2021. Uto. Drugi deo projekta
+//18.5.2021. Uto. Početak drugog dela projekta
 
 /* 
 
-Definisanje delova koda i funkcija koje su potrebne za izračunavanje Hurstovog parametra 
-(kroz 6 koraka) i vizuelizacija podataka...
+Definisanje delova koda i funkcija, koje su potrebne za izračunavanje Hurstovog parametra 
+(kroz 6 koraka) i vizuelizaciju podataka...
 
 */
 
@@ -311,7 +311,22 @@ const proracun = () => {
 
     */
 
-    console.log(noviNeNultiNiz);
-    txtPod.value = noviNeNultiNiz;
+    //Test na prvom isečku niza: 
+
+    a = noviNeNultiNiz.slice(0, 4);
+
+    x1 = a[0];
+    x2 = a[1];
+    x3 = a[2];
+    x4 = a[3];
+
+    w1 = x1 - srVrVrSerije;
+    w2 = x1 + x2 - 2*srVrVrSerije;
+    w3 = x1 + x2 + x3 - 3*srVrVrSerije;
+    w4 = x1 + x2 + x3 + x4 - 4*srVrVrSerije;
+
+    console.log(a, x1, x2, x3, x4, w1, w2, w3, w4);
+    txtPod.value = a;
+
 };
 

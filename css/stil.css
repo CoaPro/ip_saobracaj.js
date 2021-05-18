@@ -22,7 +22,7 @@ textarea{
     height: 15em;
     width: 30em;
     margin: 0 auto;
-    /* resize: none; */
+    resize: none;
 }
 
 button{
@@ -96,7 +96,7 @@ input:hover, #btnPrikazNiza:hover, #btnPrikazNeNulaElemenataNiza:hover, #btnBris
     margin-bottom: 0.4em;
 }
 
-#txtD{
+#txtN, #txtZbir, #txtSrVr{
     background-color: white;
     color: black;
     width: 10em;
