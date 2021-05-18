@@ -1,8 +1,11 @@
 //Odabir fajla tj. JSON niza i prikaz u txtA
+
 let txtA = document.getElementById('txtA');
+
+//Definisanje drugih parametara i elemenata... 
+
 let txtB = document.getElementById('txtB');
 let txtC = document.getElementById('txtC');
-let txtD = document.getElementById('txtD');
 let input = document.querySelector('input');
 
 input.addEventListener('change', () => {
@@ -26,8 +29,8 @@ input.addEventListener('change', () => {
 
 });
 
-
 //Funkcija (strelica) brisanje
+
 const brisanje = ()  => {
     txtA.value = ''; 
     txtB.value = '';
@@ -54,7 +57,7 @@ const prikazNiza = () => {
 
 }
 
-//
+//Funkcija koja prikazuje elemente vremenske serije, koji su razičiti od nule
 const prikazNeNulaElemenata = () => {
     
     const niz = JSON.parse(txtA.value);
@@ -76,6 +79,7 @@ const prikazNeNulaElemenata = () => {
     txtB.value = e;
 }
 
+//13.5.2021. Čet. 
 
 /*
 Napraviti novi niz od elementa JSON niza. Indeksi novog niza bi trebalo biti
@@ -98,6 +102,7 @@ A elementi bi trebalo biti:
 */
 
 //Prikaz niza sa svim elementima
+
 const noviNiz = () => {
     
     const niz = JSON.parse(txtA.value);
@@ -108,6 +113,7 @@ const noviNiz = () => {
     };
 
 // Podela niza sa svim elementima na podnizove sa četiri elementa
+
 function podelaNiza(){
 
     const niz = JSON.parse(txtA.value);
@@ -205,11 +211,11 @@ const podelaNniza = () => {
     a[12] = noviNeNultiNiz.slice(12, 16);
     a[16] = noviNeNultiNiz.slice(16, 20);
 
-     
      */
 
     //Test
 
+    /*
     console.log(noviNeNultiNiz.slice(0, 4));
     console.log(noviNeNultiNiz.slice(4, 8));
     console.log(noviNeNultiNiz.slice(12, 16));
@@ -218,6 +224,8 @@ const podelaNniza = () => {
     console.log(noviNeNultiNiz.slice(24, 28));
     
     console.log(`Broj podnizova je ${br}`);
+    */
+
     document.getElementById('brPodnizova').innerHTML = `Broj podnizova je sada:  ${br}`;
 
 };
@@ -231,7 +239,6 @@ Definisanje delova koda i funkcija koje su potrebne za izračunavanje Hurstovog 
 
 */
 
-
 //Funkcija proračun 
 
 const proracun = () => {
@@ -240,7 +247,7 @@ const proracun = () => {
     let noviNiz = niz.map(({'All Packets': element}) => element);
 
     let a = new Array();
-    let aStr = '';
+    //let aStr = '';
     let br = 0;
 
     let neNulti = (a) => {
@@ -249,12 +256,19 @@ const proracun = () => {
 
     let noviNeNultiNiz = noviNiz.filter(neNulti);
 
+    let txtN = document.getElementById('txtN');
+    let txtZbir = document.getElementById('txtZbir');
+    let txtSrVr = document.getElementById('txtSrVr');
+    let txtPod = document.getElementById('txtPod');
+
+    let x1, x2, x3, x4, w1, w2, w3, w4;
+
     for(let i = 0; i < noviNeNultiNiz.length; i++){
 
         if(i % 4 === 0){
             br++;
-            a[i] = noviNeNultiNiz.slice(i, i+4);
-            aStr += a[i] + '\n';
+            a = noviNeNultiNiz.slice(i, i+4);
+            //aStr += a + '\n';
             //console.log(aStr);
             //txtD.value = aStr; 
         }
@@ -262,9 +276,11 @@ const proracun = () => {
     }
 
     //1. Srednja vrednost elementa niza
+
     let zbirVrSerije = 0;
     let srVrVrSerije = 0;
     let n = 0;
+
     //let zbirVremenskeSerije = noviNeNultiNiz.forEach(value => {suma += value;});
 
     for(let i = 0; i < noviNeNultiNiz.length; i++){
@@ -272,10 +288,30 @@ const proracun = () => {
         n++;
         
     }
-    srVrVrSerije = zbirVrSerije / n;
 
-    console.log(zbirVrSerije, srVrVrSerije);
-    txtD.value = srVrVrSerije.toFixed(2);
-    console.log(n);
+    srVrVrSerije = (zbirVrSerije / n).toFixed(2);
 
+    txtN.value = n;
+    txtZbir.value = zbirVrSerije;
+    txtSrVr.value = srVrVrSerije;
+
+    /* 
+    Podela vremenske serije (od 1334 elementa) na podnizove od četiri elementa...
+    Za svaki podniz definisati sledeće vrednosti i metode:
+
+    x1 = a[0];
+    x2 = a[1];
+    x3 = a[2];
+    x4 = a[3];
+
+    w1 = x1 - SrVr;
+    w2 = x1 + x2 - 2*SrVr;
+    w3 = x1 + x2 + x3 - 3*SrVr;
+    w4 = x1 + x2 + x3 + x4 - 4*SrVr;
+
+    */
+
+    console.log(noviNeNultiNiz);
+    txtPod.value = noviNeNultiNiz;
 };
+
