@@ -104,7 +104,7 @@ const noviNiz = () => {
     const noviNiz = niz.map(({'All Packets': vrednost}) => vrednost );
     txtC.value = noviNiz;
     console.log(noviNiz);
-    document.getElementById('brPodnizova').innerHTML = `Broj elemenata niza je:  ${noviNiz.length}`;
+    document.getElementById('brPodnizova').innerHTML = `Broj elemenata niza tj. vremenske serije je:  ${noviNiz.length}`;
     };
 
 // Podela niza sa svim elementima na podnizove sa četiri elementa
@@ -235,5 +235,47 @@ Definisanje delova koda i funkcija koje su potrebne za izračunavanje Hurstovog 
 //Funkcija proračun 
 
 const proracun = () => {
-    txtD.value = 'Funkcija je u fazi izrade...';
+
+    let niz = JSON.parse(txtA.value);
+    let noviNiz = niz.map(({'All Packets': element}) => element);
+
+    let a = new Array();
+    let aStr = '';
+    let br = 0;
+
+    let neNulti = (a) => {
+        return a > 0;
+    };
+
+    let noviNeNultiNiz = noviNiz.filter(neNulti);
+
+    for(let i = 0; i < noviNeNultiNiz.length; i++){
+
+        if(i % 4 === 0){
+            br++;
+            a[i] = noviNeNultiNiz.slice(i, i+4);
+            aStr += a[i] + '\n';
+            //console.log(aStr);
+            //txtD.value = aStr; 
+        }
+        
+    }
+
+    //1. Srednja vrednost elementa niza
+    let zbirVrSerije = 0;
+    let srVrVrSerije = 0;
+    let n = 0;
+    //let zbirVremenskeSerije = noviNeNultiNiz.forEach(value => {suma += value;});
+
+    for(let i = 0; i < noviNeNultiNiz.length; i++){
+        zbirVrSerije += noviNeNultiNiz[i];
+        n++;
+        
+    }
+    srVrVrSerije = zbirVrSerije / n;
+
+    console.log(zbirVrSerije, srVrVrSerije);
+    txtD.value = srVrVrSerije.toFixed(2);
+    console.log(n);
+
 };

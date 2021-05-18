@@ -95,3 +95,9 @@ input:hover, #btnPrikazNiza:hover, #btnPrikazNeNulaElemenataNiza:hover, #btnBris
 #btnProracun {
     margin-bottom: 0.4em;
 }
+
+#txtD{
+    background-color: white;
+    color: black;
+    width: 10em;
+}
