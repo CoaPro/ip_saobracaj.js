@@ -101,14 +101,3 @@ input:hover, #btnPrikazNiza:hover, #btnPrikazNeNulaElemenataNiza:hover, #btnBris
     color: black;
     width: 10em;
 }
-
-#progressBar {
-    width: 100%;
-    background-color: grey;
-  }
-  
-  #pBar {
-    width: 1%;
-    height: 30px;
-    background-color: green;
-  }
