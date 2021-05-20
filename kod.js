@@ -313,20 +313,43 @@ const proracun = () => {
 
     //Test na prvom isečku niza: 
 
-    a = noviNeNultiNiz.slice(0, 4);
 
-    x1 = a[0];
-    x2 = a[1];
-    x3 = a[2];
-    x4 = a[3];
+    // 20.5.2021. Čet. 
 
-    w1 = x1 - srVrVrSerije;
-    w2 = x1 + x2 - 2*srVrVrSerije;
-    w3 = x1 + x2 + x3 - 3*srVrVrSerije;
-    w4 = x1 + x2 + x3 + x4 - 4*srVrVrSerije;
+    //Isečak niza tj. vremenska serija od četiri elementa
 
-    console.log(a, x1, x2, x3, x4, w1, w2, w3, w4);
-    txtPod.value = a;
+    a = noviNeNultiNiz.slice(0, 4); 
+
+    let zbirA = 0;
+    let srVrA = 0;
+    let nA = 0;
+
+    for(let i = 0; i < a.length; i++){
+        nA++;
+        zbirA += a[i];
+
+    }
+
+    
+   //Određivanje koeficijenata x1, x2, x3, x4
+
+   x1 = a[0];
+   x2 = a[1];
+   x3 = a[2];
+   x4 = a[3];
+   
+   //Srednja vrednost vremenske serije od četiri elementa
+
+   srVrA = (zbirA / nA);
+
+    //Određivanje vrednosti koeficijenata w1, w2, w3, w4
+
+    w1 = x1 - srVrA;
+    w2 = x1 + x2 - 2*srVrA;
+    w3 = x1 + x2 + x3 - 3*srVrA;
+    w4 = x1 + x2 + x3 + x4 - 4*srVrA;
+
+    //console.log(nA, zbirA, a[0], a[1], a[2], a[3], srVrA);
+    console.log(w1, w2, w3, w4);
 
 };
-
