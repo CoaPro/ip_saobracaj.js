@@ -318,6 +318,7 @@ const proracun = () => {
 
     //Isečak niza tj. vremenska serija od četiri elementa
 
+    /*
     a = noviNeNultiNiz.slice(0, 4); 
 
     let zbirA = 0;
@@ -342,7 +343,7 @@ const proracun = () => {
 
    srVrA = (zbirA / nA);
 
-    //Određivanje vrednosti koeficijenata w1, w2, w3, w4
+    //Određivanje vrednosti koeficijenata w1, w2, w3, w4, tj. kumulativnih devijacija grupe
 
     w1 = x1 - srVrA;
     w2 = x1 + x2 - 2*srVrA;
@@ -354,18 +355,16 @@ const proracun = () => {
     maxVr = Math.max(w1, w2, w3, w4);
     minVr = Math.min(w1, w2, w3, w4);
     
-    //R(4)
+    //R(4) - opseg grupe
 
     Rn = maxVr - minVr;
 
-    //S(4)
+    //S(4) - standardna devijacija
 
     let Sn_, Sn;
 
     Sn_ = Math.sqrt((1/4)*((x1 - srVrA)**2 + (x2 - srVrA)**2 + (x3 - srVrA)**2 + (x4 - srVrA)**2));
     Sn = Number(Sn_.toFixed(2));
-
-    
 
     let RS, logN, logRS;
 
@@ -378,47 +377,43 @@ const proracun = () => {
     logN = Number(Math.log10(nA).toFixed(2));
     logRS = Number(Math.log10(RS).toFixed(2));
 
-    //Vizuelizacija podataka
-
-    var graf = document.getElementById('grafik').getContext('2d');
-
-    var vizuelizacijaPodataka = new Chart(graf, {
-    type: 'bubble',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        labels: [logN],
-        datasets: [{
-            label: '# vrednost',
-            data: [logRS],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
 
     //console.log(nA, zbirA, a[0], a[1], a[2], a[3], srVrA);
     console.log(w1, w2, w3, w4, maxVr, minVr, Rn, Sn, RS, logN, logRS); 
 
+*/
+
+//Test #2
+
+/* 
+
+U cilju uspešne realizacije projekta, za početak:
+Napisati funkciju koja deli dati niz na podnizove od 4 elementa
+i koja sabira elemente datog podniza... Takođe, vizuelizovati podatke...
+
+*/
+
+
+let podniz;
+let aca;
+let acaVrednost = '';
+
+let nizNiz = [1, 2, 3, 4, 5, 7, 8, 9, 10];
+
+function zbir(a, b){
+    return a + b;
+}
+
+while(nizNiz.length){
+
+    let podniz = noviNeNultiNiz.splice(0, 4);
+    aca = podniz.reduce((x, y) => zbir(x, y));
+    console.log(aca);
+    acaVrednost += aca + '\n';
+    txtPod.value = acaVrednost;
+}
+
 };
+
+
+
