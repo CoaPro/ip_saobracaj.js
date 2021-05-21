@@ -393,25 +393,89 @@ i koja sabira elemente datog podniza... Takođe, vizuelizovati podatke...
 
 */
 
+//21.5.2021. Pet. 
+
+let graf = document.getElementById('grafik').getContext('2d');
+let vizuelizacijaPodataka = new Chart(graf, {
+    type: 'bubble',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: 'Vrednost',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
 
 let podniz;
-let aca;
-let acaVrednost = '';
+let zbirVS;
+let zbirVStekst = '';
 
-let nizNiz = [1, 2, 3, 4, 5, 7, 8, 9, 10];
+let srVrVS;
+let srVrVStekst = '';
+
 
 function zbir(a, b){
     return a + b;
 }
 
-while(nizNiz.length){
+function srednjaVrednost(a, b, n){
+    return Number(((a+b)/n).toFixed(2));
+}
+
+while(noviNeNultiNiz.length){
+
+    //Podela vremenske serije od 1334 elementa na manje vremenske serije od 4 elementa
 
     let podniz = noviNeNultiNiz.splice(0, 4);
-    aca = podniz.reduce((x, y) => zbir(x, y));
-    console.log(aca);
-    acaVrednost += aca + '\n';
-    txtPod.value = acaVrednost;
+
+    /*Za svaku vremensku seriju od 4 elementa izvršiti metode definisane funkcijom zbir(a, b),
+    tj. zbir svih elemenata date vremenske serije
+    */
+
+    zbirVS = podniz.reduce((x, y) => zbir(x, y));
+    //console.log(zbirVS);
+    //zbirVStekst += zbirVS + '\n';
+    //txtPod.value = zbirVStekst;
+
+
+    /*Srednja vrednost elemenata svake vremenske serije */
+
+    //srVrVS = podniz.reduce((x, y) => srednjaVrednost(x, y, podniz.length));
+    srVrVS = zbirVS/podniz.length;
+    //console.log(srVrVS);
+    //srVrVStekst += srVrVS + '\n';
+    //txtPod.value = srVrVStekst;
+
+    
+
 }
+
 
 };
 
