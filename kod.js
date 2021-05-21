@@ -261,8 +261,6 @@ const proracun = () => {
     let txtSrVr = document.getElementById('txtSrVr');
     let txtPod = document.getElementById('txtPod');
 
-    let x1, x2, x3, x4, w1, w2, w3, w4;
-
     for(let i = 0; i < noviNeNultiNiz.length; i++){
 
         if(i % 4 === 0){
@@ -439,7 +437,8 @@ let zbirVStekst = '';
 let srVrVS;
 let srVrVStekst = '';
 
-
+let x1, x2, x3, x4, w1, w2, w3, w4;
+let maxVr, minVr, Rn, Sn_, Sn, RS, logN, logSN;
 function zbir(a, b){
     return a + b;
 }
@@ -472,7 +471,41 @@ while(noviNeNultiNiz.length){
     //srVrVStekst += srVrVS + '\n';
     //txtPod.value = srVrVStekst;
 
+    x1 = podniz[0];
+    x2 = podniz[1];
+    x3 = podniz[2];
+    x4 = podniz[3];
+
+    w1 = x1 - srVrVS;
+    w2 = x1 + x2 - 2*srVrVS;
+    w3 = x1 + x2 + x3 - 3*srVrVS;
+    w4 = x1 + x2 + x3 + x4 - 4*srVrVS;
+
+    maxVr = Math.max(w1, w2, w3, w4);
+    minVr = Math.min(w1, w2, w3, w4);
     
+    //R(4) - opseg grupe
+
+    Rn = maxVr - minVr;
+
+    //S(4) - standardna devijacija
+
+    let Sn_, Sn;
+
+    Sn_ = Math.sqrt((1/4)*((x1 - srVrVS)**2 + (x2 - srVrVS)**2 + (x3 - srVrVS)**2 + (x4 - srVrVS)**2));
+    Sn = Number(Sn_.toFixed(2));
+
+    //RS statistika
+
+    RS = Number((Rn/Sn).toFixed(2));
+
+    //Vrednosti potrebne za vizuelizaciju podataka
+
+    logN = Number(Math.log10(podniz.length).toFixed(2));
+    logRS = Number(Math.log10(RS).toFixed(2));
+
+    console.log(Rn, Sn, RS, logN, logRS);
+
 
 }
 
