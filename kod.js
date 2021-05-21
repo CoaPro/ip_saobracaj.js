@@ -259,7 +259,6 @@ const proracun = () => {
     let txtN = document.getElementById('txtN');
     let txtZbir = document.getElementById('txtZbir');
     let txtSrVr = document.getElementById('txtSrVr');
-    let txtPod = document.getElementById('txtPod');
 
     for(let i = 0; i < noviNeNultiNiz.length; i++){
 
@@ -393,6 +392,14 @@ i koja sabira elemente datog podniza... Takođe, vizuelizovati podatke...
 
 //21.5.2021. Pet. 
 
+let txtZbirPod = document.getElementById('txtZbirPod');
+let txtSrVrPod = document.getElementById('txtSrVrPod');
+let txtWpod = document.getElementById('txtWpod');
+let txtRpod = document.getElementById('txtRpod');
+let txtSpod = document.getElementById('txtSpod');
+let txtRSpod = document.getElementById('txtRSpod');
+let txtLogRSpod = document.getElementById('txtLogRSpod');
+
 let graf = document.getElementById('grafik').getContext('2d');
 let vizuelizacijaPodataka = new Chart(graf, {
     type: 'bubble',
@@ -435,7 +442,23 @@ let zbirVS;
 let zbirVStekst = '';
 
 let srVrVS;
-let srVrVStekst = '';
+let srVrVStekst = ''; 
+
+let wVS;
+let wVStekst = '';
+
+let rVS;
+let rVStekst = '';
+
+let sVS;
+let sVStekst = '';
+
+let rsVS;
+let rsVStekst = '';
+
+let logRSvs;
+let logRSvsTekst = '';
+
 
 let x1, x2, x3, x4, w1, w2, w3, w4;
 let maxVr, minVr, Rn, Sn_, Sn, RS, logN, logSN;
@@ -459,8 +482,8 @@ while(noviNeNultiNiz.length){
 
     zbirVS = podniz.reduce((x, y) => zbir(x, y));
     //console.log(zbirVS);
-    //zbirVStekst += zbirVS + '\n';
-    //txtPod.value = zbirVStekst;
+    zbirVStekst += zbirVS + '\n';
+    txtZbirPod.value = zbirVStekst;
 
 
     /*Srednja vrednost elemenata svake vremenske serije */
@@ -468,18 +491,31 @@ while(noviNeNultiNiz.length){
     //srVrVS = podniz.reduce((x, y) => srednjaVrednost(x, y, podniz.length));
     srVrVS = zbirVS/podniz.length;
     //console.log(srVrVS);
-    //srVrVStekst += srVrVS + '\n';
-    //txtPod.value = srVrVStekst;
+    srVrVStekst += srVrVS + '\n';
+    txtSrVrPod.value = srVrVStekst;
 
     x1 = podniz[0];
     x2 = podniz[1];
     x3 = podniz[2];
     x4 = podniz[3];
 
+    /*
+    Određivanje vrednosti koeficijenata w1, w2, w3, w4, tj. kumulativnih devijacija grupe
+    tj. podniza
+    */
+
     w1 = x1 - srVrVS;
     w2 = x1 + x2 - 2*srVrVS;
     w3 = x1 + x2 + x3 - 3*srVrVS;
     w4 = x1 + x2 + x3 + x4 - 4*srVrVS;
+
+    wVS= `${w1} ${w2} ${w3} ${w4}`;
+    wVStekst += wVS + '\n';
+    txtWpod.value = wVStekst;
+
+    //console.log(wVS);
+
+    //Određivanje maksimalne i minimalne vrednosti date vremenske serije
 
     maxVr = Math.max(w1, w2, w3, w4);
     minVr = Math.min(w1, w2, w3, w4);
@@ -504,13 +540,10 @@ while(noviNeNultiNiz.length){
     logN = Number(Math.log10(podniz.length).toFixed(2));
     logRS = Number(Math.log10(RS).toFixed(2));
 
-    console.log(Rn, Sn, RS, logN, logRS);
-
+    //console.log(Rn, Sn, RS, logN, logRS);
+    //console.log(w1, w2, w3, w4);
 
 }
 
 
 };
-
-
-
