@@ -445,20 +445,12 @@ let srVrVS;
 let srVrVStekst = ''; 
 
 let wVS;
+
 let wVStekst = '';
-
-let rVS;
 let rVStekst = '';
-
-let sVS;
 let sVStekst = '';
-
-let rsVS;
 let rsVStekst = '';
-
-let logRSvs;
 let logRSvsTekst = '';
-
 
 let x1, x2, x3, x4, w1, w2, w3, w4;
 let maxVr, minVr, Rn, Sn_, Sn, RS, logN, logSN;
@@ -523,6 +515,8 @@ while(noviNeNultiNiz.length){
     //R(4) - opseg grupe
 
     Rn = maxVr - minVr;
+    rVStekst += Rn + '\n';
+    txtRpod.value = rVStekst;
 
     //S(4) - standardna devijacija
 
@@ -531,19 +525,27 @@ while(noviNeNultiNiz.length){
     Sn_ = Math.sqrt((1/4)*((x1 - srVrVS)**2 + (x2 - srVrVS)**2 + (x3 - srVrVS)**2 + (x4 - srVrVS)**2));
     Sn = Number(Sn_.toFixed(2));
 
+    sVStekst += Sn + '\n';
+    txtSpod.value = sVStekst;
+
     //RS statistika
 
     RS = Number((Rn/Sn).toFixed(2));
+
+    rsVStekst += RS + '\n';
+    txtRSpod.value = rsVStekst;
 
     //Vrednosti potrebne za vizuelizaciju podataka
 
     logN = Number(Math.log10(podniz.length).toFixed(2));
     logRS = Number(Math.log10(RS).toFixed(2));
 
+    logRSvsTekst += logRS + '\n';
+    txtLogRSpod.value = logRSvsTekst;
+
     //console.log(Rn, Sn, RS, logN, logRS);
     //console.log(w1, w2, w3, w4);
 
 }
-
 
 };
