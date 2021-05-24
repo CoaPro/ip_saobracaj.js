@@ -454,6 +454,11 @@ let logRSvsTekst = '';
 
 let x1, x2, x3, x4, w1, w2, w3, w4;
 let maxVr, minVr, Rn, Sn_, Sn, RS, logN, logSN;
+
+let A, usrednjavanje;
+
+A = 0;
+
 function zbir(a, b){
     return a + b;
 }
@@ -463,7 +468,6 @@ function srednjaVrednost(a, b, n){
 }
 
 while(noviNeNultiNiz.length){
-
     //Podela vremenske serije od 1334 elementa na manje vremenske serije od 4 elementa
 
     let podniz = noviNeNultiNiz.splice(0, 4);
@@ -546,6 +550,15 @@ while(noviNeNultiNiz.length){
     //console.log(Rn, Sn, RS, logN, logRS);
     //console.log(w1, w2, w3, w4);
 
+//24.5.2021. Pon. 
+
+    //Usrednjavanje odnosa
+    //Broj grupa (A)
+
+    A++;
+    
 }
+
+console.log(A);
 
 };
