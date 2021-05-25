@@ -260,6 +260,11 @@ const proracun = () => {
     let txtZbir = document.getElementById('txtZbir');
     let txtSrVr = document.getElementById('txtSrVr');
 
+
+    //25.5.2021.
+    let txtUsrednjavanje = document.getElementById('txtUsrednjavanje');
+    let txtHurst = document.getElementById('txtHurst');
+
     for(let i = 0; i < noviNeNultiNiz.length; i++){
 
         if(i % 4 === 0){
@@ -455,9 +460,13 @@ let logRSvsTekst = '';
 let x1, x2, x3, x4, w1, w2, w3, w4;
 let maxVr, minVr, Rn, Sn_, Sn, RS, logN, logSN;
 
-let A, usrednjavanje;
+//25.5.2021.
+let A, logn, s, usrednjavanje, usrednjavanjeA;
 
 A = 0;
+//s = 0;
+usrednjavanje = 0;
+usrednjavanjeA = 0;
 
 function zbir(a, b){
     return a + b;
@@ -551,14 +560,29 @@ while(noviNeNultiNiz.length){
     //console.log(w1, w2, w3, w4);
 
 //24.5.2021. Pon. 
+//25.5.2021. Uto.
 
     //Usrednjavanje odnosa
     //Broj grupa (A)
 
     A++;
-    
+
+    usrednjavanje = podniz.reduce((x, y) => zbir(x, y));
+    usrednjavanjeA = Number((usrednjavanje / A).toFixed(2)); 
+
+    txtUsrednjavanje.value = usrednjavanjeA; 
+
+    logn = Math.log2(n);
+    s = Math.floor(logn);
+
 }
 
-console.log(A);
+
+
+console.log(n);
+console.log(logn);
+console.log(s);
+
+txtHurst.value = 'Funckija je još uvek u izradi...';
 
 };

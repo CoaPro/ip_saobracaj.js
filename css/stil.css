@@ -96,7 +96,7 @@ input:hover, #btnPrikazNiza:hover, #btnPrikazNeNulaElemenataNiza:hover, #btnBris
     margin-bottom: 0.4em;
 }
 
-#txtN, #txtZbir, #txtSrVr{
+#txtN, #txtZbir, #txtSrVr, #txtUsrednjavanje{
     background-color: white;
     color: black;
     width: 10em;
