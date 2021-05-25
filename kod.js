@@ -261,9 +261,11 @@ const proracun = () => {
     let txtSrVr = document.getElementById('txtSrVr');
 
 
-    //25.5.2021.
+    //+25.5.2021.
+    let txtnPod = document.getElementById('txtnPod');
     let txtUsrednjavanje = document.getElementById('txtUsrednjavanje');
     let txtHurst = document.getElementById('txtHurst');
+    let txtBrPod = document.getElementById('txtBrPod');
 
     for(let i = 0; i < noviNeNultiNiz.length; i++){
 
@@ -281,19 +283,19 @@ const proracun = () => {
 
     let zbirVrSerije = 0;
     let srVrVrSerije = 0;
-    let n = 0;
+    let N = 0;
 
     //let zbirVremenskeSerije = noviNeNultiNiz.forEach(value => {suma += value;});
 
     for(let i = 0; i < noviNeNultiNiz.length; i++){
         zbirVrSerije += noviNeNultiNiz[i];
-        n++;
+        N++;
         
     }
 
-    srVrVrSerije = (zbirVrSerije / n).toFixed(2);
+    srVrVrSerije = (zbirVrSerije / N).toFixed(2);
 
-    txtN.value = n;
+    txtN.value = N;
     txtZbir.value = zbirVrSerije;
     txtSrVr.value = srVrVrSerije;
 
@@ -457,14 +459,19 @@ let sVStekst = '';
 let rsVStekst = '';
 let logRSvsTekst = '';
 
-let x1, x2, x3, x4, w1, w2, w3, w4;
-let maxVr, minVr, Rn, Sn_, Sn, RS, logN, logSN;
+let txtnPodTekst = '';
 
-//25.5.2021.
-let A, logn, s, usrednjavanje, usrednjavanjeA;
+
+let x1, x2, x3, x4, w1, w2, w3, w4;
+let maxVr, minVr, Rn, Sn_, Sn, RS, logn, logSN;
+
+//+25.5.2021.
+let A,  brElPodnizova, brPodnizova, logN, s, usrednjavanje, usrednjavanjeA;
 
 A = 0;
 //s = 0;
+brElPodnizova = 0;
+brPodnizova = 0;
 usrednjavanje = 0;
 usrednjavanjeA = 0;
 
@@ -477,6 +484,8 @@ function srednjaVrednost(a, b, n){
 }
 
 while(noviNeNultiNiz.length){
+
+    brPodnizova++;
     //Podela vremenske serije od 1334 elementa na manje vremenske serije od 4 elementa
 
     let podniz = noviNeNultiNiz.splice(0, 4);
@@ -486,12 +495,26 @@ while(noviNeNultiNiz.length){
     */
 
     zbirVS = podniz.reduce((x, y) => zbir(x, y));
+
     //console.log(zbirVS);
+
     zbirVStekst += zbirVS + '\n';
     txtZbirPod.value = zbirVStekst;
 
 
     /*Srednja vrednost elemenata svake vremenske serije */
+
+    //+25.5.2021.
+
+    //Prikaz broja  podnizova: 
+    
+    txtBrPod.value = brPodnizova;
+
+    //Prikaz broja (elemenata) članova podnizova: 
+
+    brElPodnizova = podniz.length;
+    txtnPodTekst += brElPodnizova + '\n';
+    txtnPod.value = txtnPodTekst; 
 
     //srVrVS = podniz.reduce((x, y) => srednjaVrednost(x, y, podniz.length));
     srVrVS = zbirVS/podniz.length;
@@ -550,13 +573,13 @@ while(noviNeNultiNiz.length){
 
     //Vrednosti potrebne za vizuelizaciju podataka
 
-    logN = Number(Math.log10(podniz.length).toFixed(2));
+    logn = Number(Math.log10(podniz.length).toFixed(2));
     logRS = Number(Math.log10(RS).toFixed(2));
 
     logRSvsTekst += logRS + '\n';
     txtLogRSpod.value = logRSvsTekst;
 
-    //console.log(Rn, Sn, RS, logN, logRS);
+    //console.log(Rn, Sn, RS, logn, logRS);
     //console.log(w1, w2, w3, w4);
 
 //24.5.2021. Pon. 
@@ -572,16 +595,27 @@ while(noviNeNultiNiz.length){
 
     txtUsrednjavanje.value = usrednjavanjeA; 
 
-    logn = Math.log2(n);
-    s = Math.floor(logn);
+    logN = Math.log2(N);
+    s = Math.floor(logN);
+
+    /*
+    Zaključak: 
+    xi je element vremenske serije
+    Dužina vremenske serije je N = 1334
+    Potrebno je podeliti vremensku seriju u A grupa 
+    od po n članova, u ovom slučaju (n = 4)
+    */
 
 }
 
+let suma1, suma2, suma3, suma4, suma5, suma6;
 
+for(let i = 1; i <= s; i++){
+    
+}
 
-console.log(n);
-console.log(logn);
-console.log(s);
+console.log(A);
+
 
 txtHurst.value = 'Funckija je još uvek u izradi...';
 
