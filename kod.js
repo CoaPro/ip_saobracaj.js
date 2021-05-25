@@ -467,6 +467,7 @@ let maxVr, minVr, Rn, Sn_, Sn, RS, logn, logSN;
 
 //+25.5.2021.
 let A,  brElPodnizova, brPodnizova, logN, s, usrednjavanje, usrednjavanjeA;
+let suma1, suma2, suma3, suma4, suma5, suma6;
 
 A = 0;
 //s = 0;
@@ -474,6 +475,8 @@ brElPodnizova = 0;
 brPodnizova = 0;
 usrednjavanje = 0;
 usrednjavanjeA = 0;
+
+suma1 = 0;
 
 function zbir(a, b){
     return a + b;
@@ -595,7 +598,7 @@ while(noviNeNultiNiz.length){
 
     txtUsrednjavanje.value = usrednjavanjeA; 
 
-    logN = Math.log2(N);
+    logN = Number((Math.log2(N)).toFixed(2));
     s = Math.floor(logN);
 
     /*
@@ -608,14 +611,15 @@ while(noviNeNultiNiz.length){
 
 }
 
-let suma1, suma2, suma3, suma4, suma5, suma6;
+
+//console.log(A);
+//console.log(s);
+
 
 for(let i = 1; i <= s; i++){
-    
+    suma1 += i;
 }
-
-console.log(A);
-
+console.log(suma1);
 
 txtHurst.value = 'Funckija je još uvek u izradi...';
 
