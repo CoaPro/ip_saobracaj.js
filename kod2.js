@@ -84,33 +84,29 @@ const prikazNeNulaElemenata = () => {
 }
 
 
-// Podela niza sa svim elementima na podnizove sa četiri elementa
+// Podela niza sa svim elementima na podnizove sa NASUMIČNIM brojem elemenata
 
 function podelaNiza(){
 
     const niz = JSON.parse(txtA.value);
     const noviNiz = niz.map(({'All Packets': vrednost}) => vrednost );
-    
-    let i = 0;
-    let br = -1;
-    let br2 = 0;
-    let a_str = '';
-    let a = new Array();
-    let brPodnizova = document.getElementById('brPodnizova');
 
-    for(let i = 0; i <= noviNiz.length; i++){
-        br++;
-        if(i % 4 == 0){
-            br2++;
-            a[i] = noviNiz.slice(i, i+4);
-            //console.log(a[i]);
-            a_str += a[i] + '\n';
-            txtC.value = a_str;
-        }
+    let podnizR = new Array();
+
+    let acaNasumicniBroj  = (min, max) => {
+        return Math.random() * (max - min) + min;
+    };
+
+    let acaBroj = Math.floor(Math.random()*4) + 2;
+
+    let acaBrojTekst = '';
+
+    while(noviNiz.length > 1){
+        podnizR = noviNiz.splice(0, acaNasumicniBroj(2, 4));
+        console.log(podnizR);
+        acaBrojTekst += podnizR + '\n';
+        txtC.value = acaBrojTekst;
     }
-
-    console.log(`Broj nizova je ${br2}`);
-    brPodnizova.innerHTML = `Broj podnizova je: ${br2}`;
 
 }
 
