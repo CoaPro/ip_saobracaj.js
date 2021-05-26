@@ -170,17 +170,18 @@ const podelaNniza = () => {
 
     noviNeNultiNiz = nNizz.filter(neNulti);
 
-    let podnizR = new Array();
+    podnizR = new Array();
 
-    let nasumicniBroj = (min, max) => {
+    nasumicniBroj = (min, max) => {
         return Math.random() * (max - min) + min;
     };
 
-    let acaBroj = Math.floor(Math.random()*4) + 2;
+    acaBroj = Math.floor(Math.random()*4) + 2;
 
-    let brojTekst = '';
+    brojTekst = '';
 
     while(noviNeNultiNiz.length > 1){
+
         brojPodnizova2++;
         podnizR = noviNeNultiNiz.splice(0, nasumicniBroj(2, 4));
         console.log(podnizR);
@@ -516,8 +517,9 @@ const pro = () => {
 
     /* Definisanje promenljivih: */
 
-    let niz = JSON.parse(txtA.value);
-    let noviNiz = niz.map(({'All Packets': element}) => element);
+    /*Globalna promenljiva*/
+    //let niz = JSON.parse(txtA.value);
+    //let noviNiz = niz.map(({'All Packets': element}) => element);
 
     let a = new Array();
     let br = 0;
@@ -526,7 +528,7 @@ const pro = () => {
         return a > 0;
     };
 
-    let noviNeNultiNiz = noviNiz.filter(neNulti);
+    //let noviNeNultiNiz = noviNiz.filter(neNulti);
 
     let txtN = document.getElementById('txtN');
     let txtZbir = document.getElementById('txtZbir');
