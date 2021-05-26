@@ -43,8 +43,8 @@ const brisanje = ()  => {
 };
 
 const prikazNiza = () => {
-
-    const niz = JSON.parse(txtA.value);
+    /*Globalna promenljiva*/
+    niz = JSON.parse(txtA.value);
 
     let i = 0;
     let e = '';
@@ -65,7 +65,7 @@ const prikazNiza = () => {
 //Funkcija koja prikazuje elemente vremenske serije, koji su razičiti od nule
 const prikazNeNulaElemenata = () => {
     
-    const niz = JSON.parse(txtA.value);
+    //const niz = JSON.parse(txtA.value);
 
     let i = 0;
     let e = '';
@@ -86,10 +86,12 @@ const prikazNeNulaElemenata = () => {
 
 //Prikaz niza sa svim elementima
 
-const noviNiz = () => {
+const fNoviNiz = () => {
     
-    const niz = JSON.parse(txtA.value);
-    const noviNiz = niz.map(({'All Packets': vrednost}) => vrednost );
+    //const niz = JSON.parse(txtA.value);
+    /*Globalna promenljiva*/
+
+    noviNiz = niz.map(({'All Packets': vrednost}) => vrednost );
     txtC.value = noviNiz;
     console.log(noviNiz);
     document.getElementById('brPodnizova').innerHTML = `Broj elemenata niza tj. vremenske serije je:  ${noviNiz.length}`;
@@ -99,20 +101,21 @@ const noviNiz = () => {
 
 function podelaNiza(){
 
-    let brojPodnizova = 0;
+    /*Globalna promenljiva*/
+    brojPodnizova = 0;
 
-    const niz = JSON.parse(txtA.value);
-    const noviNiz = niz.map(({'All Packets': vrednost}) => vrednost );
+    //const niz = JSON.parse(txtA.value);
+    //const noviNiz = niz.map(({'All Packets': vrednost}) => vrednost );
 
-    let podnizR = new Array();
+    podnizR = new Array();
 
-    let nasumicniBroj  = (min, max) => {
+    nasumicniBroj  = (min, max) => {
         return Math.random() * (max - min) + min;
     };
 
-    let acaBroj = Math.floor(Math.random()*4) + 2;
+    acaBroj = Math.floor(Math.random()*4) + 2;
 
-    let brojTekst = '';
+    brojTekst = '';
 
     while(noviNiz.length > 1){
         brojPodnizova++;
@@ -132,14 +135,16 @@ function podelaNiza(){
 
 const nNiz = () => {
     
-    const niz = JSON.parse(txtA.value);
-    const nNizz = niz.map(({'All Packets': element}) => element);
+    /*Globalna promenljiva*/
+    //const niz = JSON.parse(txtA.value);
+    nNizz = niz.map(({'All Packets': element}) => element);
 
     const neNulti = (a) => {
         return a > 0;
     };
 
-    const noviNeNultiNiz = nNizz.filter(neNulti);
+    /*Globalna promenljiva*/
+    noviNeNultiNiz = nNizz.filter(neNulti);
     console.log(noviNeNultiNiz);
     txtC.value = noviNeNultiNiz; 
 
@@ -152,16 +157,18 @@ podnizove sa NASUMIČNIM brojem elemenata
 
 const podelaNniza = () => {
 
-    let brojPodnizova2 = 0;
+    /*Globalna promenljiva*/
 
-    const niz = JSON.parse(txtA.value);
-    const nNizz = niz.map(({'All Packets': element}) => element);
+    brojPodnizova2 = 0;
+
+    //const niz = JSON.parse(txtA.value);
+    //const nNizz = niz.map(({'All Packets': element}) => element);
 
     const neNulti = (a) => {
         return a > 0;
     };
 
-    const noviNeNultiNiz = nNizz.filter(neNulti);
+    noviNeNultiNiz = nNizz.filter(neNulti);
 
     let podnizR = new Array();
 
@@ -538,7 +545,7 @@ const pro = () => {
 
     //Broj podnizova je: 
     let brPodnizova;
-    
-    txtBrPod.value = brojPodnizova;
+
+    txtBrPod.value = brojPodnizova2;
 
 };
