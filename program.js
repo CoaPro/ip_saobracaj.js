@@ -131,7 +131,7 @@ function podelaNiza(){
 
 //Rad: 17.5.2021. Pon. Srećan Svetski dan telekomunikacija i informacionog društva
 
-//Prikaz elemenata niza koji su različiti od nule
+//Prikaz niza čiji su elementi različiti od nule
 
 const nNiz = () => {
     
@@ -139,15 +139,19 @@ const nNiz = () => {
     //const niz = JSON.parse(txtA.value);
     nNizz = niz.map(({'All Packets': element}) => element);
 
+    /*
     const neNulti = (a) => {
         return a > 0;
     };
+    */
 
     /*Globalna promenljiva*/
-    noviNeNultiNiz = nNizz.filter(neNulti);
+    noviNeNultiNiz = nNizz.filter(x => x > 0);
+    N = noviNeNultiNiz.length;
+
     //console.log(noviNeNultiNiz);
     txtC.value = noviNeNultiNiz; 
-    document.getElementById('brPodnizova').innerHTML = `Broj elemenata niza tj. vremenske serije je: ${noviNeNultiNiz.length}`;
+    document.getElementById('brPodnizova').innerHTML = `Broj elemenata niza tj. vremenske serije je: ${N}`;
 };
 
 /*
@@ -164,11 +168,13 @@ const podelaNniza = () => {
     //const niz = JSON.parse(txtA.value);
     //const nNizz = niz.map(({'All Packets': element}) => element);
 
+    /*
     const neNulti = (a) => {
         return a > 0;
     };
 
     noviNeNultiNiz = nNizz.filter(neNulti);
+    */
 
     podnizR = new Array();
 
@@ -190,7 +196,6 @@ const podelaNniza = () => {
         txtC.value = brojTekst;
     }
 
-    N = noviNeNultiNiz.length;
     //console.log(N);
     //console.log(brojPodnizova2);
 
@@ -526,7 +531,7 @@ const pro = () => {
     //let niz = JSON.parse(txtA.value);
     //let noviNiz = niz.map(({'All Packets': element}) => element);
 
- 
+ /*
     //let noviNeNultiNiz = noviNiz.filter(neNulti);
 
     txtN = document.getElementById('txtN');
@@ -538,15 +543,18 @@ const pro = () => {
 
     //Zbir svih elemenata nenultog niza je: 
     //zbirVS, srVrVS;
-    zbirVS = noviNeNultiNiz.reduce((a, b) => a + b);
+    zbirVS = noviNeNultiNiz.filter(x => x > 0).reduce((a, b) => a + b);
     txtZbir.value = zbirVS;
     srVrVS = Number((zbirVS / N).toFixed(2));
     txtSrVr.value = srVrVS;
 
     //Broj podnizova je: 
-    brPodnizova;
+    //brPodnizova;
 
-    console.log(brojPodnizova2);
+    //console.log(brojPodnizova2);
     txtBrPod.value = brojPodnizova2;
+    */
+    //console.log(nNizz);
+    console.log(noviNeNultiNiz);
 
 };
