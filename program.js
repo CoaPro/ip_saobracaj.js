@@ -57,7 +57,7 @@ const prikazNiza = () => {
         //console.log(f);
 
     }
-    document.getElementById('brElNiza').innerHTML = `Broj elemenata niza je: ${f}`;
+    document.getElementById('brElNiza').innerHTML = `Broj elemenata celokupnog niza je: ${f}`;
     txtB.value = e;
 
 }
@@ -80,7 +80,7 @@ const prikazNeNulaElemenata = () => {
     }
     }
 
-    document.getElementById('brElNiza').innerHTML = `Broj elemenata niza je: ${f}`;
+    document.getElementById('brElNiza').innerHTML = `Broj elemenata nenultog niza je: ${f}`;
     txtB.value = e;
 }
 
@@ -93,7 +93,7 @@ const fNoviNiz = () => {
 
     noviNiz = niz.map(({'All Packets': vrednost}) => vrednost );
     txtC.value = noviNiz;
-    console.log(noviNiz);
+    //console.log(noviNiz);
     document.getElementById('brPodnizova').innerHTML = `Broj elemenata niza tj. vremenske serije je:  ${noviNiz.length}`;
     };
 
@@ -120,7 +120,7 @@ function podelaNiza(){
     while(noviNiz.length > 1){
         brojPodnizova++;
         podnizR = noviNiz.splice(0, nasumicniBroj(2, 4));
-        console.log(podnizR);
+        //console.log(podnizR);
         brojTekst += podnizR + '\n';
         txtC.value = brojTekst;
     }
@@ -145,9 +145,9 @@ const nNiz = () => {
 
     /*Globalna promenljiva*/
     noviNeNultiNiz = nNizz.filter(neNulti);
-    console.log(noviNeNultiNiz);
+    //console.log(noviNeNultiNiz);
     txtC.value = noviNeNultiNiz; 
-
+    document.getElementById('brPodnizova').innerHTML = `Broj elemenata niza tj. vremenske serije je: ${noviNeNultiNiz.length}`;
 };
 
 /*
@@ -158,7 +158,7 @@ podnizove sa NASUMIČNIM brojem elemenata
 const podelaNniza = () => {
 
     /*Globalna promenljiva*/
-
+    
     brojPodnizova2 = 0;
 
     //const niz = JSON.parse(txtA.value);
@@ -183,11 +183,16 @@ const podelaNniza = () => {
     while(noviNeNultiNiz.length > 1){
 
         brojPodnizova2++;
+        //brojPodnizova2 = aca;
         podnizR = noviNeNultiNiz.splice(0, nasumicniBroj(2, 4));
-        console.log(podnizR);
+        //console.log(podnizR);
         brojTekst += podnizR + '\n';
         txtC.value = brojTekst;
     }
+
+    N = noviNeNultiNiz.length;
+    //console.log(N);
+    //console.log(brojPodnizova2);
 
     document.getElementById('brPodnizova').innerHTML = `Broj podnizova je sada: ${brojPodnizova2}`;
     
@@ -521,33 +526,27 @@ const pro = () => {
     //let niz = JSON.parse(txtA.value);
     //let noviNiz = niz.map(({'All Packets': element}) => element);
 
-    let a = new Array();
-    let br = 0;
-
-    let neNulti = (a) => {
-        return a > 0;
-    };
-
+ 
     //let noviNeNultiNiz = noviNiz.filter(neNulti);
 
-    let txtN = document.getElementById('txtN');
-    let txtZbir = document.getElementById('txtZbir');
-    let txtSrVr = document.getElementById('txtSrVr');
+    txtN = document.getElementById('txtN');
+    txtZbir = document.getElementById('txtZbir');
+    txtSrVr = document.getElementById('txtSrVr');
 
     //Ukupan broj elemenata nenultog niza je: 
-    let N = noviNeNultiNiz.length;
     txtN.value = N;
 
     //Zbir svih elemenata nenultog niza je: 
-    let zbirVS, srVrVS;
+    //zbirVS, srVrVS;
     zbirVS = noviNeNultiNiz.reduce((a, b) => a + b);
     txtZbir.value = zbirVS;
     srVrVS = Number((zbirVS / N).toFixed(2));
     txtSrVr.value = srVrVS;
 
     //Broj podnizova je: 
-    let brPodnizova;
+    brPodnizova;
 
+    console.log(brojPodnizova2);
     txtBrPod.value = brojPodnizova2;
 
 };
