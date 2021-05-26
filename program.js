@@ -146,7 +146,7 @@ const nNiz = () => {
 };
 
 /*
-Podela niza (nNiz), koji poseduje elemente različite od nule na 
+Podela niza (nNizz), koji poseduje elemente različite od nule na 
 podnizove sa NASUMIČNIM brojem elemenata 
 */
 
@@ -186,6 +186,7 @@ const podelaNniza = () => {
 };
 
 //18.5.2021. Uto. Početak drugog dela projekta
+//+26.5.2021. Sre. ažuriranje delova koda...
 
 /* 
 
@@ -497,5 +498,47 @@ for(let i = 1; i <= s; i++){
 console.log(suma1);
 
 txtHurst.value = 'Funckija je još uvek u izradi...';
+
+};
+
+/*
+Definisanje nove, sveobuhvatne funkcije sa svim metodama 
+za izračunavanje Hurstovog parametra i vizuelizaciju podataka...
+*/
+const pro = () => {
+
+    /* Definisanje promenljivih: */
+
+    let niz = JSON.parse(txtA.value);
+    let noviNiz = niz.map(({'All Packets': element}) => element);
+
+    let a = new Array();
+    let br = 0;
+
+    let neNulti = (a) => {
+        return a > 0;
+    };
+
+    let noviNeNultiNiz = noviNiz.filter(neNulti);
+
+    let txtN = document.getElementById('txtN');
+    let txtZbir = document.getElementById('txtZbir');
+    let txtSrVr = document.getElementById('txtSrVr');
+
+    //Ukupan broj elemenata nenultog niza je: 
+    let N = noviNeNultiNiz.length;
+    txtN.value = N;
+
+    //Zbir svih elemenata nenultog niza je: 
+    let zbirVS, srVrVS;
+    zbirVS = noviNeNultiNiz.reduce((a, b) => a + b);
+    txtZbir.value = zbirVS;
+    srVrVS = Number((zbirVS / N).toFixed(2));
+    txtSrVr.value = srVrVS;
+
+    //Broj podnizova je: 
+    let brPodnizova;
+    
+    txtBrPod.value = brojPodnizova;
 
 };
