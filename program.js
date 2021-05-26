@@ -5,13 +5,13 @@ Uvid u greške i početak ispravljanja pojedinih delova koda...
 */
 //Odabir fajla tj. JSON niza i prikaz u txtA
 
-let txtA = document.getElementById('txtA');
+txtA = document.getElementById('txtA');
 
 //Definisanje drugih parametara i elemenata... 
 
-let txtB = document.getElementById('txtB');
-let txtC = document.getElementById('txtC');
-let input = document.querySelector('input');
+txtB = document.getElementById('txtB');
+txtC = document.getElementById('txtC');
+input = document.querySelector('input');
 
 input.addEventListener('change', () => {
     let files = input.files;
@@ -35,6 +35,14 @@ input.addEventListener('change', () => {
 });
 
 //Funkcija (strelica) brisanje
+
+/* 
+DEFINISANJE NIZOVAAAAAAA 
+niz = JSON.parse(txtA.value);
+noviNiz = niz.map(({'All Packets': vrednost}) => vrednost );
+nNizz = niz.map(({'All Packets': element}) => element);
+noviNeNultiNiz = nNizz.filter(x => x > 0);
+*/
 
 const brisanje = ()  => {
     txtA.value = ''; 
@@ -133,6 +141,8 @@ function podelaNiza(){
 
 //Prikaz niza čiji su elementi različiti od nule
 
+
+
 const nNiz = () => {
     
     /*Globalna promenljiva*/
@@ -147,6 +157,8 @@ const nNiz = () => {
 
     /*Globalna promenljiva*/
     noviNeNultiNiz = nNizz.filter(x => x > 0);
+    //noviNeNultiNiz = noviNiz.filter(x => x > 0);
+    //console.log(noviNeNultiNiz);
     N = noviNeNultiNiz.length;
 
     //console.log(noviNeNultiNiz);
@@ -198,6 +210,7 @@ const podelaNniza = () => {
 
     //console.log(N);
     //console.log(brojPodnizova2);
+    console.log(noviNeNultiNiz);
 
     document.getElementById('brPodnizova').innerHTML = `Broj podnizova je sada: ${brojPodnizova2}`;
     
@@ -523,6 +536,11 @@ txtHurst.value = 'Funckija je još uvek u izradi...';
 Definisanje nove, sveobuhvatne funkcije sa svim metodama 
 za izračunavanje Hurstovog parametra i vizuelizaciju podataka...
 */
+
+function acaaa(){
+    console.log(noviNeNultiNiz);
+}
+
 const pro = () => {
 
     /* Definisanje promenljivih: */
@@ -555,6 +573,6 @@ const pro = () => {
     txtBrPod.value = brojPodnizova2;
     */
     //console.log(nNizz);
-    console.log(noviNeNultiNiz);
+    acaaa();
 
 };
