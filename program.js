@@ -1,6 +1,7 @@
 /*
 25.5.2021. Uto. 17.23h
 Uvid u greške i početak ispravljanja pojedinih delova koda...
++26.5.2021. Sre. 11.55h 
 */
 //Odabir fajla tj. JSON niza i prikaz u txtA
 
@@ -83,30 +84,45 @@ const prikazNeNulaElemenata = () => {
     txtB.value = e;
 }
 
+//Prikaz niza sa svim elementima
+
+const noviNiz = () => {
+    
+    const niz = JSON.parse(txtA.value);
+    const noviNiz = niz.map(({'All Packets': vrednost}) => vrednost );
+    txtC.value = noviNiz;
+    console.log(noviNiz);
+    document.getElementById('brPodnizova').innerHTML = `Broj elemenata niza tj. vremenske serije je:  ${noviNiz.length}`;
+    };
 
 // Podela niza sa svim elementima na podnizove sa NASUMIČNIM brojem elemenata
 
 function podelaNiza(){
+
+    let brojPodnizova = 0;
 
     const niz = JSON.parse(txtA.value);
     const noviNiz = niz.map(({'All Packets': vrednost}) => vrednost );
 
     let podnizR = new Array();
 
-    let acaNasumicniBroj  = (min, max) => {
+    let nasumicniBroj  = (min, max) => {
         return Math.random() * (max - min) + min;
     };
 
     let acaBroj = Math.floor(Math.random()*4) + 2;
 
-    let acaBrojTekst = '';
+    let brojTekst = '';
 
     while(noviNiz.length > 1){
-        podnizR = noviNiz.splice(0, acaNasumicniBroj(2, 4));
+        brojPodnizova++;
+        podnizR = noviNiz.splice(0, nasumicniBroj(2, 4));
         console.log(podnizR);
-        acaBrojTekst += podnizR + '\n';
-        txtC.value = acaBrojTekst;
+        brojTekst += podnizR + '\n';
+        txtC.value = brojTekst;
     }
+
+    document.getElementById('brPodnizova').innerHTML = `Broj podnizova je: ${brojPodnizova}`;
 
 }
 
@@ -126,21 +142,20 @@ const nNiz = () => {
     const noviNeNultiNiz = nNizz.filter(neNulti);
     console.log(noviNeNultiNiz);
     txtC.value = noviNeNultiNiz; 
-    document.getElementById('brPodnizova').innerHTML = `Broj elemenata niza sada je:  ${noviNeNultiNiz.length}`;
 
 };
 
-//Podela niza (nNiz), koji poseduje elemente različite od nule na 
-//podnizove sa četiri elementa
+/*
+Podela niza (nNiz), koji poseduje elemente različite od nule na 
+podnizove sa NASUMIČNIM brojem elemenata 
+*/
 
 const podelaNniza = () => {
 
+    let brojPodnizova2 = 0;
+
     const niz = JSON.parse(txtA.value);
     const nNizz = niz.map(({'All Packets': element}) => element);
-
-    let a = new Array();
-    let aStr = '';
-    let br = 0;
 
     const neNulti = (a) => {
         return a > 0;
@@ -148,22 +163,26 @@ const podelaNniza = () => {
 
     const noviNeNultiNiz = nNizz.filter(neNulti);
 
-    for(let i = 0; i < noviNeNultiNiz.length; i++){
+    let podnizR = new Array();
 
-        if(i % 4 === 0){
-            br++;
-            a[i] = noviNeNultiNiz.slice(i, i+4);
-            aStr += a[i] + '\n';
-            //console.log(aStr);
-            txtC.value = aStr; 
-        }
-        
+    let nasumicniBroj = (min, max) => {
+        return Math.random() * (max - min) + min;
+    };
+
+    let acaBroj = Math.floor(Math.random()*4) + 2;
+
+    let brojTekst = '';
+
+    while(noviNeNultiNiz.length > 1){
+        brojPodnizova2++;
+        podnizR = noviNeNultiNiz.splice(0, nasumicniBroj(2, 4));
+        console.log(podnizR);
+        brojTekst += podnizR + '\n';
+        txtC.value = brojTekst;
     }
 
-   
-
-    document.getElementById('brPodnizova').innerHTML = `Broj podnizova je sada:  ${br}`;
-
+    document.getElementById('brPodnizova').innerHTML = `Broj podnizova je sada: ${brojPodnizova2}`;
+    
 };
 
 //18.5.2021. Uto. Početak drugog dela projekta
