@@ -177,8 +177,16 @@ const podelaNniza = () => {
     /*Globalna promenljiva*/
     
     brojPodnizova2 = 0;
+
+    brElPodnizova = 0;
+    brElPodnizovaTekst = '';
+
     zbirPodnizova = 0;
     zbirPodnizovaTekst = '';
+
+    srVrPod = 0;
+    srVrPodTekst = '';
+
 
     //const niz = JSON.parse(txtA.value);
     //const nNizz = niz.map(({'All Packets': element}) => element);
@@ -203,20 +211,36 @@ const podelaNniza = () => {
 
     brojTekst = '';
 
+    function srVr(a, b, n){
+        return Number(((a+b)/n).toFixed(2));
+    }
+
     while(noviNeNultiNiz.length > 1){
 
+        nasumicniBroj(2, 4); 
+        vrNasumicnogBroja = nasumicniBroj(2, 4); 
+        
         brojPodnizova2++;
         //brojPodnizova2 = aca;
-        podnizR = noviNeNultiNiz.splice(0, nasumicniBroj(2, 4));
+        podnizR = noviNeNultiNiz.splice(0, vrNasumicnogBroja);
         //console.log(podnizR);
         brojTekst += podnizR + '\n';
         txtC.value = brojTekst;
+
+        //Broj elemenata(članova) svakog podniza
+        txtnPod = document.getElementById('txtnPod');
+        brElPodnizova = Math.floor(vrNasumicnogBroja);
+        brElPodnizovaTekst += brElPodnizova + '\n';
 
         //Zbir svakog podniza
         txtZbirPod = document.getElementById('txtZbirPod');
         zbirPodnizova = podnizR.reduce((x,y) => x + y);
         zbirPodnizovaTekst += zbirPodnizova + '\n';
         //txtZbirPod.value = zbirPodnizovaTekst;
+
+        //Srednja vrednost svakog podniza
+        txtSrVrPod = document.getElementById('txtSrVrPod');
+        //srVrPod = Number(());
     }
 
     //console.log(N);
@@ -585,7 +609,10 @@ const pro = () => {
 
     //console.log(nNizz);
     console.log(noviNeNultiNiz);
-    
+
+    //Prikaz broja elemenata(članova) svakog podniza
+    txtnPod.value = brElPodnizovaTekst;
+
     //Prikaz zbira svakog podniza
     txtZbirPod.value = zbirPodnizovaTekst;
 
