@@ -156,7 +156,7 @@ const nNiz = () => {
     */
 
     /*Globalna promenljiva*/
-    noviNeNultiNiz = nNizz.filter(x => x > 0);
+     noviNeNultiNiz = nNizz.filter(x => x > 0);
     //noviNeNultiNiz = noviNiz.filter(x => x > 0);
     //console.log(noviNeNultiNiz);
     N = noviNeNultiNiz.length;
@@ -164,6 +164,7 @@ const nNiz = () => {
     //console.log(noviNeNultiNiz);
     txtC.value = noviNeNultiNiz; 
     document.getElementById('brPodnizova').innerHTML = `Broj elemenata niza tj. vremenske serije je: ${N}`;
+    console.log(noviNeNultiNiz);
 };
 
 /*
@@ -187,6 +188,8 @@ const podelaNniza = () => {
 
     noviNeNultiNiz = nNizz.filter(neNulti);
     */
+
+    let noviNeNultiNiz = nNizz.filter(x => x > 0);
 
     podnizR = new Array();
 
@@ -573,6 +576,6 @@ const pro = () => {
     txtBrPod.value = brojPodnizova2;
     */
     //console.log(nNizz);
-    acaaa();
+    console.log(noviNeNultiNiz);
 
 };
