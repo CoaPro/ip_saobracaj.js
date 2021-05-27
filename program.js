@@ -181,11 +181,13 @@ const podelaNniza = () => {
     brElPodnizova = 0;
     brElPodnizovaTekst = '';
 
-    zbirPodnizova = 0;
-    zbirPodnizovaTekst = '';
+    zbirPodniza = 0;
+    zbirPodnizaTekst = '';
 
     srVrPod = 0;
     srVrPodTekst = '';
+
+    w1 = 0, w2 = 0, w3 = 0, w4 = 0;
 
 
     //const niz = JSON.parse(txtA.value);
@@ -219,7 +221,7 @@ const podelaNniza = () => {
 
         nasumicniBroj(2, 4); 
         vrNasumicnogBroja = nasumicniBroj(2, 4); 
-        
+
         brojPodnizova2++;
         //brojPodnizova2 = aca;
         podnizR = noviNeNultiNiz.splice(0, vrNasumicnogBroja);
@@ -234,13 +236,32 @@ const podelaNniza = () => {
 
         //Zbir svakog podniza
         txtZbirPod = document.getElementById('txtZbirPod');
-        zbirPodnizova = podnizR.reduce((x,y) => x + y);
-        zbirPodnizovaTekst += zbirPodnizova + '\n';
+        zbirPodniza = podnizR.reduce((x,y) => x + y);
+        zbirPodnizaTekst += zbirPodniza + '\n';
         //txtZbirPod.value = zbirPodnizovaTekst;
 
         //Srednja vrednost svakog podniza
         txtSrVrPod = document.getElementById('txtSrVrPod');
-        //srVrPod = Number(());
+        srVrPod = Number((zbirPodniza / brElPodnizova).toFixed(2));
+        srVrPodTekst += srVrPod + '\n';
+
+        //Kumulativne devijacije svakog podniza
+        txtWpod = document.getElementById('txtWpod');
+
+        if(brElPodnizova === 2){
+
+            //txtWpod.value = '2-test';
+
+        } else if (brElPodnizova === 3){
+            
+            //txtWpod.value = '3-test';
+
+        } else if (brElPodnizova === 4){
+
+        } else
+        {
+        txtWpod.value = 'Pokušajte ponovo sa generisanjem podnizova...';
+        }
     }
 
     //console.log(N);
@@ -614,6 +635,9 @@ const pro = () => {
     txtnPod.value = brElPodnizovaTekst;
 
     //Prikaz zbira svakog podniza
-    txtZbirPod.value = zbirPodnizovaTekst;
+    txtZbirPod.value = zbirPodnizaTekst;
+
+    //Prikaz srednje vrednosti svakog podniza;
+    txtSrVrPod.value = srVrPodTekst;
 
 };
