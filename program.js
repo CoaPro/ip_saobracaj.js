@@ -257,7 +257,8 @@ const podelaNniza = () => {
             x2 = podnizR[1];
 
             w1 = Number((x1 - srVrPod).toFixed(2));
-            w2 = Number((x1 + x2 - 2*srVrPod).toFixed(2));
+            //w2 = Number((x1 + x2 - 2*srVrPod).toFixed(2));
+            w2 = Math.floor(Math.abs(x1 + x2 - 2*srVrPod));
 
             wPod = `${w1} ${w2}`;
             wTxt += wPod + '\n';
@@ -274,7 +275,8 @@ const podelaNniza = () => {
 
             w1 = Number((x1 - srVrPod).toFixed(2));
             w2 = Number((x1 + x2 - 2*srVrPod).toFixed(2));
-            w3 = Number((x1 + x2 + x3 - 3*srVrPod).toFixed(2));
+            //w3 = Number((x1 + x2 + x3 - 3*srVrPod).toFixed(2));
+            w3 = Math.floor(Math.abs(x1 + x2 + x3 - 3*srVrPod));
 
             wPod = `${w1} ${w2} ${w3}`;
             wTxt +=  wPod + '\n';
@@ -291,7 +293,7 @@ const podelaNniza = () => {
             w1 = Number((x1 - srVrPod).toFixed(2));
             w2 = Number((x1 + x2 - 2*srVrPod).toFixed(2));
             w3 = Number((x1 + x2 + x3 - 3*srVrPod).toFixed(2));
-            w4 = Number((x1 + x2 + x3 + x4 - 4*srVrPod).toFixed(2));
+            w4 = Math.floor(Math.abs(x1 + x2 + x3 + x4 - 4*srVrPod));
 
             wPod = `${w1} ${w2} ${w3} ${w4}`;
             wTxt += wPod + '\n';
