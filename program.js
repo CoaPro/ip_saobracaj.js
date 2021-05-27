@@ -188,6 +188,7 @@ const podelaNniza = () => {
     srVrPodTekst = '';
 
     w1 = 0, w2 = 0, w3 = 0, w4 = 0;
+    wTxt = '';
 
 
     //const niz = JSON.parse(txtA.value);
@@ -246,17 +247,44 @@ const podelaNniza = () => {
         srVrPodTekst += srVrPod + '\n';
 
         //Kumulativne devijacije svakog podniza
+        wPod = Number();
         txtWpod = document.getElementById('txtWpod');
 
         if(brElPodnizova === 2){
 
+            w1 = podnizR[0];
+            w2 = podnizR[1];
+
+            wPod = `${w1} ${w2}`;
+            wTxt += wPod + '\n';
+            console.log(w1, w2);
+
+
             //txtWpod.value = '2-test';
 
         } else if (brElPodnizova === 3){
-            
+
+            w1 = podnizR[0];
+            w2 = podnizR[1];
+            w3 = podnizR[2];
+
+            wPod = `${w1} ${w2} ${w3}`;
+            wTxt +=  wPod + '\n';
+            console.log(w1, w2, w3);
             //txtWpod.value = '3-test';
 
         } else if (brElPodnizova === 4){
+
+            w1 = podnizR[0];
+            w2 = podnizR[1];
+            w3 = podnizR[2];
+            w4 = podnizR[3];
+
+            wPod = `${w1} ${w2} ${w3} ${w4}`;
+            wTxt += wPod + '\n';
+
+            console.log(w1, w2, w3, w4);
+
 
         } else
         {
@@ -639,5 +667,8 @@ const pro = () => {
 
     //Prikaz srednje vrednosti svakog podniza;
     txtSrVrPod.value = srVrPodTekst;
+
+    //Prikaz kumulativnih devijacija podnizova
+    txtWpod.value = wTxt;
 
 };
