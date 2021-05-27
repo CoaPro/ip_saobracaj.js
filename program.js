@@ -187,6 +187,7 @@ const podelaNniza = () => {
     srVrPod = 0;
     srVrPodTekst = '';
 
+    x1 = 0, x2 = 0, x3 = 0, x4 = 0;
     w1 = 0, w2 = 0, w3 = 0, w4 = 0;
     wTxt = '';
 
@@ -252,8 +253,11 @@ const podelaNniza = () => {
 
         if(brElPodnizova === 2){
 
-            w1 = podnizR[0];
-            w2 = podnizR[1];
+            x1 = podnizR[0];
+            x2 = podnizR[1];
+
+            w1 = Number((x1 - srVrPod).toFixed(2));
+            w2 = Number((x1 + x2 - 2*srVrPod).toFixed(2));
 
             wPod = `${w1} ${w2}`;
             wTxt += wPod + '\n';
@@ -264,9 +268,13 @@ const podelaNniza = () => {
 
         } else if (brElPodnizova === 3){
 
-            w1 = podnizR[0];
-            w2 = podnizR[1];
-            w3 = podnizR[2];
+            x1 = podnizR[0];
+            x2 = podnizR[1];
+            x3 = podnizR[2];
+
+            w1 = Number((x1 - srVrPod).toFixed(2));
+            w2 = Number((x1 + x2 - 2*srVrPod).toFixed(2));
+            w3 = Number((x1 + x2 + x3 - 3*srVrPod).toFixed(2));
 
             wPod = `${w1} ${w2} ${w3}`;
             wTxt +=  wPod + '\n';
@@ -275,10 +283,15 @@ const podelaNniza = () => {
 
         } else if (brElPodnizova === 4){
 
-            w1 = podnizR[0];
-            w2 = podnizR[1];
-            w3 = podnizR[2];
-            w4 = podnizR[3];
+            x1 = podnizR[0];
+            x2 = podnizR[1];
+            x3 = podnizR[2];
+            x4 = podnizR[3];
+
+            w1 = Number((x1 - srVrPod).toFixed(2));
+            w2 = Number((x1 + x2 - 2*srVrPod).toFixed(2));
+            w3 = Number((x1 + x2 + x3 - 3*srVrPod).toFixed(2));
+            w4 = Number((x1 + x2 + x3 + x4 - 4*srVrPod).toFixed(2));
 
             wPod = `${w1} ${w2} ${w3} ${w4}`;
             wTxt += wPod + '\n';
