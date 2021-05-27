@@ -177,6 +177,8 @@ const podelaNniza = () => {
     /*Globalna promenljiva*/
     
     brojPodnizova2 = 0;
+    zbirPodnizova = 0;
+    zbirPodnizovaTekst = '';
 
     //const niz = JSON.parse(txtA.value);
     //const nNizz = niz.map(({'All Packets': element}) => element);
@@ -209,6 +211,12 @@ const podelaNniza = () => {
         //console.log(podnizR);
         brojTekst += podnizR + '\n';
         txtC.value = brojTekst;
+
+        //Zbir svakog podniza
+        txtZbirPod = document.getElementById('txtZbirPod');
+        zbirPodnizova = podnizR.reduce((x,y) => x + y);
+        zbirPodnizovaTekst += zbirPodnizova + '\n';
+        //txtZbirPod.value = zbirPodnizovaTekst;
     }
 
     //console.log(N);
@@ -552,7 +560,7 @@ const pro = () => {
     //let niz = JSON.parse(txtA.value);
     //let noviNiz = niz.map(({'All Packets': element}) => element);
 
- /*
+ 
     //let noviNeNultiNiz = noviNiz.filter(neNulti);
 
     txtN = document.getElementById('txtN');
@@ -574,8 +582,11 @@ const pro = () => {
 
     //console.log(brojPodnizova2);
     txtBrPod.value = brojPodnizova2;
-    */
+
     //console.log(nNizz);
     console.log(noviNeNultiNiz);
+    
+    //Prikaz zbira svakog podniza
+    txtZbirPod.value = zbirPodnizovaTekst;
 
 };
