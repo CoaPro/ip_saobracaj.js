@@ -203,6 +203,10 @@ const podelaNniza = () => {
 
     A = 0, usrednjavanje = Number(), usrednjavanjeA = 0, logN = 0, s = 0;
 
+    logn = 0, logn_2 = 0;
+    lognTxt = '';
+    logn_2Txt = '';
+
     /*
     
     A++;
@@ -298,6 +302,13 @@ const podelaNniza = () => {
 
         //Najbliža celobrojna vrednost s za logN, gde je osnova logaritma 2
         txtNajCelVred = document.getElementById('txtNajCelVred');
+
+        //Logaritamske vrednosti broja (n) elemenata grupa
+        txtLogn = document.getElementById('txtLogn');
+
+        //Kvadratne logaritamske vrednosti broja (n) elemenata grupa
+        txtLogn_2 = document.getElementById('txtLogn_2');
+        
         
         if(brElPodnizova === 2){
 
@@ -342,6 +353,14 @@ const podelaNniza = () => {
 
             //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
             s = Math.floor(Math.log2(N));
+
+            //Progračun logaritamskih vrednosti broja (n) elemenata grupa
+            logn = Number((Math.log10(brElPodnizova)).toFixed(2));
+
+            lognTxt += logn + '\n';
+
+            //Progračun kvadrata logaritamskih vrednosti broja (n) elemenata grupa
+            
             
         } else if (brElPodnizova === 3){
 
@@ -388,7 +407,12 @@ const podelaNniza = () => {
             //usrednjavanje += RS; 
             
             //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
-            s = Math.floor(Math.log2(N));           
+            s = Math.floor(Math.log2(N)); 
+            
+            //Progračun logaritamskih vrednosti broja (n) elemenata grupa
+            logn = Number((Math.log10(brElPodnizova)).toFixed(2));
+
+            lognTxt += logn + '\n';
 
         } else if (brElPodnizova === 4){
 
@@ -438,7 +462,12 @@ const podelaNniza = () => {
             //usrednjavanje += RS;
 
             //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
-            s = Math.floor(Math.log2(N));            
+            s = Math.floor(Math.log2(N)); 
+            
+            //Progračun logaritamskih vrednosti broja (n) elemenata grupa
+            logn = Number((Math.log10(brElPodnizova)).toFixed(2));
+
+            lognTxt += logn + '\n';            
 
         } else
         {
@@ -857,5 +886,11 @@ const pro = () => {
 
     //Prikaz najbliže celobrojne vrednosti s za logN, gde je osnova logaritma 2
     txtNajCelVred.value = s;
+
+    //Prikaz logaritamskih vrednosti broja (n) elemenata grupa
+    txtLogn.value = lognTxt; 
+
+    //Prikaz kvadrata logaritamskih vrednosti broja (n) elemenata grupa
+    txtLogn_2.value = logn_2Txt;
 
 };
