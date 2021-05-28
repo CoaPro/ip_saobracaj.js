@@ -141,8 +141,6 @@ function podelaNiza(){
 
 //Prikaz niza čiji su elementi različiti od nule
 
-
-
 const nNiz = () => {
     
     /*Globalna promenljiva*/
@@ -220,8 +218,6 @@ const podelaNniza = () => {
     s = Math.floor(logN);
     
     */
-
-    
 
     //const niz = JSON.parse(txtA.value);
     //const nNizz = niz.map(({'All Packets': element}) => element);
