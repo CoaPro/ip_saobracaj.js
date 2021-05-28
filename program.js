@@ -360,7 +360,8 @@ const podelaNniza = () => {
             lognTxt += logn + '\n';
 
             //Progračun kvadrata logaritamskih vrednosti broja (n) elemenata grupa
-            
+            logn_2 = Number((logn**2).toFixed(2));
+            logn_2Txt += logn_2 + '\n';
             
         } else if (brElPodnizova === 3){
 
@@ -412,7 +413,11 @@ const podelaNniza = () => {
             //Progračun logaritamskih vrednosti broja (n) elemenata grupa
             logn = Number((Math.log10(brElPodnizova)).toFixed(2));
 
-            lognTxt += logn + '\n';
+            lognTxt += logn + '\n'; 
+
+            //Progračun kvadrata logaritamskih vrednosti broja (n) elemenata grupa
+            logn_2 = Number((logn**2).toFixed(2));
+            logn_2Txt += logn_2 + '\n';
 
         } else if (brElPodnizova === 4){
 
@@ -467,7 +472,11 @@ const podelaNniza = () => {
             //Progračun logaritamskih vrednosti broja (n) elemenata grupa
             logn = Number((Math.log10(brElPodnizova)).toFixed(2));
 
-            lognTxt += logn + '\n';            
+            lognTxt += logn + '\n'; 
+            
+            //Progračun kvadrata logaritamskih vrednosti broja (n) elemenata grupa
+            logn_2 = Number((logn**2).toFixed(2));
+            logn_2Txt += logn_2 + '\n';
 
         } else
         {
