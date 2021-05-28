@@ -197,7 +197,7 @@ const podelaNniza = () => {
     S_ = 0, S = 0;
     vrStxt = ''; 
 
-    RS = 0, logRS = 0;
+    RS = Number(), logRS = 0;
     vrRStxt = '';
     logRStxt = '';
 
@@ -336,6 +336,10 @@ const podelaNniza = () => {
             //usrednjavanje += Number(RS);
             //usrednjavanjeA = Number((usrednjavanje / A).toFixed(2)); 
 
+            
+            //usrednjavanje += RS;
+            
+
         } else if (brElPodnizova === 3){
 
             x1 = podnizR[0];
@@ -376,7 +380,9 @@ const podelaNniza = () => {
             
             //Proračun usrednjavanja odnosa opsega i standardne devijacije grupe
             //usrednjavanje += Number(RS); 
-            //usrednjavanjeA = Number((usrednjavanje / A).toFixed(2));        
+            //usrednjavanjeA = Number((usrednjavanje / A).toFixed(2)); 
+
+            //usrednjavanje += RS;                
 
         } else if (brElPodnizova === 4){
 
@@ -421,7 +427,10 @@ const podelaNniza = () => {
             
             //Proračun usrednjavanja odnosa opsega i standardne devijacije grupe
             //usrednjavanje += Number(RS);
-            //usrednjavanjeA = Number((usrednjavanje / A).toFixed(2));           
+            //usrednjavanjeA = Number((usrednjavanje / A).toFixed(2)); 
+            
+            //usrednjavanje += RS;
+
             
 
         } else
@@ -436,6 +445,17 @@ const podelaNniza = () => {
     console.log(noviNeNultiNiz);
 
     document.getElementById('brPodnizova').innerHTML = `Broj podnizova je sada: ${brojPodnizova2}`;
+
+
+    for(let i = 0; i <= N; i++){
+        usrednjavanje += RS; 
+        usrednjavanjeA = Number((usrednjavanje / A).toFixed(2));
+    }
+
+    console.log(N);
+    console.log(A);
+    console.log(Number(usrednjavanje.toFixed(2)));
+    console.log(usrednjavanjeA);
     
 };
 
@@ -821,8 +841,11 @@ const pro = () => {
     //Prikaz logaritamskog R/S opsega svake grupe
     txtLogRSpod.value = logRStxt;
 
-    console.log(A);
-    console.log(usrednjavanje);
+    //Usrednjavanje R/S odnosa
+    txtUsrednjavanje.value = usrednjavanjeA;
+
+    //console.log(A);
+    //console.log(Number(usrednjavanje));
     //console.log(usrednjavanjeA);
 
 };
