@@ -194,6 +194,8 @@ const podelaNniza = () => {
     maxVr = 0, minVr = 0, Rn = 0;
     opsegRtxt = '';
 
+    S_ = 0, S = 0;
+    vrStxt = ''; 
 
     //const niz = JSON.parse(txtA.value);
     //const nNizz = niz.map(({'All Packets': element}) => element);
@@ -258,6 +260,9 @@ const podelaNniza = () => {
         //maxVr = 0, minVr = 0, Rn = 0;
         txtRpod = document.getElementById('txtRpod');
 
+        //Standardna devijacija svake grupe
+        txtSpod = document.getElementById('txtSpod');
+        
         if(brElPodnizova === 2){
 
             x1 = podnizR[0];
@@ -277,6 +282,12 @@ const podelaNniza = () => {
             Rn = maxVr - minVr;
 
             opsegRtxt += Rn + '\n';
+
+            //Proračun standardne devijacije svake grupe
+            S_ = Math.sqrt((1/brElPodnizova)*((x1 - srVrPod)**2 + (x2 - srVrPod)**2));
+            S = Number(S_.toFixed(2));
+            
+            vrStxt += S + '\n';
 
         } else if (brElPodnizova === 3){
 
@@ -299,6 +310,12 @@ const podelaNniza = () => {
             Rn = maxVr - minVr;
 
             opsegRtxt += Rn + '\n';
+
+            //Proračun standardne devijacije svake grupe
+            S_ = Math.sqrt((1/brElPodnizova)*((x1 - srVrPod)**2 + (x2 - srVrPod)**2 + (x3 - srVrPod)**2));
+            S = Number(S_.toFixed(2)); 
+
+            vrStxt += S + '\n';
 
         } else if (brElPodnizova === 4){
 
@@ -324,6 +341,12 @@ const podelaNniza = () => {
             Rn = maxVr - minVr;
 
             opsegRtxt += Rn + '\n';
+
+            //Proračun standardne devijacije svake grupe
+            S_ = Math.sqrt((1/brElPodnizova)*((x1 - srVrPod)**2 + (x2 - srVrPod)**2 + (x3 - srVrPod)**2 + (x4 - srVrPod)**2));
+            S = Number(S_.toFixed(2)); 
+
+            vrStxt += S + '\n';           
 
         } else
         {
@@ -712,5 +735,8 @@ const pro = () => {
 
     //Prikaz opsega svake grupe
     txtRpod.value = opsegRtxt;
+
+    //Prikaz standardne devijacije svake grupe
+    txtSpod.value = vrStxt; 
 
 };
