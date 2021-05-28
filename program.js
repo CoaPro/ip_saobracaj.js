@@ -294,7 +294,10 @@ const podelaNniza = () => {
         txtLogRSpod = document.getElementById('txtLogRSpod');
 
         //Usrednjavanje R/S odnosa
-        txtUsrednjavanje = document.getElementById('txtUsrednjavanje');
+        txtUsrednjavanje = document.getElementById('txtUsrednjavanje'); 
+
+        //Najbliža celobrojna vrednost s za logN, gde je osnova logaritma 2
+        txtNajCelVred = document.getElementById('txtNajCelVred');
         
         if(brElPodnizova === 2){
 
@@ -335,11 +338,11 @@ const podelaNniza = () => {
             //Proračun usrednjavanja odnosa opsega i standardne devijacije grupe
             //usrednjavanje += Number(RS);
             //usrednjavanjeA = Number((usrednjavanje / A).toFixed(2)); 
-
-            
             //usrednjavanje += RS;
-            
 
+            //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
+            s = Math.floor(Math.log2(N));
+            
         } else if (brElPodnizova === 3){
 
             x1 = podnizR[0];
@@ -382,7 +385,10 @@ const podelaNniza = () => {
             //usrednjavanje += Number(RS); 
             //usrednjavanjeA = Number((usrednjavanje / A).toFixed(2)); 
 
-            //usrednjavanje += RS;                
+            //usrednjavanje += RS; 
+            
+            //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
+            s = Math.floor(Math.log2(N));           
 
         } else if (brElPodnizova === 4){
 
@@ -431,7 +437,8 @@ const podelaNniza = () => {
             
             //usrednjavanje += RS;
 
-            
+            //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
+            s = Math.floor(Math.log2(N));            
 
         } else
         {
@@ -847,5 +854,8 @@ const pro = () => {
     //console.log(A);
     //console.log(Number(usrednjavanje));
     //console.log(usrednjavanjeA);
+
+    //Prikaz najbliže celobrojne vrednosti s za logN, gde je osnova logaritma 2
+    txtNajCelVred.value = s;
 
 };
