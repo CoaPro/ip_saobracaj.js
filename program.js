@@ -191,11 +191,16 @@ const podelaNniza = () => {
     w1 = 0, w2 = 0, w3 = 0, w4 = 0;
     wTxt = '';
 
-    maxVr = 0, minVr = 0, Rn = 0;
+    maxVr = 0, minVr = 0, R = 0;
     opsegRtxt = '';
 
     S_ = 0, S = 0;
     vrStxt = ''; 
+
+    RS = 0, logRS = 0;
+    vrRStxt = '';
+    logRStxt = '';
+    
 
     //const niz = JSON.parse(txtA.value);
     //const nNizz = niz.map(({'All Packets': element}) => element);
@@ -262,6 +267,15 @@ const podelaNniza = () => {
 
         //Standardna devijacija svake grupe
         txtSpod = document.getElementById('txtSpod');
+
+        //R/S odnos svake grupe
+        txtRSpod = document.getElementById('txtRSpod');
+
+        //Logaritamski R/S odnos svake grupe
+        txtLogRSpod = document.getElementById('txtLogRSpod');
+
+        //Usrednjavanje R/S odnosa
+        txtUsrednjavanje = document.getElementById('txtUsrednjavanje');
         
         if(brElPodnizova === 2){
 
@@ -279,15 +293,25 @@ const podelaNniza = () => {
             //Proračun opsega svake grupe
             maxVr = Math.max(w1, w2);
             minVr = Math.min(w1, w2);
-            Rn = maxVr - minVr;
+            R = maxVr - minVr;
 
-            opsegRtxt += Rn + '\n';
+            opsegRtxt += R + '\n';
 
             //Proračun standardne devijacije svake grupe
             S_ = Math.sqrt((1/brElPodnizova)*((x1 - srVrPod)**2 + (x2 - srVrPod)**2));
             S = Number(S_.toFixed(2));
             
-            vrStxt += S + '\n';
+            vrStxt += S + '\n'; 
+
+            //Proračun R/S opsega svake grupe
+            RS = Number((R/S).toFixed(2));
+
+            vrRStxt += RS + '\n';
+
+            //Proračun logaritamskog R/S odnosa svake grupe
+            logRS = Number((Math.log10(RS)).toFixed(2));
+
+            logRStxt += logRS + '\n';
 
         } else if (brElPodnizova === 3){
 
@@ -307,15 +331,25 @@ const podelaNniza = () => {
             //Proračun opsega svake grupe
             maxVr = Math.max(w1, w2, w3);
             minVr = Math.min(w1, w2, w3);
-            Rn = maxVr - minVr;
+            R = maxVr - minVr;
 
-            opsegRtxt += Rn + '\n';
+            opsegRtxt += R + '\n';
 
             //Proračun standardne devijacije svake grupe
             S_ = Math.sqrt((1/brElPodnizova)*((x1 - srVrPod)**2 + (x2 - srVrPod)**2 + (x3 - srVrPod)**2));
             S = Number(S_.toFixed(2)); 
 
-            vrStxt += S + '\n';
+            vrStxt += S + '\n'; 
+
+            //Proračun R/S opsega svake grupe
+            RS = Number((R/S).toFixed(2));
+
+            vrRStxt += RS + '\n';   
+            
+            //Proračun logaritamskog R/S odnosa svake grupe
+            logRS = Number((Math.log10(RS)).toFixed(2));
+
+            logRStxt += logRS + '\n';            
 
         } else if (brElPodnizova === 4){
 
@@ -338,15 +372,26 @@ const podelaNniza = () => {
             //Proračun opsega svake grupe
             maxVr = Math.max(w1, w2, w3, w4);
             minVr = Math.min(w1, w2, w3, w4);
-            Rn = maxVr - minVr;
+            R = maxVr - minVr;
 
-            opsegRtxt += Rn + '\n';
+            opsegRtxt += R + '\n';
 
             //Proračun standardne devijacije svake grupe
             S_ = Math.sqrt((1/brElPodnizova)*((x1 - srVrPod)**2 + (x2 - srVrPod)**2 + (x3 - srVrPod)**2 + (x4 - srVrPod)**2));
             S = Number(S_.toFixed(2)); 
 
-            vrStxt += S + '\n';           
+            vrStxt += S + '\n'; 
+
+            //Proračun R/S opsega svake grupe
+            RS = Number((R/S).toFixed(2));
+
+            vrRStxt += RS + '\n';
+
+            //Proračun logaritamskog R/S odnosa svake grupe
+            logRS = Number((Math.log10(RS)).toFixed(2));
+
+            logRStxt += logRS + '\n';            
+            
 
         } else
         {
@@ -738,5 +783,13 @@ const pro = () => {
 
     //Prikaz standardne devijacije svake grupe
     txtSpod.value = vrStxt; 
+
+    //Prikaz R/S opsega svake grupe
+    txtRSpod.value = vrRStxt;
+
+    //Prikaz logaritamskog R/S opsega svake grupe
+    txtLogRSpod.value = logRStxt;
+
+
 
 };
