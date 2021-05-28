@@ -191,6 +191,9 @@ const podelaNniza = () => {
     w1 = 0, w2 = 0, w3 = 0, w4 = 0;
     wTxt = '';
 
+    maxVr = 0, minVr = 0, Rn = 0;
+    opsegRtxt = '';
+
 
     //const niz = JSON.parse(txtA.value);
     //const nNizz = niz.map(({'All Packets': element}) => element);
@@ -251,6 +254,10 @@ const podelaNniza = () => {
         wPod = Number();
         txtWpod = document.getElementById('txtWpod');
 
+        //Opseg svake grupe
+        //maxVr = 0, minVr = 0, Rn = 0;
+        txtRpod = document.getElementById('txtRpod');
+
         if(brElPodnizova === 2){
 
             x1 = podnizR[0];
@@ -262,10 +269,14 @@ const podelaNniza = () => {
 
             wPod = `${w1} ${w2}`;
             wTxt += wPod + '\n';
-            console.log(w1, w2);
+            //console.log(w1, w2);
 
+            //Proračun opsega svake grupe
+            maxVr = Math.max(w1, w2);
+            minVr = Math.min(w1, w2);
+            Rn = maxVr - minVr;
 
-            //txtWpod.value = '2-test';
+            opsegRtxt += Rn + '\n';
 
         } else if (brElPodnizova === 3){
 
@@ -280,8 +291,14 @@ const podelaNniza = () => {
 
             wPod = `${w1} ${w2} ${w3}`;
             wTxt +=  wPod + '\n';
-            console.log(w1, w2, w3);
-            //txtWpod.value = '3-test';
+            //console.log(w1, w2, w3);
+            
+            //Proračun opsega svake grupe
+            maxVr = Math.max(w1, w2, w3);
+            minVr = Math.min(w1, w2, w3);
+            Rn = maxVr - minVr;
+
+            opsegRtxt += Rn + '\n';
 
         } else if (brElPodnizova === 4){
 
@@ -290,6 +307,7 @@ const podelaNniza = () => {
             x3 = podnizR[2];
             x4 = podnizR[3];
 
+            /*Kumulativne devijacije svakog podniza */
             w1 = Number((x1 - srVrPod).toFixed(2));
             w2 = Number((x1 + x2 - 2*srVrPod).toFixed(2));
             w3 = Number((x1 + x2 + x3 - 3*srVrPod).toFixed(2));
@@ -298,8 +316,14 @@ const podelaNniza = () => {
             wPod = `${w1} ${w2} ${w3} ${w4}`;
             wTxt += wPod + '\n';
 
-            console.log(w1, w2, w3, w4);
+            //console.log(w1, w2, w3, w4);
 
+            //Proračun opsega svake grupe
+            maxVr = Math.max(w1, w2, w3, w4);
+            minVr = Math.min(w1, w2, w3, w4);
+            Rn = maxVr - minVr;
+
+            opsegRtxt += Rn + '\n';
 
         } else
         {
@@ -685,5 +709,8 @@ const pro = () => {
 
     //Prikaz kumulativnih devijacija podnizova
     txtWpod.value = wTxt;
+
+    //Prikaz opsega svake grupe
+    txtRpod.value = opsegRtxt;
 
 };
