@@ -200,6 +200,23 @@ const podelaNniza = () => {
     RS = 0, logRS = 0;
     vrRStxt = '';
     logRStxt = '';
+
+    A = 0, usrednjavanje = Number(), usrednjavanjeA = 0, logN = 0, s = 0;
+
+    /*
+    
+    A++;
+
+    usrednjavanje = podniz.reduce((x, y) => zbir(x, y));
+    usrednjavanjeA = Number((usrednjavanje / A).toFixed(2)); 
+
+    txtUsrednjavanje.value = usrednjavanjeA; 
+
+    logN = Number((Math.log2(N)).toFixed(2));
+    s = Math.floor(logN);
+    
+    */
+
     
 
     //const niz = JSON.parse(txtA.value);
@@ -230,6 +247,8 @@ const podelaNniza = () => {
     }
 
     while(noviNeNultiNiz.length > 1){
+
+        A++;
 
         nasumicniBroj(2, 4); 
         vrNasumicnogBroja = nasumicniBroj(2, 4); 
@@ -313,6 +332,10 @@ const podelaNniza = () => {
 
             logRStxt += logRS + '\n';
 
+            //Proračun usrednjavanja odnosa opsega i standardne devijacije grupe
+            //usrednjavanje += Number(RS);
+            //usrednjavanjeA = Number((usrednjavanje / A).toFixed(2)); 
+
         } else if (brElPodnizova === 3){
 
             x1 = podnizR[0];
@@ -349,7 +372,11 @@ const podelaNniza = () => {
             //Proračun logaritamskog R/S odnosa svake grupe
             logRS = Number((Math.log10(RS)).toFixed(2));
 
-            logRStxt += logRS + '\n';            
+            logRStxt += logRS + '\n'; 
+            
+            //Proračun usrednjavanja odnosa opsega i standardne devijacije grupe
+            //usrednjavanje += Number(RS); 
+            //usrednjavanjeA = Number((usrednjavanje / A).toFixed(2));        
 
         } else if (brElPodnizova === 4){
 
@@ -390,13 +417,18 @@ const podelaNniza = () => {
             //Proračun logaritamskog R/S odnosa svake grupe
             logRS = Number((Math.log10(RS)).toFixed(2));
 
-            logRStxt += logRS + '\n';            
+            logRStxt += logRS + '\n'; 
+            
+            //Proračun usrednjavanja odnosa opsega i standardne devijacije grupe
+            //usrednjavanje += Number(RS);
+            //usrednjavanjeA = Number((usrednjavanje / A).toFixed(2));           
             
 
         } else
         {
         txtWpod.value = 'Pokušajte ponovo sa generisanjem podnizova...';
         }
+
     }
 
     //console.log(N);
@@ -695,7 +727,6 @@ while(noviNeNultiNiz.length){
     logN = Number((Math.log2(N)).toFixed(2));
     s = Math.floor(logN);
 
-    
 
     /*
     Zaključak: 
@@ -790,6 +821,8 @@ const pro = () => {
     //Prikaz logaritamskog R/S opsega svake grupe
     txtLogRSpod.value = logRStxt;
 
-
+    console.log(A);
+    console.log(usrednjavanje);
+    //console.log(usrednjavanjeA);
 
 };
