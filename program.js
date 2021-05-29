@@ -207,7 +207,7 @@ const podelaNniza = () => {
 
     sumaLogn = 0, sumaLogRS = 0, sumaLogn_2 = 0, sumaLognLogRS = 0;
 
-    nizSuma = [];
+    ceoNizSumaLogn = [], nizSumaLogn = [];
 
     /*
     
@@ -364,7 +364,9 @@ const podelaNniza = () => {
             logn_2Txt += logn_2 + '\n';
 
             //Proračun suma potrebnh za određivanje Hurstovog parametra
-            nizSuma.push(logn);
+            ceoNizSumaLogn.push(logn);
+            nizSumaLogn = ceoNizSumaLogn.slice(0, 10);
+            sumaLogn = Number((nizSumaLogn.reduce((x, y) => x + y)).toFixed(2));
             
         } else if (brElPodnizova === 3){
 
@@ -423,7 +425,9 @@ const podelaNniza = () => {
             logn_2Txt += logn_2 + '\n';
 
             //Proračun suma potrebnh za određivanje Hurstovog parametra
-            nizSuma.push(logn);
+            ceoNizSumaLogn.push(logn);
+            nizSumaLogn = ceoNizSumaLogn.slice(0, 10);
+            sumaLogn = Number((nizSumaLogn.reduce((x, y) => x + y)).toFixed(2));
         
 
         } else if (brElPodnizova === 4){
@@ -486,7 +490,9 @@ const podelaNniza = () => {
             logn_2Txt += logn_2 + '\n';
         
             //Proračun suma potrebnh za određivanje Hurstovog parametra
-            nizSuma.push(logn);
+            ceoNizSumaLogn.push(logn);
+            nizSumaLogn = ceoNizSumaLogn.slice(0, 10);
+            sumaLogn = Number((nizSumaLogn.reduce((x, y) => x + y)).toFixed(2));
 
         } else
         {
@@ -908,7 +914,9 @@ const pro = () => {
     txtLogn_2.value = logn_2Txt;
 
 
-    console.log(nizSuma);
+    //console.log(ceoNizSumaLogn);
+    console.log(nizSumaLogn);
+    console.log(sumaLogn);
     /*
     console.log(s);
     console.log(`Suma logn je: ${Number((sumaLogn).toFixed(2))}`);
