@@ -992,4 +992,6 @@ const pro = () => {
     H = Number(H_.toFixed(2));
 
     console.log(`Hurstov parametar je: ${H}`);
+    
+    txtHurst.value = H;
 };
