@@ -209,6 +209,8 @@ const podelaNniza = () => {
 
     ceoNizSumaLogn = [], nizSumaLogn = [], nizSumaLogn_2 = [];
 
+    ceoNizSumaLogRSf = [];
+
     ceoNizSumaLogRS = [], nizSumaLogRS = [];
 
     ceoNizSumaLognLogRS = [], nizSumaLognLogRS = [];
@@ -383,7 +385,11 @@ const podelaNniza = () => {
 
             //Suma elemenata logRS
             ceoNizSumaLogRS.push(logRS);
-            nizSumaLogRS = ceoNizSumaLogRS.slice(0, 10);
+
+            //Filtriranje niza...
+            ceoNizSumaLogRSf = ceoNizSumaLogRS.filter(x => typeof(x) !== 'NaN');
+            nizSumaLogRS = ceoNizSumaLogRSf.slice(0, 10);
+
             sumaLogRS = Number((nizSumaLogRS.reduce((x, y) => x + y)).toFixed(2));
 
             //Suma elemenata logn*logRS
@@ -459,7 +465,11 @@ const podelaNniza = () => {
 
             //Suma elemenata logRS
             ceoNizSumaLogRS.push(logRS);
-            nizSumaLogRS = ceoNizSumaLogRS.slice(0, 10);
+
+            //Filtriranje niza...
+            ceoNizSumaLogRSf = ceoNizSumaLogRS.filter(x => typeof(x) !== 'NaN');
+            nizSumaLogRS = ceoNizSumaLogRSf.slice(0, 10);
+
             sumaLogRS = Number((nizSumaLogRS.reduce((x, y) => x + y)).toFixed(2));
 
             //Suma elemenata logn*logRS
@@ -538,7 +548,11 @@ const podelaNniza = () => {
 
             //Suma elemenata logRS
             ceoNizSumaLogRS.push(logRS);
-            nizSumaLogRS = ceoNizSumaLogRS.slice(0, 10); 
+
+            //Filtriranje niza...
+            ceoNizSumaLogRSf = ceoNizSumaLogRS.filter(x => typeof(x) !== 'NaN');
+            nizSumaLogRS = ceoNizSumaLogRSf.slice(0, 10);
+
             sumaLogRS = Number((nizSumaLogRS.reduce((x, y) => x + y)).toFixed(2));
 
             //Suma elemenata logn*logRS
@@ -992,6 +1006,6 @@ const pro = () => {
     H = Number(H_.toFixed(2));
 
     console.log(`Hurstov parametar je: ${H}`);
-    
+
     txtHurst.value = H;
 };
