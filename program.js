@@ -162,7 +162,7 @@ const nNiz = () => {
     //console.log(noviNeNultiNiz);
     txtC.value = noviNeNultiNiz; 
     document.getElementById('brPodnizova').innerHTML = `Broj elemenata niza tj. vremenske serije je: ${N}`;
-    console.log(noviNeNultiNiz);
+    //console.log(noviNeNultiNiz);
 };
 
 /*
@@ -205,12 +205,18 @@ const podelaNniza = () => {
     lognTxt = '';
     logn_2Txt = '';
 
-    sumaLogn = 0, sumaLogn_2 = 0, sumaLogRS = 0, sumaLognLogRS = 0;
+    sumaLogn = 0, sumaLogn_2 = 0, sumaLogRS = Number(), sumaLognLogRS = 0;
 
-    ceoNizSumaLogn = [], nizSumaLogn = [];
-    nizSumaLogn_2 = [];
+    ceoNizSumaLogn = [], nizSumaLogn = [], nizSumaLogn_2 = [];
 
     ceoNizSumaLogRS = [], nizSumaLogRS = [];
+
+    ceoNizSumaLognLogRS = [], nizSumaLognLogRS = [];
+
+    vrLognLogRS = Number();
+
+    H_ = Number();
+    H = Number();
 
     /*
     
@@ -378,7 +384,13 @@ const podelaNniza = () => {
             //Suma elemenata logRS
             ceoNizSumaLogRS.push(logRS);
             nizSumaLogRS = ceoNizSumaLogRS.slice(0, 10);
-            
+            sumaLogRS = Number((nizSumaLogRS.reduce((x, y) => x + y)).toFixed(2));
+
+            //Suma elemenata logn*logRS
+            vrLognLogRS = Number((logn * logRS).toFixed(2));
+            ceoNizSumaLognLogRS.push(vrLognLogRS);
+            nizSumaLognLogRS = ceoNizSumaLognLogRS.slice(0, 10);
+            sumaLognLogRS = Number((nizSumaLognLogRS.reduce((x, y) => x + y)).toFixed(2));
             
         } else if (brElPodnizova === 3){
 
@@ -448,6 +460,13 @@ const podelaNniza = () => {
             //Suma elemenata logRS
             ceoNizSumaLogRS.push(logRS);
             nizSumaLogRS = ceoNizSumaLogRS.slice(0, 10);
+            sumaLogRS = Number((nizSumaLogRS.reduce((x, y) => x + y)).toFixed(2));
+
+            //Suma elemenata logn*logRS
+            vrLognLogRS = Number((logn * logRS).toFixed(2));
+            ceoNizSumaLognLogRS.push(vrLognLogRS);
+            nizSumaLognLogRS = ceoNizSumaLognLogRS.slice(0, 10);
+            sumaLognLogRS = Number((nizSumaLognLogRS.reduce((x, y) => x + y)).toFixed(2));
 
         } else if (brElPodnizova === 4){
 
@@ -519,7 +538,14 @@ const podelaNniza = () => {
 
             //Suma elemenata logRS
             ceoNizSumaLogRS.push(logRS);
-            nizSumaLogRS = ceoNizSumaLogRS.slice(0, 10);
+            nizSumaLogRS = ceoNizSumaLogRS.slice(0, 10); 
+            sumaLogRS = Number((nizSumaLogRS.reduce((x, y) => x + y)).toFixed(2));
+
+            //Suma elemenata logn*logRS
+            vrLognLogRS = Number((logn * logRS).toFixed(2));
+            ceoNizSumaLognLogRS.push(vrLognLogRS);
+            nizSumaLognLogRS = ceoNizSumaLognLogRS.slice(0, 10);
+            sumaLognLogRS = Number((nizSumaLognLogRS.reduce((x, y) => x + y)).toFixed(2));
 
         } else
         {
@@ -942,17 +968,28 @@ const pro = () => {
 
 
     //console.log(ceoNizSumaLogn);
-    console.log(nizSumaLogn);
+    //console.log(nizSumaLogn);
+    //console.log(sumaLogn);
+    //console.log(nizSumaLogn_2);
+    //console.log(sumaLogn_2);
+
+    //console.log(ceoNizSumaLogRS);
+    //.log(nizSumaLogRS);
+
+    //console.log(ceoNizSumaLognLogRS);
+    //console.log(nizSumaLognLogRS);
+    //console.log(sumaLognLogRS);
+
+    console.log(s);
+    console.log(sumaLognLogRS);
     console.log(sumaLogn);
-    console.log(nizSumaLogn_2);
+    console.log(sumaLogRS);
     console.log(sumaLogn_2);
 
-    console.log(ceoNizSumaLogRS);
-    console.log(nizSumaLogRS);
-    /*
-    console.log(s);
-    console.log(`Suma logn je: ${Number((sumaLogn).toFixed(2))}`);
-    console.log(`Suma logn_2 je: ${Number((sumaLogn_2).toFixed(2))}`);
-    */
 
+    //Hurstov parametar: 
+    H_ =(s*sumaLognLogRS - sumaLogn*sumaLogRS)/(s*sumaLogn_2 - sumaLogn*sumaLogn);
+    H = Number(H_.toFixed(2));
+
+    console.log(`Hurstov parametar je: ${H}`);
 };
