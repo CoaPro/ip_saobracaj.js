@@ -205,6 +205,10 @@ const podelaNniza = () => {
     lognTxt = '';
     logn_2Txt = '';
 
+    sumaLogn = 0, sumaLogRS = 0, sumaLogn_2 = 0, sumaLognLogRS = 0;
+
+    nizSuma = [];
+
     /*
     
     A++;
@@ -358,6 +362,9 @@ const podelaNniza = () => {
             //Progračun kvadrata logaritamskih vrednosti broja (n) elemenata grupa
             logn_2 = Number((logn**2).toFixed(2));
             logn_2Txt += logn_2 + '\n';
+
+            //Proračun suma potrebnh za određivanje Hurstovog parametra
+            nizSuma.push(logn);
             
         } else if (brElPodnizova === 3){
 
@@ -414,6 +421,10 @@ const podelaNniza = () => {
             //Progračun kvadrata logaritamskih vrednosti broja (n) elemenata grupa
             logn_2 = Number((logn**2).toFixed(2));
             logn_2Txt += logn_2 + '\n';
+
+            //Proračun suma potrebnh za određivanje Hurstovog parametra
+            nizSuma.push(logn);
+        
 
         } else if (brElPodnizova === 4){
 
@@ -473,6 +484,9 @@ const podelaNniza = () => {
             //Progračun kvadrata logaritamskih vrednosti broja (n) elemenata grupa
             logn_2 = Number((logn**2).toFixed(2));
             logn_2Txt += logn_2 + '\n';
+        
+            //Proračun suma potrebnh za određivanje Hurstovog parametra
+            nizSuma.push(logn);
 
         } else
         {
@@ -487,17 +501,12 @@ const podelaNniza = () => {
 
     document.getElementById('brPodnizova').innerHTML = `Broj podnizova je sada: ${brojPodnizova2}`;
 
-
+    //Proračun usrednjavanja
     for(let i = 0; i <= N; i++){
         usrednjavanje += RS; 
         usrednjavanjeA = Number((usrednjavanje / A).toFixed(2));
     }
 
-    console.log(N);
-    console.log(A);
-    console.log(Number(usrednjavanje.toFixed(2)));
-    console.log(usrednjavanjeA);
-    
 };
 
 //18.5.2021. Uto. Početak drugog dela projekta
@@ -897,5 +906,13 @@ const pro = () => {
 
     //Prikaz kvadrata logaritamskih vrednosti broja (n) elemenata grupa
     txtLogn_2.value = logn_2Txt;
+
+
+    console.log(nizSuma);
+    /*
+    console.log(s);
+    console.log(`Suma logn je: ${Number((sumaLogn).toFixed(2))}`);
+    console.log(`Suma logn_2 je: ${Number((sumaLogn_2).toFixed(2))}`);
+    */
 
 };
