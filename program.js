@@ -205,9 +205,12 @@ const podelaNniza = () => {
     lognTxt = '';
     logn_2Txt = '';
 
-    sumaLogn = 0, sumaLogRS = 0, sumaLogn_2 = 0, sumaLognLogRS = 0;
+    sumaLogn = 0, sumaLogn_2 = 0, sumaLogRS = 0, sumaLognLogRS = 0;
 
     ceoNizSumaLogn = [], nizSumaLogn = [];
+    nizSumaLogn_2 = [];
+
+    ceoNizSumaLogRS = [], nizSumaLogRS = [];
 
     /*
     
@@ -364,9 +367,18 @@ const podelaNniza = () => {
             logn_2Txt += logn_2 + '\n';
 
             //Proračun suma potrebnh za određivanje Hurstovog parametra
+
+            //Suma elemenata logn i logn*logn
             ceoNizSumaLogn.push(logn);
             nizSumaLogn = ceoNizSumaLogn.slice(0, 10);
             sumaLogn = Number((nizSumaLogn.reduce((x, y) => x + y)).toFixed(2));
+            nizSumaLogn_2 = nizSumaLogn.map(x => x*x);
+            sumaLogn_2 = Number((nizSumaLogn_2.reduce((x, y) => x + y)).toFixed(2));
+
+            //Suma elemenata logRS
+            ceoNizSumaLogRS.push(logRS);
+            nizSumaLogRS = ceoNizSumaLogRS.slice(0, 10);
+            
             
         } else if (brElPodnizova === 3){
 
@@ -425,10 +437,17 @@ const podelaNniza = () => {
             logn_2Txt += logn_2 + '\n';
 
             //Proračun suma potrebnh za određivanje Hurstovog parametra
+
+            //Suma elemenata logn i logn*logn
             ceoNizSumaLogn.push(logn);
             nizSumaLogn = ceoNizSumaLogn.slice(0, 10);
             sumaLogn = Number((nizSumaLogn.reduce((x, y) => x + y)).toFixed(2));
-        
+            nizSumaLogn_2 = nizSumaLogn.map(x => x*x);
+            sumaLogn_2 = Number((nizSumaLogn_2.reduce((x, y) => x + y)).toFixed(2));
+
+            //Suma elemenata logRS
+            ceoNizSumaLogRS.push(logRS);
+            nizSumaLogRS = ceoNizSumaLogRS.slice(0, 10);
 
         } else if (brElPodnizova === 4){
 
@@ -490,9 +509,17 @@ const podelaNniza = () => {
             logn_2Txt += logn_2 + '\n';
         
             //Proračun suma potrebnh za određivanje Hurstovog parametra
+
+            //Suma elemenata logn i logn*logn
             ceoNizSumaLogn.push(logn);
             nizSumaLogn = ceoNizSumaLogn.slice(0, 10);
             sumaLogn = Number((nizSumaLogn.reduce((x, y) => x + y)).toFixed(2));
+            nizSumaLogn_2 = nizSumaLogn.map(x => x*x);
+            sumaLogn_2 = Number((nizSumaLogn_2.reduce((x, y) => x + y)).toFixed(2));
+
+            //Suma elemenata logRS
+            ceoNizSumaLogRS.push(logRS);
+            nizSumaLogRS = ceoNizSumaLogRS.slice(0, 10);
 
         } else
         {
@@ -917,6 +944,11 @@ const pro = () => {
     //console.log(ceoNizSumaLogn);
     console.log(nizSumaLogn);
     console.log(sumaLogn);
+    console.log(nizSumaLogn_2);
+    console.log(sumaLogn_2);
+
+    console.log(ceoNizSumaLogRS);
+    console.log(nizSumaLogRS);
     /*
     console.log(s);
     console.log(`Suma logn je: ${Number((sumaLogn).toFixed(2))}`);
