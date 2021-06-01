@@ -101,3 +101,7 @@ input:hover, #btnPrikazNiza:hover, #btnPrikazNeNulaElemenataNiza:hover, #btnBris
     color: black;
     width: 10em;
 }
+
+#infoTxt{
+    font-size: 70%;
+}

@@ -268,8 +268,8 @@ const podelaNniza = () => {
 
         A++;
 
-        nasumicniBroj(2, 4); 
-        vrNasumicnogBroja = nasumicniBroj(2, 4); 
+        nasumicniBroj(2, 5); 
+        vrNasumicnogBroja = nasumicniBroj(2, 5); 
 
         brojPodnizova2++;
         //brojPodnizova2 = aca;
@@ -334,11 +334,11 @@ const podelaNniza = () => {
             w1 = Number((x1 - srVrPod).toFixed(2));
             //w2 = Number((x1 + x2 - 2*srVrPod).toFixed(2));
             w2 = Math.floor(Math.abs(x1 + x2 - 2*srVrPod));
-
+            
             wPod = `${w1} ${w2}`;
             wTxt += wPod + '\n';
             //console.log(w1, w2);
-
+            
             //Smeštanje vrednosti kumulativnih devijacija w1 i w2 u nizove;
 
             //Proračun opsega svake grupe
@@ -363,12 +363,7 @@ const podelaNniza = () => {
             logRS = Number((Math.log10(RS)).toFixed(2));
 
             logRStxt += logRS + '\n';
-
-            //Proračun usrednjavanja odnosa opsega i standardne devijacije grupe
-            //usrednjavanje += Number(RS);
-            //usrednjavanjeA = Number((usrednjavanje / A).toFixed(2)); 
-            //usrednjavanje += RS;
-
+        
             //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
             s = Math.floor(Math.log2(N));
 
@@ -447,13 +442,7 @@ const podelaNniza = () => {
             logRS = Number((Math.log10(RS)).toFixed(2));
 
             logRStxt += logRS + '\n'; 
-            
-            //Proračun usrednjavanja odnosa opsega i standardne devijacije grupe
-            //usrednjavanje += Number(RS); 
-            //usrednjavanjeA = Number((usrednjavanje / A).toFixed(2)); 
-
-            //usrednjavanje += RS; 
-            
+        
             //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
             s = Math.floor(Math.log2(N)); 
             
@@ -535,13 +524,7 @@ const podelaNniza = () => {
             logRS = Number((Math.log10(RS)).toFixed(2));
 
             logRStxt += logRS + '\n'; 
-            
-            //Proračun usrednjavanja odnosa opsega i standardne devijacije grupe
-            //usrednjavanje += Number(RS);
-            //usrednjavanjeA = Number((usrednjavanje / A).toFixed(2)); 
-            
-            //usrednjavanje += RS;
-
+        
             //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
             s = Math.floor(Math.log2(N)); 
             
@@ -897,10 +880,10 @@ function vizuelizacijaPodataka(){
     let vizuelizacijaPodataka = new Chart(graf, {
         type: 'bar',
         data: {
-            labels: [0.48, 0.48, 0.3, 0.48, 0.48, 0.3, 0.48, 0.3, 0.3, 0.3],
+            labels: ceoNizLogn,
             datasets: [{
                 label: 'Vrednost',
-                data: [0.12, 0.15, 0, 0.09, 0.14, 0, 0.1, 0, 0, 0],
+                data: ceoNizLogRS,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
