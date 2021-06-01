@@ -207,11 +207,11 @@ const podelaNniza = () => {
 
     sumaLogn = 0, sumaLogn_2 = 0, sumaLogRS = Number(), sumaLognLogRS = 0;
 
-    ceoNizSumaLogn = [], nizSumaLogn = [], nizSumaLogn_2 = [];
+    ceoNizLogn = [], nizSumaLogn = [], nizSumaLogn_2 = [];
 
     ceoNizSumaLogRSf = [];
 
-    ceoNizSumaLogRS = [], nizSumaLogRS = [];
+    ceoNizLogRS = [], nizSumaLogRS = [];
 
     ceoNizSumaLognLogRS = [], nizSumaLognLogRS = [];
 
@@ -219,6 +219,9 @@ const podelaNniza = () => {
 
     H_ = Number();
     H = Number();
+
+    /*1.6.2021. Nove promenljive */
+    nizW = [], nizR = [], nizS = [], nizRS = [], nizLogRS = [], nizLogn = []; 
 
     /*
     
@@ -323,6 +326,8 @@ const podelaNniza = () => {
         
         if(brElPodnizova === 2){
 
+            //Proračun kumulativnih devijacija podnizova
+
             x1 = podnizR[0];
             x2 = podnizR[1];
 
@@ -333,6 +338,8 @@ const podelaNniza = () => {
             wPod = `${w1} ${w2}`;
             wTxt += wPod + '\n';
             //console.log(w1, w2);
+
+            //Smeštanje vrednosti kumulativnih devijacija w1 i w2 u nizove;
 
             //Proračun opsega svake grupe
             maxVr = Math.max(w1, w2);
@@ -377,17 +384,22 @@ const podelaNniza = () => {
             //Proračun suma potrebnh za određivanje Hurstovog parametra
 
             //Suma elemenata logn i logn*logn
-            ceoNizSumaLogn.push(logn);
-            nizSumaLogn = ceoNizSumaLogn.slice(0, 10);
+
+            //Niz sastavljen od svih logn vrednosti
+            ceoNizLogn.push(logn);
+
+            nizSumaLogn = ceoNizLogn.slice(0, 10);
             sumaLogn = Number((nizSumaLogn.reduce((x, y) => x + y)).toFixed(2));
             nizSumaLogn_2 = nizSumaLogn.map(x => x*x);
             sumaLogn_2 = Number((nizSumaLogn_2.reduce((x, y) => x + y)).toFixed(2));
 
             //Suma elemenata logRS
-            ceoNizSumaLogRS.push(logRS);
+
+            //Niz sastavnjen od svih logRS vrednosti
+            ceoNizLogRS.push(logRS);
 
             //Filtriranje niza...
-            ceoNizSumaLogRSf = ceoNizSumaLogRS.filter(x => typeof(x) !== 'NaN');
+            ceoNizSumaLogRSf = ceoNizLogRS.filter(x => typeof(x) !== 'NaN');
             nizSumaLogRS = ceoNizSumaLogRSf.slice(0, 10);
 
             sumaLogRS = Number((nizSumaLogRS.reduce((x, y) => x + y)).toFixed(2));
@@ -457,17 +469,22 @@ const podelaNniza = () => {
             //Proračun suma potrebnh za određivanje Hurstovog parametra
 
             //Suma elemenata logn i logn*logn
-            ceoNizSumaLogn.push(logn);
-            nizSumaLogn = ceoNizSumaLogn.slice(0, 10);
+
+            //Niz sastavljen od svih logn vrednosti
+            ceoNizLogn.push(logn);
+
+            nizSumaLogn = ceoNizLogn.slice(0, 10);
             sumaLogn = Number((nizSumaLogn.reduce((x, y) => x + y)).toFixed(2));
             nizSumaLogn_2 = nizSumaLogn.map(x => x*x);
             sumaLogn_2 = Number((nizSumaLogn_2.reduce((x, y) => x + y)).toFixed(2));
 
             //Suma elemenata logRS
-            ceoNizSumaLogRS.push(logRS);
+
+            //Niz sastavnjen od svih logRS vrednosti
+            ceoNizLogRS.push(logRS);
 
             //Filtriranje niza...
-            ceoNizSumaLogRSf = ceoNizSumaLogRS.filter(x => typeof(x) !== 'NaN');
+            ceoNizSumaLogRSf = ceoNizLogRS.filter(x => typeof(x) !== 'NaN');
             nizSumaLogRS = ceoNizSumaLogRSf.slice(0, 10);
 
             sumaLogRS = Number((nizSumaLogRS.reduce((x, y) => x + y)).toFixed(2));
@@ -540,17 +557,22 @@ const podelaNniza = () => {
             //Proračun suma potrebnh za određivanje Hurstovog parametra
 
             //Suma elemenata logn i logn*logn
-            ceoNizSumaLogn.push(logn);
-            nizSumaLogn = ceoNizSumaLogn.slice(0, 10);
+
+            //Niz sastavljen od svih logn vrednosti
+            ceoNizLogn.push(logn);
+
+            nizSumaLogn = ceoNizLogn.slice(0, 10);
             sumaLogn = Number((nizSumaLogn.reduce((x, y) => x + y)).toFixed(2));
             nizSumaLogn_2 = nizSumaLogn.map(x => x*x);
             sumaLogn_2 = Number((nizSumaLogn_2.reduce((x, y) => x + y)).toFixed(2));
 
             //Suma elemenata logRS
-            ceoNizSumaLogRS.push(logRS);
+
+            //Niz sastavnjen od svih logRS vrednosti
+            ceoNizLogRS.push(logRS);
 
             //Filtriranje niza...
-            ceoNizSumaLogRSf = ceoNizSumaLogRS.filter(x => typeof(x) !== 'NaN');
+            ceoNizSumaLogRSf = ceoNizLogRS.filter(x => typeof(x) !== 'NaN');
             nizSumaLogRS = ceoNizSumaLogRSf.slice(0, 10);
 
             sumaLogRS = Number((nizSumaLogRS.reduce((x, y) => x + y)).toFixed(2));
@@ -869,16 +891,16 @@ za izračunavanje Hurstovog parametra i vizuelizaciju podataka...
 function acaaa(){
     console.log(noviNeNultiNiz);
 }
-
+//test
 function vizuelizacijaPodataka(){
     let graf = document.getElementById('grafik').getContext('2d');
     let vizuelizacijaPodataka = new Chart(graf, {
         type: 'bar',
         data: {
-            labels: ceoNizSumaLogn,
+            labels: [0.48, 0.48, 0.3, 0.48, 0.48, 0.3, 0.48, 0.3, 0.3, 0.3],
             datasets: [{
                 label: 'Vrednost',
-                data: [ceoNizSumaLognLogRS],
+                data: [0.12, 0.15, 0, 0.09, 0.14, 0, 0.1, 0, 0, 0],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -996,12 +1018,13 @@ const pro = () => {
     //console.log(nizSumaLognLogRS);
     //console.log(sumaLognLogRS);
 
+    /*
     console.log(s);
     console.log(sumaLognLogRS);
     console.log(sumaLogn);
     console.log(sumaLogRS);
     console.log(sumaLogn_2);
-
+    */
 
     //Hurstov parametar: 
     H_ =(s*sumaLognLogRS - sumaLogn*sumaLogRS)/(s*sumaLogn_2 - sumaLogn*sumaLogn);
@@ -1012,4 +1035,7 @@ const pro = () => {
     txtHurst.value = H;
 
     vizuelizacijaPodataka();
+
+    console.log(ceoNizLogn);
+    console.log(ceoNizLogRS);
 };
