@@ -1,7 +1,23 @@
-/*
+/* Deo izveštaja i beleški
+.
+.
+.
+//Rad: 17.5.2021. Pon. Svetski dan telekomunikacija i informacionog društva
+
+//Prikaz niza čiji su elementi različiti od nule
+.
+.
+.
 25.5.2021. Uto. 17.23h
 Uvid u greške i početak ispravljanja pojedinih delova koda...
 +26.5.2021. Sre. 11.55h 
+.
+.
+.
+1.6.2021. Uto.  
+    Optimizacija koda
+    Vizuelizacija
+    Izmena opsega funkcije nasumicniBroj(2, 4) => nasumicniBroj(2, 5)
 */
 //Odabir fajla tj. JSON niza i prikaz u txtA
 
@@ -137,7 +153,7 @@ function podelaNiza(){
 
 }
 
-//Rad: 17.5.2021. Pon. Srećan Svetski dan telekomunikacija i informacionog društva
+//Rad: 17.5.2021. Pon. Svetski dan telekomunikacija i informacionog društva
 
 //Prikaz niza čiji su elementi različiti od nule
 
