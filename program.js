@@ -469,7 +469,7 @@ const podelaNniza = () => {
 
             //Suma elemenata logRS
 
-            //Niz sastavnjen od svih logRS vrednosti
+            //Niz sastavljen od svih logRS vrednosti
             ceoNizLogRS.push(logRS);
 
             //Filtriranje niza...
@@ -1021,4 +1021,6 @@ const pro = () => {
 
     console.log(ceoNizLogn);
     console.log(ceoNizLogRS);
+    console.log(A);
+    console.log(sumaLogRS);
 };
