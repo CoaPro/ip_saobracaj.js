@@ -1,0 +1,47 @@
+1.6.2021.  Uto. 
+
+Naziv programa: IP saobraćaj | JavaScript
+Programski jezik: JavaScript
+
+Princip funkcionisanja programa:
+
+Korisnik odabira *.json fajl (JavaScript Object Notation), u kome su snimljene vrednosti IP saobraćaja sa I/O grafika, koji je generisan programom Wireshark. 
+
+Izvorno, date vrednosti I/O grafika se izvoze u *.csv ili *.jaml fajl. 
+JavaScript(JS) najčešće funcioniše sa JSON fajlovima, mada upotrebom neke od JS biblioteka, moguć je direktan rad sa *.csv ili *.jaml datotekama.
+
+Konverzija raznih fajlova u *.json je moguća putem nekog od Veb sajtova, u zavisnosti od toga koji je format datoteke u pitanju. U ovom slučaju, kao primer može odlično poslužiti CSV to JSON Converter. 
+Link do ovog sajta je: https://www.convertcsv.com/csv-to-json.htm
+
+---
+
+Nakon što korisnik odabere lokaciju *.json datoteke na računaru, ona se učitava u svom izvornom obliku. 
+Klikom na taster Prikaz niza, dati *json fajl se konvertuje u JavaScript niz elemenata.
+
+Praktično, JSON fajl predstavlja niz objekata.
+Za izračunavanje Hurstovog parametra, potrebno je prilagoditi niz objekata u niz elemenata i nad tako generisanim nizom i njegovim elementima izvršiti određene proračune. 
+
+Ovaj niz će zapravo predstavljati celokupnu vremensku seriju dužine N.
+
+Moguće je priaz niza svih elemenata i prikaz elemenata različitih od nule.
+Korisnik može ponovo pokrenuti proces, pritiskom na taster Brisanje. 
+
+Prva tri tastera služe samo za prikazivanje i konverziju datog *json niza u vremensku seriju i ne izvode nikakve dodatne operacije vremenskom serijom. 
+
+Redosled ovih operacija je sledeći:
+Odabir datoteke => Prikaz niza => Prikaz elemenata različitih od nule
+Ukoliko bi korisnik prvo pritisnuo taster Prikaz elemenata različitih od nule, niz ne bi bio prikazan. Zato treba prvo izvršiti konverziju *.json datoteke u JavaScript niz elemenata, a zatim nad datim nizom izvršiti filtriranje nenultih elemenata.   
+
+Dalje operacije nad nizom se nastavljaju odabirom tastera:
+	Niz svih elemenata
+	Nasumična podela niza
+	Niz elemenata različitih od nule
+	Podela niza elemenata različitih od nule.
+
+Prikaz celokupne vremenske serije, tj. konverzije *.json niza u JavaScript niz elemenata se obavlja pritiskom na dugme Niz svih elemenata. 
+Pošto je datu vremensku seriju potrebno podeliti u A grupa, od po n članova, u ovom programu će se ovaj proces realizovati upotrebom nasučine funkcije Random. 
+
+
+
+
+

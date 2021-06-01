@@ -18,6 +18,7 @@ Uvid u greške i početak ispravljanja pojedinih delova koda...
     Optimizacija koda
     Vizuelizacija
     Izmena opsega funkcije nasumicniBroj(2, 4) => nasumicniBroj(2, 5)
+    OpisPrograma.txt
 */
 //Odabir fajla tj. JSON niza i prikaz u txtA
 
