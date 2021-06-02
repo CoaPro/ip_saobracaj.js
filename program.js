@@ -35,6 +35,10 @@ Uvid u greške i početak ispravljanja pojedinih delova koda...
 
         Drugo rešenje je filtriranje datih nizova metodom JavaScript nizova Array.filter(x => x >= 0).
 
+    //20.40h
+    Program testiran - nije uočena greška u radu.
+    Može se reći da je završen projekat ip_saobracaj_js. //Update 5 | 2.6.2021. 
+    
 */
 //Odabir fajla tj. JSON niza i prikaz u txtA
 
