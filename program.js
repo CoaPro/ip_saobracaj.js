@@ -33,6 +33,8 @@ Uvid u greške i početak ispravljanja pojedinih delova koda...
         Dalje, opseg (R) biće jednak nuli, a takođe i standardna devijacija (S).
         R/S statistika neće biti definisana, a sve to  će rezultovati NaN vrednošću. 
 
+        Drugo rešenje je filtriranje datih nizova metodom JavaScript nizova Array.filter(x => x >= 0).
+
 
 */
 //Odabir fajla tj. JSON niza i prikaz u txtA
@@ -434,8 +436,10 @@ const podelaNniza = () => {
             //Niz sastavnjen od svih logRS vrednosti
             ceoNizLogRS.push(logRS);
 
-            //Filtriranje niza...
-            ceoNizSumaLogRSf = ceoNizLogRS.filter(x => typeof(x) !== 'NaN');
+            //Filtriranje niza v1
+            //ceoNizSumaLogRSf = ceoNizLogRS.filter(x => typeof(x) !== 'NaN');
+            //Filtriranje niza v2 (bolja metoda)
+            ceoNizSumaLogRSf = ceoNizLogRS.filter(x => x >= 0);
             nizSumaLogRS = ceoNizSumaLogRSf.slice(0, 10);
 
             sumaLogRS = Number((nizSumaLogRS.reduce((x, y) => x + y)).toFixed(2));
@@ -517,11 +521,10 @@ const podelaNniza = () => {
             //Niz sastavljen od svih logRS vrednosti
             ceoNizLogRS.push(logRS);
 
-            //Filtriranje niza...
-            ceoNizSumaLogRSf = ceoNizLogRS.filter(x => typeof(x) !== 'NaN');
-            nizSumaLogRS = ceoNizSumaLogRSf.slice(0, 10);
-
-            sumaLogRS = Number((nizSumaLogRS.reduce((x, y) => x + y)).toFixed(2));
+            //Filtriranje niza v1
+            //ceoNizSumaLogRSf = ceoNizLogRS.filter(x => typeof(x) !== 'NaN');
+            //Filtriranje niza v2 (bolja metoda)
+            ceoNizSumaLogRSf = ceoNizLogRS.filter(x => x >= 0);
 
             //Suma elemenata logn*logRS
             vrLognLogRS = Number((logn * logRS).toFixed(2));
@@ -603,8 +606,10 @@ const podelaNniza = () => {
             //Niz sastavnjen od svih logRS vrednosti
             ceoNizLogRS.push(logRS);
 
-            //Filtriranje niza...
-            ceoNizSumaLogRSf = ceoNizLogRS.filter(x => typeof(x) !== 'NaN');
+            //Filtriranje niza v1
+            //ceoNizSumaLogRSf = ceoNizLogRS.filter(x => typeof(x) !== 'NaN');
+            //Filtriranje niza v2 (bolja metoda)
+            ceoNizSumaLogRSf = ceoNizLogRS.filter(x => x >= 0);
             nizSumaLogRS = ceoNizSumaLogRSf.slice(0, 10);
 
             sumaLogRS = Number((nizSumaLogRS.reduce((x, y) => x + y)).toFixed(2));
