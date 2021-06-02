@@ -19,6 +19,20 @@ Uvid u greške i početak ispravljanja pojedinih delova koda...
     Vizuelizacija
     Izmena opsega funkcije nasumicniBroj(2, 4) => nasumicniBroj(2, 5)
     OpisPrograma.txt
+
+2.6.2021. Uto.
+    Optimizacija koda
+    Otrkivanje uzroka pojavljivanja 'Not-a-number' - NaN' vrednosti:
+
+        Ona se javlja kada se u podnizu, nasumičnim odabirom pojave dve iste vrednosti
+        IP paketa, npr. [12224, 12224] i [432, 432].
+        Da bi se ovaj problem izbegao, jedno od rešenja je izmena opsega funkcije
+        nasumicniBroj(2, 5), na opseg nasumicniBroj(3, 5) npr.  
+
+        Ako su vrednosti (x1) i (x2) jednake, njihove kumulativne devijacije (w1) i (w2) biće jednake nuli.
+        Dalje, opseg (R) biće jednak nuli, a takođe i standardna devijacija (S).
+        R/S statistika neće biti definisana, a sve to  će rezultovati NaN vrednošću. 
+
 */
 //Odabir fajla tj. JSON niza i prikaz u txtA
 
@@ -240,6 +254,11 @@ const podelaNniza = () => {
     /*1.6.2021. Nove promenljive */
     nizW = [], nizR = [], nizS = [], nizRS = [], nizLogRS = [], nizLogn = []; 
 
+    /*2.6.2021. Nove promenljive */
+
+    nizUsrednjavanje = [], nizUsrednjavanjeF = [];
+    sumaUsrednjavanje = Number(), sumaUsrednjavanjeA = Number();
+
     /*
     
     A++;
@@ -285,8 +304,8 @@ const podelaNniza = () => {
 
         A++;
 
-        nasumicniBroj(2, 5); 
-        vrNasumicnogBroja = nasumicniBroj(2, 5); 
+        nasumicniBroj(3, 5); 
+        vrNasumicnogBroja = nasumicniBroj(3, 5); 
 
         brojPodnizova2++;
         //brojPodnizova2 = aca;
@@ -295,7 +314,7 @@ const podelaNniza = () => {
         brojTekst += podnizR + '\n';
         txtC.value = brojTekst;
 
-        //Broj elemenata(članova) svakog podniza
+        //Broj elemenata (članova) svakog podniza
         txtnPod = document.getElementById('txtnPod');
         brElPodnizova = Math.floor(vrNasumicnogBroja);
         brElPodnizovaTekst += brElPodnizova + '\n';
@@ -350,7 +369,7 @@ const podelaNniza = () => {
 
             w1 = Number((x1 - srVrPod).toFixed(2));
             //w2 = Number((x1 + x2 - 2*srVrPod).toFixed(2));
-            w2 = Math.floor(Math.abs(x1 + x2 - 2*srVrPod));
+            w2 = Number(Math.floor(Math.abs(x1 + x2 - 2*srVrPod)));
             
             wPod = `${w1} ${w2}`;
             wTxt += wPod + '\n';
@@ -380,6 +399,12 @@ const podelaNniza = () => {
             logRS = Number((Math.log10(RS)).toFixed(2));
 
             logRStxt += logRS + '\n';
+
+            //Proračun usrednjavanja v2
+            nizUsrednjavanje.push(RS);
+            nizUsrednjavanjeF = nizUsrednjavanje.filter(x => typeof(x) !== 'NaN');
+            sumaUsrednjavanje = nizUsrednjavanjeF.reduce((x, y) => x + y);
+            //sumaUsrednjavanjeA = Number((sumaUsrednjavanje / A).toFixed(2));            
         
             //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
             s = Math.floor(Math.log2(N));
@@ -431,7 +456,7 @@ const podelaNniza = () => {
             w1 = Number((x1 - srVrPod).toFixed(2));
             w2 = Number((x1 + x2 - 2*srVrPod).toFixed(2));
             //w3 = Number((x1 + x2 + x3 - 3*srVrPod).toFixed(2));
-            w3 = Math.floor(Math.abs(x1 + x2 + x3 - 3*srVrPod));
+            w3 = Number(Math.floor(Math.abs(x1 + x2 + x3 - 3*srVrPod)));
 
             wPod = `${w1} ${w2} ${w3}`;
             wTxt +=  wPod + '\n';
@@ -459,7 +484,13 @@ const podelaNniza = () => {
             logRS = Number((Math.log10(RS)).toFixed(2));
 
             logRStxt += logRS + '\n'; 
-        
+
+            //Proračun usrednjavanja v2
+            nizUsrednjavanje.push(RS);
+            nizUsrednjavanjeF = nizUsrednjavanje.filter(x => typeof(x) !== 'NaN');
+            sumaUsrednjavanje = nizUsrednjavanjeF.reduce((x, y) => x + y);
+            //sumaUsrednjavanjeA = Number((sumaUsrednjavanje / A).toFixed(2));
+
             //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
             s = Math.floor(Math.log2(N)); 
             
@@ -512,7 +543,7 @@ const podelaNniza = () => {
             w1 = Number((x1 - srVrPod).toFixed(2));
             w2 = Number((x1 + x2 - 2*srVrPod).toFixed(2));
             w3 = Number((x1 + x2 + x3 - 3*srVrPod).toFixed(2));
-            w4 = Math.floor(Math.abs(x1 + x2 + x3 + x4 - 4*srVrPod));
+            w4 = Number(Math.floor(Math.abs(x1 + x2 + x3 + x4 - 4*srVrPod)));
 
             wPod = `${w1} ${w2} ${w3} ${w4}`;
             wTxt += wPod + '\n';
@@ -541,6 +572,12 @@ const podelaNniza = () => {
             logRS = Number((Math.log10(RS)).toFixed(2));
 
             logRStxt += logRS + '\n'; 
+
+            //Proračun usrednjavanja v2
+            nizUsrednjavanje.push(RS);
+            nizUsrednjavanjeF = nizUsrednjavanje.filter(x => typeof(x) !== 'NaN');
+            sumaUsrednjavanje = nizUsrednjavanjeF.reduce((x, y) => x + y);
+            //sumaUsrednjavanjeA = Number((sumaUsrednjavanje / A).toFixed(2));
         
             //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
             s = Math.floor(Math.log2(N)); 
@@ -596,11 +633,18 @@ const podelaNniza = () => {
 
     document.getElementById('brPodnizova').innerHTML = `Broj podnizova je sada: ${brojPodnizova2}`;
 
-    //Proračun usrednjavanja
+    //Proračun usrednjavanja v1
+
+    /*
     for(let i = 0; i <= N; i++){
+
+        if(typeof(i) !== 'NaN'){
         usrednjavanje += RS; 
         usrednjavanjeA = Number((usrednjavanje / A).toFixed(2));
+        }
+
     }
+    */
 
 };
 
@@ -989,7 +1033,8 @@ const pro = () => {
     txtLogRSpod.value = logRStxt;
 
     //Usrednjavanje R/S odnosa
-    txtUsrednjavanje.value = usrednjavanjeA;
+    sumaUsrednjavanjeA = Number((sumaUsrednjavanje / A).toFixed(2));
+    txtUsrednjavanje.value = sumaUsrednjavanjeA;
 
     //console.log(A);
     //console.log(Number(usrednjavanje));
@@ -1004,40 +1049,24 @@ const pro = () => {
     //Prikaz kvadrata logaritamskih vrednosti broja (n) elemenata grupa
     txtLogn_2.value = logn_2Txt;
 
-
-    //console.log(ceoNizSumaLogn);
-    //console.log(nizSumaLogn);
-    //console.log(sumaLogn);
-    //console.log(nizSumaLogn_2);
-    //console.log(sumaLogn_2);
-
-    //console.log(ceoNizSumaLogRS);
-    //.log(nizSumaLogRS);
-
-    //console.log(ceoNizSumaLognLogRS);
-    //console.log(nizSumaLognLogRS);
-    //console.log(sumaLognLogRS);
-
-    /*
-    console.log(s);
-    console.log(sumaLognLogRS);
-    console.log(sumaLogn);
-    console.log(sumaLogRS);
-    console.log(sumaLogn_2);
-    */
-
     //Hurstov parametar: 
     H_ =(s*sumaLognLogRS - sumaLogn*sumaLogRS)/(s*sumaLogn_2 - sumaLogn*sumaLogn);
     H = Number(H_.toFixed(2));
 
+    if(H >= 0 && H <= 1 && typeof(H) !== 'NaN'){
     console.log(`Hurstov parametar je: ${H}`);
-
     txtHurst.value = H;
-
     vizuelizacijaPodataka();
+    } else {
+        txtHurst.value = 'Desila se neuobičajena greška. Klikinite na dugme Obrisati i pokušajte ponovo. Neki od mogućih uzroka su pojava više NaN vrednosti ili semantičke greške u kodu.';
+        console.log(`Desila se neuobičajena greška. Klikinite na dugme Obrisati i pokušajte ponovo. Neki od mogućih uzroka su pojava više NaN vrednosti ili semantičke greške u kodu.`);
+        console.log(`Vrednost H parametra je:  ${H}`);
+    }
 
-    console.log(ceoNizLogn);
-    console.log(ceoNizLogRS);
-    console.log(A);
-    console.log(sumaLogRS);
+    console.log(`NizUsrednjavanje:  ${nizUsrednjavanje}`);
+    console.log(`NizUsrednjavanjeF:  ${nizUsrednjavanjeF}`);
+    console.log(`sumaUsrednjavanje:  ${sumaUsrednjavanje}`);
+    console.log(`A:  ${A}`);
+    console.log(`sumaUsrednjavanjeA:  ${sumaUsrednjavanjeA}`);
+
 };

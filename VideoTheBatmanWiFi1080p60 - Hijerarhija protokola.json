@@ -1,0 +1,362 @@
+[
+  {
+    "Protocol": "Frame",
+    "Percent Packets": "100",
+    "Packets": 4863,
+    "Percent Bytes": "100",
+    "Bytes": 3502383,
+    "Bits": {
+       "s": "228448.3162069048"
+    },
+    "End Packets": 0,
+    "End Bytes": 0,
+    "End Bits": {
+       "s": "0"
+    }
+ },
+  {
+    "Protocol": "Ethernet",
+    "Percent Packets": "100",
+    "Packets": 4863,
+    "Percent Bytes": "1.9438764978016396",
+    "Bytes": 68082,
+    "Bits": {
+       "s": "4440.753128369597"
+    },
+    "End Packets": 0,
+    "End Bytes": 0,
+    "End Bits": {
+       "s": "0"
+    }
+ },
+  {
+    "Protocol": "Internet Protocol Version 6",
+    "Percent Packets": "0.12338062924120913",
+    "Packets": 6,
+    "Percent Bytes": "0.0068524772990275476",
+    "Bytes": 240,
+    "Bits": {
+       "s": "15.654369008088823"
+    },
+    "End Packets": 0,
+    "End Bytes": 0,
+    "End Bits": {
+       "s": "0"
+    }
+ },
+  {
+    "Protocol": "User Datagram Protocol",
+    "Percent Packets": "0.12338062924120913",
+    "Packets": 6,
+    "Percent Bytes": "0.0013704954598055096",
+    "Bytes": 48,
+    "Bits": {
+       "s": "3.1308738016177644"
+    },
+    "End Packets": 0,
+    "End Bytes": 0,
+    "End Bits": {
+       "s": "0"
+    }
+ },
+  {
+    "Protocol": "Multicast Domain Name System",
+    "Percent Packets": "0.08225375282747276",
+    "Packets": 4,
+    "Percent Bytes": "0.003197822739546189",
+    "Bytes": 112,
+    "Bits": {
+       "s": "7.305372203774784"
+    },
+    "End Packets": 4,
+    "End Bytes": 112,
+    "End Bits": {
+       "s": "7.305372203774784"
+    }
+ },
+  {
+    "Protocol": "Link-local Multicast Name Resolution",
+    "Percent Packets": "0.04112687641373638",
+    "Packets": 2,
+    "Percent Bytes": "0.001256287504821717",
+    "Bytes": 44,
+    "Bits": {
+       "s": "2.8699676514829506"
+    },
+    "End Packets": 2,
+    "End Bytes": 44,
+    "End Bits": {
+       "s": "2.8699676514829506"
+    }
+ },
+  {
+    "Protocol": "Internet Protocol Version 4",
+    "Percent Packets": "99.52704092124203",
+    "Packets": 4840,
+    "Percent Bytes": "2.7638325106077777",
+    "Bytes": 96800,
+    "Bits": {
+       "s": "6313.928833262492"
+    },
+    "End Packets": 0,
+    "End Bytes": 0,
+    "End Bits": {
+       "s": "0"
+    }
+ },
+  {
+    "Protocol": "User Datagram Protocol",
+    "Percent Packets": "0.5963397079991775",
+    "Packets": 29,
+    "Percent Bytes": "0.006624061389059963",
+    "Bytes": 232,
+    "Bits": {
+       "s": "15.132556707819194"
+    },
+    "End Packets": 0,
+    "End Bytes": 0,
+    "End Bits": {
+       "s": "0"
+    }
+ },
+  {
+    "Protocol": "NetBIOS Name Service",
+    "Percent Packets": "0.061690314620604564",
+    "Packets": 3,
+    "Percent Bytes": "0.004282798311892218",
+    "Bytes": 150,
+    "Bits": {
+       "s": "9.783980630055513"
+    },
+    "End Packets": 3,
+    "End Bytes": 150,
+    "End Bits": {
+       "s": "9.783980630055513"
+    }
+ },
+  {
+    "Protocol": "Multicast Domain Name System",
+    "Percent Packets": "0.08225375282747276",
+    "Packets": 4,
+    "Percent Bytes": "0.003197822739546189",
+    "Bytes": 112,
+    "Bits": {
+       "s": "7.305372203774784"
+    },
+    "End Packets": 4,
+    "End Bytes": 112,
+    "End Bits": {
+       "s": "7.305372203774784"
+    }
+ },
+  {
+    "Protocol": "Link-local Multicast Name Resolution",
+    "Percent Packets": "0.04112687641373638",
+    "Packets": 2,
+    "Percent Bytes": "0.001256287504821717",
+    "Bytes": 44,
+    "Bits": {
+       "s": "2.8699676514829506"
+    },
+    "End Packets": 2,
+    "End Bytes": 44,
+    "End Bits": {
+       "s": "2.8699676514829506"
+    }
+ },
+  {
+    "Protocol": "Domain Name System",
+    "Percent Packets": "0.41126876413736374",
+    "Packets": 20,
+    "Percent Bytes": "0.044826622331138544",
+    "Bytes": 1570,
+    "Bits": {
+       "s": "102.40566392791438"
+    },
+    "End Packets": 20,
+    "End Bytes": 1570,
+    "End Bits": {
+       "s": "102.40566392791438"
+    }
+ },
+  {
+    "Protocol": "Transmission Control Protocol",
+    "Percent Packets": "98.93070121324286",
+    "Packets": 4811,
+    "Percent Bytes": "95.20583556966785",
+    "Bytes": 3334473,
+    "Bits": {
+       "s": "217496.12828962065"
+    },
+    "End Packets": 3138,
+    "End Bytes": 2094221,
+    "End Bits": {
+       "s": "136598.7846603699"
+    }
+ },
+  {
+    "Protocol": "Transport Layer Security",
+    "Percent Packets": "18.712728768250052",
+    "Packets": 910,
+    "Percent Bytes": "30.766795064960057",
+    "Bytes": 1077571,
+    "Bits": {
+       "s": "70286.22527673033"
+    },
+    "End Packets": 876,
+    "End Bytes": 1032281,
+    "End Bits": {
+       "s": "67332.1153918289"
+    }
+ },
+  {
+    "Protocol": "Malformed Packet",
+    "Percent Packets": "0.02056343820686819",
+    "Packets": 1,
+    "Percent Bytes": "0",
+    "Bytes": 0,
+    "Bits": {
+       "s": "0"
+    },
+    "End Packets": 1,
+    "End Bytes": 0,
+    "End Bits": {
+       "s": "0"
+    }
+ },
+  {
+    "Protocol": "Hypertext Transfer Protocol",
+    "Percent Packets": "16.26567962163274",
+    "Packets": 791,
+    "Percent Bytes": "62.401799003706905",
+    "Bytes": 2185550,
+    "Bits": {
+       "s": "142555.85910678553"
+    },
+    "End Packets": 744,
+    "End Bytes": 225895,
+    "End Bits": {
+       "s": "14734.348696175935"
+    }
+ },
+  {
+    "Protocol": "Portable Network Graphics",
+    "Percent Packets": "0.04112687641373638",
+    "Packets": 2,
+    "Percent Bytes": "0.48269992173899884",
+    "Bytes": 16906,
+    "Bits": {
+       "s": "1102.7198435447901"
+    },
+    "End Packets": 2,
+    "End Bytes": 17524,
+    "End Bits": {
+       "s": "1143.0298437406188"
+    }
+ },
+  {
+    "Protocol": "Online Certificate Status Protocol",
+    "Percent Packets": "0.02056343820686819",
+    "Packets": 1,
+    "Percent Bytes": "0.05867433687292338",
+    "Bytes": 2055,
+    "Bits": {
+       "s": "134.04053463176055"
+    },
+    "End Packets": 1,
+    "End Bytes": 2410,
+    "End Bits": {
+       "s": "157.19595545622525"
+    }
+ },
+  {
+    "Protocol": "Media Type",
+    "Percent Packets": "0.10281719103434094",
+    "Packets": 5,
+    "Percent Bytes": "3.2642061133805185",
+    "Bytes": 114325,
+    "Bits": {
+       "s": "7457.023903540644"
+    },
+    "End Packets": 5,
+    "End Bytes": 115828,
+    "End Bits": {
+       "s": "7555.059389453801"
+    }
+ },
+  {
+    "Protocol": "Line-based text data",
+    "Percent Packets": "0.5963397079991775",
+    "Packets": 29,
+    "Percent Bytes": "5.826147511565697",
+    "Bytes": 204054,
+    "Bits": {
+       "s": "13309.735889902318"
+    },
+    "End Packets": 29,
+    "End Bytes": 211806,
+    "End Bits": {
+       "s": "13815.372008863587"
+    }
+ },
+  {
+    "Protocol": "eXtensible Markup Language",
+    "Percent Packets": "0.1645075056549455",
+    "Packets": 8,
+    "Percent Bytes": "45.75821661994134",
+    "Bytes": 1602628,
+    "Bits": {
+       "s": "104533.87539456405"
+    },
+    "End Packets": 8,
+    "End Bytes": 1606125,
+    "End Bits": {
+       "s": "104761.97259631942"
+    }
+ },
+  {
+    "Protocol": "Compuserve GIF",
+    "Percent Packets": "0.04112687641373638",
+    "Packets": 2,
+    "Percent Bytes": "0.13447986699341563",
+    "Bytes": 4710,
+    "Bits": {
+       "s": "307.21699178374314"
+    },
+    "End Packets": 2,
+    "End Bytes": 5328,
+    "End Bits": {
+       "s": "347.52699197957185"
+    }
+ },
+  {
+    "Protocol": "Data",
+    "Percent Packets": "0.10281719103434094",
+    "Packets": 5,
+    "Percent Bytes": "0.00014275994372974057",
+    "Bytes": 5,
+    "Bits": {
+       "s": "0.3261326876685171"
+    },
+    "End Packets": 5,
+    "End Bytes": 5,
+    "End Bits": {
+       "s": "0.3261326876685171"
+    }
+ },
+  {
+    "Protocol": "Address Resolution Protocol",
+    "Percent Packets": "0.3495784495167592",
+    "Packets": 17,
+    "Percent Bytes": "0.013590746643071304",
+    "Bytes": 476,
+    "Bits": {
+       "s": "31.04783186604283"
+    },
+    "End Packets": 17,
+    "End Bytes": 476,
+    "End Bits": {
+       "s": "31.04783186604283"
+    }
+ }
+ ]
