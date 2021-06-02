@@ -33,6 +33,7 @@ Uvid u greške i početak ispravljanja pojedinih delova koda...
         Dalje, opseg (R) biće jednak nuli, a takođe i standardna devijacija (S).
         R/S statistika neće biti definisana, a sve to  će rezultovati NaN vrednošću. 
 
+
 */
 //Odabir fajla tj. JSON niza i prikaz u txtA
 
@@ -305,7 +306,7 @@ const podelaNniza = () => {
         A++;
 
         nasumicniBroj(3, 5); 
-        vrNasumicnogBroja = nasumicniBroj(3, 5); 
+        vrNasumicnogBroja = nasumicniBroj(2, 5); 
 
         brojPodnizova2++;
         //brojPodnizova2 = aca;
@@ -402,10 +403,8 @@ const podelaNniza = () => {
 
             //Proračun usrednjavanja v2
             nizUsrednjavanje.push(RS);
-            nizUsrednjavanjeF = nizUsrednjavanje.filter(x => typeof(x) !== 'NaN');
-            sumaUsrednjavanje = nizUsrednjavanjeF.reduce((x, y) => x + y);
-            //sumaUsrednjavanjeA = Number((sumaUsrednjavanje / A).toFixed(2));            
-        
+            nizUsrednjavanjeF = nizUsrednjavanje.filter(x => x >= 0);
+         
             //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
             s = Math.floor(Math.log2(N));
 
@@ -487,9 +486,7 @@ const podelaNniza = () => {
 
             //Proračun usrednjavanja v2
             nizUsrednjavanje.push(RS);
-            nizUsrednjavanjeF = nizUsrednjavanje.filter(x => typeof(x) !== 'NaN');
-            sumaUsrednjavanje = nizUsrednjavanjeF.reduce((x, y) => x + y);
-            //sumaUsrednjavanjeA = Number((sumaUsrednjavanje / A).toFixed(2));
+            nizUsrednjavanjeF = nizUsrednjavanje.filter(x => x >= 0);
 
             //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
             s = Math.floor(Math.log2(N)); 
@@ -575,9 +572,7 @@ const podelaNniza = () => {
 
             //Proračun usrednjavanja v2
             nizUsrednjavanje.push(RS);
-            nizUsrednjavanjeF = nizUsrednjavanje.filter(x => typeof(x) !== 'NaN');
-            sumaUsrednjavanje = nizUsrednjavanjeF.reduce((x, y) => x + y);
-            //sumaUsrednjavanjeA = Number((sumaUsrednjavanje / A).toFixed(2));
+            nizUsrednjavanjeF = nizUsrednjavanje.filter(x => x >= 0);
         
             //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
             s = Math.floor(Math.log2(N)); 
@@ -1033,6 +1028,7 @@ const pro = () => {
     txtLogRSpod.value = logRStxt;
 
     //Usrednjavanje R/S odnosa
+    sumaUsrednjavanje = Number((nizUsrednjavanjeF.reduce((x, y) => x + y)).toFixed(2));
     sumaUsrednjavanjeA = Number((sumaUsrednjavanje / A).toFixed(2));
     txtUsrednjavanje.value = sumaUsrednjavanjeA;
 
