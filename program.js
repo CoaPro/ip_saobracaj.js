@@ -35,7 +35,6 @@ Uvid u greške i početak ispravljanja pojedinih delova koda...
 
         Drugo rešenje je filtriranje datih nizova metodom JavaScript nizova Array.filter(x => x >= 0).
 
-
 */
 //Odabir fajla tj. JSON niza i prikaz u txtA
 
