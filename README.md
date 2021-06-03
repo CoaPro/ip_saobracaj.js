@@ -51,7 +51,7 @@ Prikaz celokupne vremenske serije, tj. konverzije JSON niza u JavaScript niz ele
 Pošto je datu vremensku seriju potrebno podeliti u A grupa, od po n članova, u ovom programu će se dati proces realizovati upotrebom JavaScript nasumčine funkcije Random(). 
 
 Pritiskom na dugme Nasumična podela niza, celokupan niz je nasumično podeljen na podnizove o opsegu od dva elementa, pa do četiri, uključujući vrednost četiri.
-U okviru ovog nisa su obuhvaćeni i elementi čija je vrednost paketa nula. 
+U okviru ovog niza su obuhvaćeni i elementi čija je vrednost paketa nula. 
 
 Korisnik ima mogućnost filtriranja datog niza i prikaza niza elemenata različitih od nule, pritiskom na instoimeno dugme. 
 U ovom programu biće razmatran samo niz elemenata različitih od nule. 
