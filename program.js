@@ -271,6 +271,7 @@ const podelaNniza = () => {
     sumaUsrednjavanje = Number(), sumaUsrednjavanjeA = Number();
 
     /*3.6.2021. Nove promenljive i nizovi */
+    fCeoNizLogn = [];
 
     /*
     
@@ -435,8 +436,10 @@ const podelaNniza = () => {
 
             //Niz sastavljen od svih logn vrednosti
             ceoNizLogn.push(logn);
+            //Filtriranje niza v3
+            fCeoNizLogn = ceoNizLogn.filter(x => x >= 0);
 
-            nizSumaLogn = ceoNizLogn.slice(0, 10);
+            nizSumaLogn = fCeoNizLogn.slice(0, 10);
             sumaLogn = Number((nizSumaLogn.reduce((x, y) => x + y)).toFixed(2));
             nizSumaLogn_2 = nizSumaLogn.map(x => x*x);
             sumaLogn_2 = Number((nizSumaLogn_2.reduce((x, y) => x + y)).toFixed(2));
@@ -520,8 +523,10 @@ const podelaNniza = () => {
 
             //Niz sastavljen od svih logn vrednosti
             ceoNizLogn.push(logn);
+            //Filtriranje niza v3
+            fCeoNizLogn = ceoNizLogn.filter(x => x >= 0);
 
-            nizSumaLogn = ceoNizLogn.slice(0, 10);
+            nizSumaLogn = fCeoNizLogn.slice(0, 10);
             sumaLogn = Number((nizSumaLogn.reduce((x, y) => x + y)).toFixed(2));
             nizSumaLogn_2 = nizSumaLogn.map(x => x*x);
             sumaLogn_2 = Number((nizSumaLogn_2.reduce((x, y) => x + y)).toFixed(2));
@@ -605,8 +610,10 @@ const podelaNniza = () => {
 
             //Niz sastavljen od svih logn vrednosti
             ceoNizLogn.push(logn);
+            //Filtriranje niza v3
+            fCeoNizLogn = ceoNizLogn.filter(x => x >= 0);
 
-            nizSumaLogn = ceoNizLogn.slice(0, 10);
+            nizSumaLogn = fCeoNizLogn.slice(0, 10);
             sumaLogn = Number((nizSumaLogn.reduce((x, y) => x + y)).toFixed(2));
             nizSumaLogn_2 = nizSumaLogn.map(x => x*x);
             sumaLogn_2 = Number((nizSumaLogn_2.reduce((x, y) => x + y)).toFixed(2));
@@ -1117,6 +1124,7 @@ const pro = () => {
    console.log(`Niz sumaLogn_2: ${nizSumaLogn_2}`);
    console.log(`Niz sumaLogn*sumaLogn: ${nizSumaLogn*nizSumaLogn}`);
 
-   
+   console.log(`Ceo Niz Logn ${ceoNizLogn} i dužina niza ${ceoNizLogn.length}`);
+   console.log(`F Ceo Niz Logn ${fCeoNizLogn} i dužina niza ${fCeoNizLogn.length}`);
 
 };
