@@ -35,28 +35,35 @@ Korisnik može ponovo pokrenuti proces, pritiskom na taster *Brisanje*.
 Prva tri tastera služe samo za prikazivanje i konverziju datog JSON niza u vremensku seriju i ne izvode nikakve dodatne operacije vremenskom serijom. 
 
 Redosled ovih operacija je sledeći:
-Odabir datoteke => Prikaz niza => Prikaz elemenata različitih od nule
-Ukoliko bi korisnik prvo pritisnuo taster Prikaz elemenata različitih od nule, niz ne bi bio prikazan. Zato treba prvo izvršiti konverziju JSON datoteke u JavaScript niz elemenata, a zatim nad datim nizom izvršiti filtriranje nenultih elemenata.   
+Odabir datoteke => *Prikaz niza* => *Prikaz elemenata različitih od nule*
+Ukoliko bi korisnik prvo pritisnuo taster *Prikaz elemenata različitih od nule*, niz ne bi bio prikazan. Zato treba prvo izvršiti konverziju JSON datoteke u JavaScript niz elemenata, a zatim nad datim nizom izvršiti filtriranje nenultih elemenata.   
 
 Dalje operacije nad nizom se nastavljaju odabirom tastera: <br /> <br />
-	1. Niz svih elemenata <br />
-	2. Nasumična podela niza <br />
-	3. Niz elemenata različitih od nule <br />
-	4. Podela niza elemenata različitih od nule. <br />
+	1. *Niz svih elemenata* <br />
+	2. *Nasumična podela niza* <br />
+	3. *Niz elemenata različitih od nule* <br />
+	4. *Podela niza elemenata različitih od nule* <br />
   <br />
   
 ---
 <br />
-Prikaz celokupne vremenske serije, tj. konverzije JSON niza u JavaScript niz elemenata se obavlja pritiskom na dugme Niz svih elemenata. 
-Pošto je datu vremensku seriju potrebno podeliti u A grupa, od po n članova, u ovom programu će se dati proces realizovati upotrebom JavaScript nasumčine funkcije Random(). 
+Prikaz celokupne vremenske serije, tj. konverzije JSON niza u JavaScript niz elemenata se obavlja pritiskom na dugme *Niz svih elemenata*. 
+Pošto je datu vremensku seriju potrebno podeliti u A grupa, od po n članova, u ovom programu će se dati proces realizovati upotrebom JavaScript nasumčine funkcije *Random()*. 
 
-Pritiskom na dugme Nasumična podela niza, celokupan niz je nasumično podeljen na podnizove o opsegu od dva elementa, pa do četiri, uključujući vrednost četiri.
+Pritiskom na dugme *Nasumična podela niza*, celokupan niz je nasumično podeljen na podnizove u opsegu od dva elementa, pa do pet, ne uključujući vrednost pet.
+<br/ >
+Deo JavaScript koda za generisanje nasumičnog broja:
+```javascript
+        nasumicniBroj(2, 5); 
+        vrNasumicnogBroja = nasumicniBroj(2, 5); 
+```
+
 U okviru ovog niza su obuhvaćeni i elementi čija je vrednost paketa nula. 
 
 Korisnik ima mogućnost filtriranja datog niza i prikaza niza elemenata različitih od nule, pritiskom na instoimeno dugme. 
-U ovom programu biće razmatran samo niz elemenata različitih od nule. 
-Upravo je taj niz vremenska serija nad kojom je potrebno odrediti Hurstov parametar. 
-Podnizovi (grupe) vremenske serije su nasumično određeni funkcijom Random(), a imaju od dva do četiri elemenata. 
-
-Hurstov parametar i svi neophodni koraci ka njegovom izračunavanju izvršavaju se pritiskom na dugme Proračun. 
+**U ovom programu biće razmatran samo niz elemenata različitih od nule.**
+Upravo je taj niz, u stvari vremenska serija za koju je potrebno odrediti Hurstov parametar. 
+Podnizovi (grupe) vremenske serije su nasumično određeni funkcijom *Random()*, a imaju od dva do četiri elemenata. 
+<br/>
+Hurstov parametar i svi neophodni koraci ka njegovom izračunavanju izvršavaju se pritiskom na dugme *Proračun*. 
 Na grafiku je prikazana vizuelizacija podataka JavaScript bibiliotekom Chart.js.
