@@ -605,8 +605,6 @@ while(noviNeNultiNiz.length){
     logN = Number((Math.log2(N)).toFixed(2));
     s = Math.floor(logN);
 
-    
-
     /*
     Zaključak: 
     xi je element vremenske serije
