@@ -102,6 +102,6 @@ input:hover, #btnPrikazNiza:hover, #btnPrikazNeNulaElemenataNiza:hover, #btnBris
     width: 10em;
 }
 
-#infoTxt{
+#infoTxt, #infoHtxt{
     font-size: 70%;
 }
