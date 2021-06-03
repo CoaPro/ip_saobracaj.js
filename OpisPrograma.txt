@@ -7,8 +7,8 @@ Princip funkcionisanja programa:
 
 Korisnik odabira *.json fajl (JavaScript Object Notation), u kome su snimljene vrednosti IP saobraćaja sa I/O grafika, koji je generisan programom Wireshark. 
 
-Izvorno, date vrednosti I/O grafika se izvoze u *.csv ili *.jaml fajl. 
-JavaScript(JS) najčešće funcioniše sa JSON fajlovima, mada upotrebom neke od JS biblioteka, moguć je direktan rad sa *.csv ili *.jaml datotekama.
+Izvorno, date vrednosti I/O grafika se izvoze u *.csv ili *.yaml fajl. 
+JavaScript(JS) najčešće funcioniše sa JSON fajlovima, mada upotrebom neke od JS biblioteka, moguć je direktan rad sa *.csv ili *.yaml datotekama.
 
 Konverzija raznih fajlova u *.json je moguća putem nekog od Veb sajtova, u zavisnosti od toga koji je format datoteke u pitanju. U ovom slučaju, kao primer može odlično poslužiti CSV to JSON Converter. 
 Link do ovog sajta je: https://www.convertcsv.com/csv-to-json.htm
@@ -23,7 +23,7 @@ Za izračunavanje Hurstovog parametra, potrebno je prilagoditi niz objekata u ni
 
 Ovaj niz će zapravo predstavljati celokupnu vremensku seriju dužine N.
 
-Moguće je priaz niza svih elemenata i prikaz elemenata različitih od nule.
+Moguće je prikazati niz sa svim elementima, kao i sa elementima različitim od nule.
 Korisnik može ponovo pokrenuti proces, pritiskom na taster Brisanje. 
 
 Prva tri tastera služe samo za prikazivanje i konverziju datog *json niza u vremensku seriju i ne izvode nikakve dodatne operacije vremenskom serijom. 
