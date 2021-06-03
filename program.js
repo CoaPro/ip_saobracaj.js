@@ -20,7 +20,7 @@ Uvid u greške i početak ispravljanja pojedinih delova koda...
     Izmena opsega funkcije nasumicniBroj(2, 4) => nasumicniBroj(2, 5)
     OpisPrograma.txt
 
-2.6.2021. Uto.
+2.6.2021. Sre.
     Optimizacija koda
     Otrkivanje uzroka pojavljivanja 'Not-a-number' - NaN' vrednosti:
 
@@ -38,6 +38,11 @@ Uvid u greške i početak ispravljanja pojedinih delova koda...
     //20.40h
     Program testiran - nije uočena greška u radu.
     Može se reći da je završen projekat ip_saobracaj_js. //Update 5 | 2.6.2021. 
+
+3.6.2021. Čet. 
+    Dodatna optimizacija koda:
+        pokušaj eliminacije NaN vrednosti u proračunu H parametra
+        filtriranje nizova (uvođenje novih), koji su protrebni za definisanje suma H parametra
     
 */
 //Odabir fajla tj. JSON niza i prikaz u txtA
@@ -264,6 +269,8 @@ const podelaNniza = () => {
 
     nizUsrednjavanje = [], nizUsrednjavanjeF = [];
     sumaUsrednjavanje = Number(), sumaUsrednjavanjeA = Number();
+
+    /*3.6.2021. Nove promenljive i nizovi */
 
     /*
     
@@ -1057,20 +1064,59 @@ const pro = () => {
     H_ =(s*sumaLognLogRS - sumaLogn*sumaLogRS)/(s*sumaLogn_2 - sumaLogn*sumaLogn);
     H = Number(H_.toFixed(2));
 
+    infoHtxt = document.getElementById('infoHtxt');
+
     if(H >= 0 && H <= 1 && typeof(H) !== 'NaN'){
+
     console.log(`Hurstov parametar je: ${H}`);
     txtHurst.value = H;
+
     vizuelizacijaPodataka();
     } else {
+
         txtHurst.value = 'Desila se neuobičajena greška. Klikinite na dugme Obrisati i pokušajte ponovo. Neki od mogućih uzroka su pojava više NaN vrednosti ili semantičke greške u kodu.';
         console.log(`Desila se neuobičajena greška. Klikinite na dugme Obrisati i pokušajte ponovo. Neki od mogućih uzroka su pojava više NaN vrednosti ili semantičke greške u kodu.`);
         console.log(`Vrednost H parametra je:  ${H}`);
+
+        infoHtxt.innerHTML = `
+        Desila se neuobičajena greška u izračunavanju H parametra. 
+        </br>
+        Hurstov parametar je: ˘${H}
+        </br>
+        Klikinite na dugme Obrisati i pokušajte ponovo. 
+        </br>
+        </br>
+        Neki od mogućih uzroka su: 
+        </br>
+        </br>
+         - pojava više NaN vrednosti
+        </br>
+         - semantičke greške u kodu
+        </br>
+         - neodgovarajući opseg vrednosti vremenske serije
+        </br>
+        </br>
+        Proverite unos vremenske serije ili izvršite određene izmene na njoj.
+        </br>
+        Proverite tačnost *.json niza. 
+        `;
+        
     }
 
+    /*
     console.log(`NizUsrednjavanje:  ${nizUsrednjavanje}`);
     console.log(`NizUsrednjavanjeF:  ${nizUsrednjavanjeF}`);
     console.log(`sumaUsrednjavanje:  ${sumaUsrednjavanje}`);
     console.log(`A:  ${A}`);
     console.log(`sumaUsrednjavanjeA:  ${sumaUsrednjavanjeA}`);
+    */
+   //H_ =(s*sumaLognLogRS - sumaLogn*sumaLogRS)/(s*sumaLogn_2 - sumaLogn*sumaLogn);
+   console.log(`Niz sumaLognLogRS: ${nizSumaLognLogRS}`);
+   console.log(`Niz sumaLogn: ${nizSumaLogn}`);
+   console.log(`Niz sumaLogRS: ${nizSumaLogRS}`);
+   console.log(`Niz sumaLogn_2: ${nizSumaLogn_2}`);
+   console.log(`Niz sumaLogn*sumaLogn: ${nizSumaLogn*nizSumaLogn}`);
+
+   
 
 };
