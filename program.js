@@ -271,7 +271,7 @@ const podelaNniza = () => {
     sumaUsrednjavanje = Number(), sumaUsrednjavanjeA = Number();
 
     /*3.6.2021. Nove promenljive i nizovi */
-    fCeoNizLogn = [];
+    fCeoNizLogn = [], fCeoNizLogRS = [], fCeoNizSumaLogRS = [], fCeoNizSumaLognLogRS = [];
 
     /*
     
@@ -448,19 +448,18 @@ const podelaNniza = () => {
 
             //Niz sastavnjen od svih logRS vrednosti
             ceoNizLogRS.push(logRS);
-
-            //Filtriranje niza v1
-            //ceoNizSumaLogRSf = ceoNizLogRS.filter(x => typeof(x) !== 'NaN');
-            //Filtriranje niza v2 (bolja metoda)
-            ceoNizSumaLogRSf = ceoNizLogRS.filter(x => x >= 0);
-            nizSumaLogRS = ceoNizSumaLogRSf.slice(0, 10);
+            //Filtriranje niza v3
+            fCeoNizLogRS = ceoNizLogRS.filter(x => x >= 0);
+            nizSumaLogRS = fCeoNizLogRS.slice(0, 10);
 
             sumaLogRS = Number((nizSumaLogRS.reduce((x, y) => x + y)).toFixed(2));
 
             //Suma elemenata logn*logRS
             vrLognLogRS = Number((logn * logRS).toFixed(2));
             ceoNizSumaLognLogRS.push(vrLognLogRS);
-            nizSumaLognLogRS = ceoNizSumaLognLogRS.slice(0, 10);
+            //Filtriranje niza v3
+            fCeoNizSumaLognLogRS = ceoNizSumaLognLogRS.filter(x => x >= 0);
+            nizSumaLognLogRS = fCeoNizSumaLognLogRS.slice(0, 10);
             sumaLognLogRS = Number((nizSumaLognLogRS.reduce((x, y) => x + y)).toFixed(2));
             
         } else if (brElPodnizova === 3){
@@ -533,18 +532,20 @@ const podelaNniza = () => {
 
             //Suma elemenata logRS
 
-            //Niz sastavljen od svih logRS vrednosti
+            //Niz sastavnjen od svih logRS vrednosti
             ceoNizLogRS.push(logRS);
+            //Filtriranje niza v3
+            fCeoNizLogRS = ceoNizLogRS.filter(x => x >= 0);
+            nizSumaLogRS = fCeoNizLogRS.slice(0, 10);
 
-            //Filtriranje niza v1
-            //ceoNizSumaLogRSf = ceoNizLogRS.filter(x => typeof(x) !== 'NaN');
-            //Filtriranje niza v2 (bolja metoda)
-            ceoNizSumaLogRSf = ceoNizLogRS.filter(x => x >= 0);
+            sumaLogRS = Number((nizSumaLogRS.reduce((x, y) => x + y)).toFixed(2));
 
             //Suma elemenata logn*logRS
             vrLognLogRS = Number((logn * logRS).toFixed(2));
             ceoNizSumaLognLogRS.push(vrLognLogRS);
-            nizSumaLognLogRS = ceoNizSumaLognLogRS.slice(0, 10);
+            //Filtriranje niza v3
+            fCeoNizSumaLognLogRS = ceoNizSumaLognLogRS.filter(x => x >= 0);
+            nizSumaLognLogRS = fCeoNizSumaLognLogRS.slice(0, 10);
             sumaLognLogRS = Number((nizSumaLognLogRS.reduce((x, y) => x + y)).toFixed(2));
 
         } else if (brElPodnizova === 4){
@@ -622,19 +623,18 @@ const podelaNniza = () => {
 
             //Niz sastavnjen od svih logRS vrednosti
             ceoNizLogRS.push(logRS);
-
-            //Filtriranje niza v1
-            //ceoNizSumaLogRSf = ceoNizLogRS.filter(x => typeof(x) !== 'NaN');
-            //Filtriranje niza v2 (bolja metoda)
-            ceoNizSumaLogRSf = ceoNizLogRS.filter(x => x >= 0);
-            nizSumaLogRS = ceoNizSumaLogRSf.slice(0, 10);
+            //Filtriranje niza v3
+            fCeoNizLogRS = ceoNizLogRS.filter(x => x >= 0);
+            nizSumaLogRS = fCeoNizLogRS.slice(0, 10);
 
             sumaLogRS = Number((nizSumaLogRS.reduce((x, y) => x + y)).toFixed(2));
 
             //Suma elemenata logn*logRS
             vrLognLogRS = Number((logn * logRS).toFixed(2));
             ceoNizSumaLognLogRS.push(vrLognLogRS);
-            nizSumaLognLogRS = ceoNizSumaLognLogRS.slice(0, 10);
+            //Filtriranje niza v3
+            fCeoNizSumaLognLogRS = ceoNizSumaLognLogRS.filter(x => x >= 0);
+            nizSumaLognLogRS = fCeoNizSumaLognLogRS.slice(0, 10);
             sumaLognLogRS = Number((nizSumaLognLogRS.reduce((x, y) => x + y)).toFixed(2));
 
         } else
@@ -1122,7 +1122,6 @@ const pro = () => {
    console.log(`Niz sumaLogn: ${nizSumaLogn}`);
    console.log(`Niz sumaLogRS: ${nizSumaLogRS}`);
    console.log(`Niz sumaLogn_2: ${nizSumaLogn_2}`);
-   console.log(`Niz sumaLogn*sumaLogn: ${nizSumaLogn*nizSumaLogn}`);
 
    console.log(`Ceo Niz Logn ${ceoNizLogn} i dužina niza ${ceoNizLogn.length}`);
    console.log(`F Ceo Niz Logn ${fCeoNizLogn} i dužina niza ${fCeoNizLogn.length}`);
