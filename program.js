@@ -272,6 +272,7 @@ const podelaNniza = () => {
 
     /*3.6.2021. Nove promenljive i nizovi */
     fCeoNizLogn = [], fCeoNizLogRS = [], fCeoNizSumaLogRS = [], fCeoNizSumaLognLogRS = [];
+    testAniz = [], test2Aniz = [];
 
     /*
     
@@ -662,7 +663,7 @@ const podelaNniza = () => {
 
     }
     */
-
+    testAniz = noviNeNultiNiz.sort((x,y) => x - y);
 };
 
 //18.5.2021. Uto. Početak drugog dela projekta
@@ -958,10 +959,10 @@ function vizuelizacijaPodataka(){
     let vizuelizacijaPodataka = new Chart(graf, {
         type: 'bar',
         data: {
-            labels: ceoNizLogn,
+            labels: ceoNizLogn, //ceoNizLogn, testAniz
             datasets: [{
                 label: 'Vrednost',
-                data: ceoNizLogRS,
+                data: ceoNizLogRS, //ceoNizLogRS
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -1125,5 +1126,12 @@ const pro = () => {
 
    console.log(`Ceo Niz Logn ${ceoNizLogn} i dužina niza ${ceoNizLogn.length}`);
    console.log(`F Ceo Niz Logn ${fCeoNizLogn} i dužina niza ${fCeoNizLogn.length}`);
+
+   //testAniz = noviNeNultiNiz.sort((x,y) => x - y);
+   console.log(testAniz);
+
+
+  
+  console.log(test2Aniz);
 
 };
