@@ -142,7 +142,7 @@ function podelaNiza(){
 
 }
 
-//Rad: 17.5.2021. Pon. Srećan Svetski dan telekomunikacija i informacionog društva
+//Rad: 17.5.2021. Pon. Svetski dan telekomunikacija i informacionog društva
 
 //Prikaz elemenata niza koji su različiti od nule
 
