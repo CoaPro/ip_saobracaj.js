@@ -39,7 +39,20 @@ Dalje operacije nad nizom se nastavljaju odabirom tastera:
 	Podela niza elemenata različitih od nule.
 
 Prikaz celokupne vremenske serije, tj. konverzije *.json niza u JavaScript niz elemenata se obavlja pritiskom na dugme Niz svih elemenata. 
-Pošto je datu vremensku seriju potrebno podeliti u A grupa, od po n članova, u ovom programu će se ovaj proces realizovati upotrebom nasumčine funkcije Random. 
+Pošto je datu vremensku seriju potrebno podeliti u A grupa, od po n članova, u ovom programu će se dati proces realizovati upotrebom JavaScript nasumčine funkcije Random(). 
+
+3.6.2021. Čet. 
+
+Pritiskom na dugme Nasumična podela niza, celokupan niz je nasumično podeljen na podnizove o opsegu od dva elementa, pa do četiri, uključujući vrednost četiri.
+U okviru ovog nisa su obuhvaćeni i elementi čija je vrednost paketa nula. 
+
+Korisnik ima mogućnost filtriranja datog niza i prikaza niza elemenata različitih od nule, pritiskom na instoimeno dugme. 
+U ovom programu biće razmatran samo niz elemenata različitih od nule. 
+Upravo je taj niz vremenska serija nad kojom je potrebno odrediti Hurstov parametar. 
+Podnizovi (grupe) vremenske serije su nasumično određeni funkcijom Random(), a imaju od dva do četiri elemenata. 
+
+Hurstov parametar i svi neophodni koraci ka njegovom izračunavanju izvršavaju se pritiskom na dugme Proračun. 
+Na grafiku je prikazana vizuelizacija podataka JavaScript bibiliotekom Chart.js.
 
 
 

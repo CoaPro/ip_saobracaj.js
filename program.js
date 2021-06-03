@@ -319,7 +319,7 @@ const podelaNniza = () => {
 
         A++;
 
-        nasumicniBroj(3, 5); 
+        nasumicniBroj(2, 5); 
         vrNasumicnogBroja = nasumicniBroj(2, 5); 
 
         brojPodnizova2++;
