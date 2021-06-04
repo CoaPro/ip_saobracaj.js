@@ -69,7 +69,7 @@ Hurstov parametar i svi neophodni koraci ka njegovom izračunavanju izvršavaju 
 
 Deo koda za izračunavanje Hurstovog parametra: 
 ```javascript
-    H_ =(s*sumaLognLogRS - sumaLogn*sumaLogRS)/(s*sumaLogn_2 - sumaLogn*sumaLogn);
+    H_ = Number((s*sumaLognLogRS - sumaLogn*sumaLogRS)/(s*sumaLogn_2 - sumaLogn*sumaLogn));
     H = Number(H_.toFixed(2));
 ```
 Na grafiku je prikazana vizuelizacija podataka JavaScript bibiliotekom Chart.js.
