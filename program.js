@@ -1057,7 +1057,7 @@ function RSstatistika(){
                     display: true
                 }
             }
-            
+
         }
     });   
 
