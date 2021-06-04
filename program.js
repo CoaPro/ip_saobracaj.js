@@ -1243,7 +1243,8 @@ const pro = () => {
     console.log(`A:  ${A}`);
     console.log(`sumaUsrednjavanjeA:  ${sumaUsrednjavanjeA}`);
     */
-   //H_ =(s*sumaLognLogRS - sumaLogn*sumaLogRS)/(s*sumaLogn_2 - sumaLogn*sumaLogn);
+
+   //H_ = (s*sumaLognLogRS - sumaLogn*sumaLogRS)/(s*sumaLogn_2 - sumaLogn*sumaLogn);
 
    //console.log(`Niz sumaLognLogRS: ${nizSumaLognLogRS}`);
    //console.log(`Niz sumaLogn: ${nizSumaLogn}`);
