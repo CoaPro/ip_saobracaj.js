@@ -45,7 +45,11 @@ Uvid u greške i početak ispravljanja pojedinih delova koda...
         filtriranje nizova (uvođenje novih), koji su protrebni za definisanje suma H parametra
     OpisPrograma.txt  
     Okvirno završen projekat  
-    
+
+4.6.2021. Čet.
+     Dodatna optimizacija i ažuriranje koda
+     Dodata RS statistika
+
 */
 //Odabir fajla tj. JSON niza i prikaz u txtA
 
