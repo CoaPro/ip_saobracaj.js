@@ -43,10 +43,9 @@ Dalje operacije nad nizom se nastavljaju odabirom tastera: <br /> <br />
 	2. *Nasumična podela niza* <br />
 	3. *Niz elemenata različitih od nule* <br />
 	4. *Podela niza elemenata različitih od nule* <br />
-  <br />
-  
+	
 ---
-<br />
+
 Prikaz celokupne vremenske serije, tj. konverzije JSON niza u JavaScript **niz elemenata** se obavlja pritiskom na dugme *Niz svih elemenata*. 
 Pošto je datu vremensku seriju potrebno podeliti u A grupa, od po n članova, u ovom programu će se dati proces realizovati upotrebom JavaScript nasumčine funkcije *Random()*. 
 
