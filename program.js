@@ -274,7 +274,14 @@ const podelaNniza = () => {
 
     /*3.6.2021. Nove promenljive i nizovi */
     fCeoNizLogn = [], fCeoNizLogRS = [], fCeoNizSumaLogRS = [], fCeoNizSumaLognLogRS = [];
-    testAniz = [], test2Aniz = [];
+    
+
+    /*4.6.2021. Nove promenljive */
+    filtriraniNiz = [], sortiraniNiz = [], sortiraniNizA = [];
+    nizJedinstvenihElemenata = [];
+
+    nFiltriraniNiz = [], nSortiraniNiz = [], nSortiraniNizA = [];
+    nNizJedinstvenihElemenata = [];
 
     /*
     
@@ -302,6 +309,21 @@ const podelaNniza = () => {
     */
 
     let noviNeNultiNiz = nNizz.filter(x => x > 0);
+
+    filtriraniNiz = nNizz.filter(x => x > 0);
+    sortiraniNiz = filtriraniNiz.sort((x,y) => x - y);
+
+    function uklanjanjeDuplikataElemenata(niz){
+        const jedan = [];
+        niz.forEach((value) => {
+            if(!jedan.includes(value)){
+                jedan.push(value);
+            }
+        });
+        return jedan;
+    }
+
+    nizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(sortiraniNiz);
 
     podnizR = new Array();
 
@@ -665,7 +687,7 @@ const podelaNniza = () => {
 
     }
     */
-    testAniz = noviNeNultiNiz.sort((x,y) => x - y);
+    
 };
 
 //18.5.2021. Uto. Početak drugog dela projekta
@@ -1161,19 +1183,15 @@ const pro = () => {
     console.log(`sumaUsrednjavanjeA:  ${sumaUsrednjavanjeA}`);
     */
    //H_ =(s*sumaLognLogRS - sumaLogn*sumaLogRS)/(s*sumaLogn_2 - sumaLogn*sumaLogn);
-   console.log(`Niz sumaLognLogRS: ${nizSumaLognLogRS}`);
-   console.log(`Niz sumaLogn: ${nizSumaLogn}`);
-   console.log(`Niz sumaLogRS: ${nizSumaLogRS}`);
-   console.log(`Niz sumaLogn_2: ${nizSumaLogn_2}`);
 
-   console.log(`Ceo Niz Logn ${ceoNizLogn} i dužina niza ${ceoNizLogn.length}`);
-   console.log(`F Ceo Niz Logn ${fCeoNizLogn} i dužina niza ${fCeoNizLogn.length}`);
+   //console.log(`Niz sumaLognLogRS: ${nizSumaLognLogRS}`);
+   //console.log(`Niz sumaLogn: ${nizSumaLogn}`);
+   //console.log(`Niz sumaLogRS: ${nizSumaLogRS}`);
+   //console.log(`Niz sumaLogn_2: ${nizSumaLogn_2}`);
 
-   //testAniz = noviNeNultiNiz.sort((x,y) => x - y);
-   console.log(testAniz);
+   //console.log(`Ceo Niz Logn ${ceoNizLogn} i dužina niza ${ceoNizLogn.length}`);
+   //console.log(`F Ceo Niz Logn ${fCeoNizLogn} i dužina niza ${fCeoNizLogn.length}`);
 
-
+   console.log(nizJedinstvenihElemenata); 
   
-  console.log(test2Aniz);
-
 };
