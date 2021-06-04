@@ -280,8 +280,9 @@ const podelaNniza = () => {
     filtriraniNiz = [], sortiraniNiz = [], sortiraniNizA = [];
     nizJedinstvenihElemenata = [];
 
-    nFiltriraniNiz = [], nSortiraniNiz = [], nSortiraniNizA = [];
-    nNizJedinstvenihElemenata = [];
+    logRSsortiraniNiz = [], logRSnizJedinstvenihElemenata = [];
+
+    lognSortiraniNiz = [], lognNizJedinstvenihElemenata = [];
 
     /*
     
@@ -486,6 +487,21 @@ const podelaNniza = () => {
             fCeoNizSumaLognLogRS = ceoNizSumaLognLogRS.filter(x => x >= 0);
             nizSumaLognLogRS = fCeoNizSumaLognLogRS.slice(0, 10);
             sumaLognLogRS = Number((nizSumaLognLogRS.reduce((x, y) => x + y)).toFixed(2));
+
+            //Vrednosti potrebne za RS statistiku 
+
+            //x - osa logn 
+            //y - osa logRS
+
+            //lognSortiraniNiz = [], lognNizJedinstvenihElemenata = [];
+            lognSortiraniNiz = fCeoNizLogn.sort((x, y) => x - y);
+            lognNizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(lognSortiraniNiz);
+
+            //logRSsortiraniNiz = [], logRSnizJedinstvenihElemenata = [];
+            logRSsortiraniNiz = fCeoNizLogRS.sort((x, y) => x - y);
+            logRSnizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(logRSsortiraniNiz);
+
+            
             
         } else if (brElPodnizova === 3){
 
@@ -572,6 +588,16 @@ const podelaNniza = () => {
             fCeoNizSumaLognLogRS = ceoNizSumaLognLogRS.filter(x => x >= 0);
             nizSumaLognLogRS = fCeoNizSumaLognLogRS.slice(0, 10);
             sumaLognLogRS = Number((nizSumaLognLogRS.reduce((x, y) => x + y)).toFixed(2));
+
+            //Vrednosti potrebne za RS statistiku 
+
+            //x - osa logn 
+            //y - osa logRS
+
+            //logRSsortiraniNiz = [], logRSnizJedinstvenihElemenata = [];
+
+            logRSsortiraniNiz = fCeoNizLogRS.sort((x, y) => x - y);
+            logRSnizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(logRSsortiraniNiz);
 
         } else if (brElPodnizova === 4){
 
@@ -661,6 +687,16 @@ const podelaNniza = () => {
             fCeoNizSumaLognLogRS = ceoNizSumaLognLogRS.filter(x => x >= 0);
             nizSumaLognLogRS = fCeoNizSumaLognLogRS.slice(0, 10);
             sumaLognLogRS = Number((nizSumaLognLogRS.reduce((x, y) => x + y)).toFixed(2));
+
+            //Vrednosti potrebne za RS statistiku 
+
+            //x - osa logn 
+            //y - osa logRS
+
+            //logRSsortiraniNiz = [], logRSnizJedinstvenihElemenata = [];
+
+            logRSsortiraniNiz = fCeoNizLogRS.sort((x, y) => x - y);
+            logRSnizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(logRSsortiraniNiz);            
 
         } else
         {
@@ -979,14 +1015,17 @@ function acaaa(){
 }
 
 function RSstatistika(){
+
+    infoTxtV.innerHTML = `x - osa: logn <br/> y - osa: logRS`;
+
     let graf = document.getElementById('grafik').getContext('2d');
     let vizuelizacijaPodataka = new Chart(graf, {
-        type: 'bar',
+        type: 'line',
         data: {
-            labels: ceoNizLogn, //ceoNizLogn, testAniz
+            labels: lognSortiraniNiz, //ceoNizLogn, testAniz
             datasets: [{
                 label: 'Vrednost',
-                data: ceoNizLogRS, //ceoNizLogRS
+                data: logRSsortiraniNiz, //ceoNizLogRS
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -1008,15 +1047,26 @@ function RSstatistika(){
         },
         options: {
             scales: {
+
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    display: true
+                },
+                x: {
+                    beginAtZero: true,
+                    display: true
                 }
             }
+            
         }
     });   
+
 }
 
 function vizuelizacijaSvihPodataka(){
+
+    infoTxtV.innerHTML = `x - osa: logn <br/> y - osa: logRS`;
+
     let graf = document.getElementById('grafik2').getContext('2d');
     let vizuelizacijaPodataka = new Chart(graf, {
         type: 'bar',
@@ -1052,6 +1102,7 @@ function vizuelizacijaSvihPodataka(){
             }
         }
     });
+
 }
 
 const pro = () => {
@@ -1193,5 +1244,7 @@ const pro = () => {
    //console.log(`F Ceo Niz Logn ${fCeoNizLogn} i dužina niza ${fCeoNizLogn.length}`);
 
    console.log(nizJedinstvenihElemenata); 
+   console.log(`x - osa: ${lognNizJedinstvenihElemenata}`);
+   console.log(`y - osa: ${logRSnizJedinstvenihElemenata}`);
   
 };
