@@ -1016,7 +1016,10 @@ function acaaa(){
 
 function RSstatistika(){
 
-    infoTxtV.innerHTML = `x - osa: logn <br/> y - osa: logRS`;
+    infoTxtV.innerHTML = `
+    x - osa: logn 
+    <br/> 
+    y - osa: logRS`;
 
     let graf = document.getElementById('grafik').getContext('2d');
     let vizuelizacijaPodataka = new Chart(graf, {
@@ -1065,7 +1068,10 @@ function RSstatistika(){
 
 function vizuelizacijaSvihPodataka(){
 
-    infoTxtV.innerHTML = `x - osa: logn <br/> y - osa: logRS`;
+    infoTxtV.innerHTML = `
+    x - osa: logn 
+    </br> 
+    y - osa: logRS`;
 
     let graf = document.getElementById('grafik2').getContext('2d');
     let vizuelizacijaPodataka = new Chart(graf, {
@@ -1182,7 +1188,7 @@ const pro = () => {
     txtLogn_2.value = logn_2Txt;
 
     //Hurstov parametar: 
-    H_ = (s*sumaLognLogRS - sumaLogn*sumaLogRS)/(s*sumaLogn_2 - sumaLogn*sumaLogn);
+    H_ = Number((s*sumaLognLogRS - sumaLogn*sumaLogRS)/(s*sumaLogn_2 - sumaLogn*sumaLogn));
     H = Number(H_.toFixed(2));
 
     infoHtxt = document.getElementById('infoHtxt');
