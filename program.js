@@ -1182,7 +1182,7 @@ const pro = () => {
     txtLogn_2.value = logn_2Txt;
 
     //Hurstov parametar: 
-    H_ =(s*sumaLognLogRS - sumaLogn*sumaLogRS)/(s*sumaLogn_2 - sumaLogn*sumaLogn);
+    H_ = (s*sumaLognLogRS - sumaLogn*sumaLogRS)/(s*sumaLogn_2 - sumaLogn*sumaLogn);
     H = Number(H_.toFixed(2));
 
     infoHtxt = document.getElementById('infoHtxt');
