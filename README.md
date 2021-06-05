@@ -53,8 +53,7 @@ Pritiskom na dugme *Nasumična podela niza*, celokupan niz je nasumično podelje
 <br/ >
 Deo JavaScript koda za generisanje nasumičnog broja:
 ```javascript
-        nasumicniBroj(2, 5); 
-        vrNasumicnogBroja = nasumicniBroj(2, 5); 
+	vrNasumicnogBroja = Math.floor(nasumicniBroj(2, 5)); 
 ```
 
 U okviru ovog niza su obuhvaćeni i elementi čija je vrednost paketa nula. 
@@ -69,6 +68,6 @@ Hurstov parametar i svi neophodni koraci ka njegovom izračunavanju izvršavaju 
 Deo koda za izračunavanje Hurstovog parametra: 
 ```javascript
     H_ = Number((s*sumaLognLogRS - sumaLogn*sumaLogRS)/(s*sumaLogn_2 - sumaLogn*sumaLogn));
-    H = Number(H_.toFixed(3));
+    H = Number(H_.toFixed(2));
 ```
 Na grafiku je prikazana vizuelizacija podataka JavaScript bibiliotekom Chart.js.
