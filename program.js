@@ -336,7 +336,7 @@ const podelaNniza = () => {
     let noviNeNultiNiz = nNizz.filter(x => x > 0);
 
     filtriraniNiz = nNizz.filter(x => x > 0);
-    sortiraniNiz = filtriraniNiz.sort((x,y) => x - y);
+    sortiraniNiz = filtriraniNiz.sort((x, y) => x - y);
 
     function uklanjanjeDuplikataElemenata(niz){
         const jedan = [];
@@ -375,7 +375,6 @@ const podelaNniza = () => {
         //nasumicniBroj(2, 5); 
         vrNasumicnogBroja = Math.floor(nasumicniBroj(2, 5)); 
         brojPodnizova2++;
-        //brojPodnizova2 = aca;
         podnizR = noviNeNultiNiz.splice(0, vrNasumicnogBroja);
         //console.log(podnizR);
         brojTekst += podnizR + '\n';
@@ -1044,6 +1043,103 @@ function acaaa(){
     console.log(noviNeNultiNiz);
 }
 
+function RSstatistika(){
+
+    infoTxtV.innerHTML = `
+    x - osa: logn 
+    <br/> 
+    y - osa: logRS`;
+
+    let graf = document.getElementById('grafik').getContext('2d');
+    let vizuelizacijaPodataka = new Chart(graf, {
+        type: 'line',
+        data: {
+            labels: lognSortiraniNiz, //ceoNizLogn, testAniz
+            datasets: [{
+                label: 'Vrednost',
+                data: logRSsortiraniNiz, //ceoNizLogRS
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+
+                y: {
+                    beginAtZero: true,
+                    display: true
+                },
+                x: {
+                    beginAtZero: true,
+                    display: true
+                }
+            }
+
+        }
+    });   
+
+}
+
+function vizuelizacijaSvihPodataka(){
+
+    infoTxtV.innerHTML = `
+    x - osa: logn 
+    </br> 
+    y - osa: logRS`;
+
+    let graf = document.getElementById('grafik2').getContext('2d');
+    let vizuelizacijaPodataka = new Chart(graf, {
+        type: 'bar',
+        data: {
+            labels: ceoNizLogn, //ceoNizLogn, testAniz
+            datasets: [{
+                label: 'Vrednost',
+                data: ceoNizLogRS, //ceoNizLogRS
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+}
+
 const pro = () => {
 
     /* Definisanje promenljivih: */
@@ -1194,99 +1290,3 @@ const pro = () => {
   
 };
 
-function RSstatistika(){
-
-    infoTxtV.innerHTML = `
-    x - osa: logn 
-    <br/> 
-    y - osa: logRS`;
-
-    let graf = document.getElementById('grafik').getContext('2d');
-    let vizuelizacijaPodataka = new Chart(graf, {
-        type: 'line',
-        data: {
-            labels: lognSortiraniNiz, //ceoNizLogn, testAniz
-            datasets: [{
-                label: 'Vrednost',
-                data: logRSsortiraniNiz, //ceoNizLogRS
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-
-                y: {
-                    beginAtZero: true,
-                    display: true
-                },
-                x: {
-                    beginAtZero: true,
-                    display: true
-                }
-            }
-
-        }
-    });   
-
-}
-
-function vizuelizacijaSvihPodataka(){
-
-    infoTxtV.innerHTML = `
-    x - osa: logn 
-    </br> 
-    y - osa: logRS`;
-
-    let graf = document.getElementById('grafik2').getContext('2d');
-    let vizuelizacijaPodataka = new Chart(graf, {
-        type: 'bar',
-        data: {
-            labels: ceoNizLogn, //ceoNizLogn, testAniz
-            datasets: [{
-                label: 'Vrednost',
-                data: ceoNizLogRS, //ceoNizLogRS
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-}
