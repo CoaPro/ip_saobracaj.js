@@ -62,6 +62,10 @@ Uvid u greške i početak ispravljanja pojedinih delova koda...
     brElPodnizova = vrNasumicnogBroja;
 
     a ne: //brElPodnizova = Math.floor(vrNasumicnogBroja);
+
+    Ažuriranje:
+    //Novo rešenje
+    brElPodnizova = podnizR.length;
         
 */
 //Odabir fajla tj. JSON niza i prikaz u txtA
@@ -237,7 +241,7 @@ const podelaNniza = () => {
     
     brojPodnizova2 = 0;
 
-    brElPodnizova = 0;
+    brElPodnizova = Number();
     brElPodnizovaTekst = '';
 
     zbirPodniza = 0;
@@ -360,13 +364,16 @@ const podelaNniza = () => {
         return Number(((a+b)/n).toFixed(2));
     }
 
+
+    //vrNasumicnogBroja = Math.floor(nasumicniBroj(2, 5));
+
+
     while(noviNeNultiNiz.length > 1){
 
         A++;
 
         //nasumicniBroj(2, 5); 
         vrNasumicnogBroja = Math.floor(nasumicniBroj(2, 5)); 
-
         brojPodnizova2++;
         //brojPodnizova2 = aca;
         podnizR = noviNeNultiNiz.splice(0, vrNasumicnogBroja);
@@ -377,9 +384,12 @@ const podelaNniza = () => {
         //Broj elemenata (članova) svakog podniza
         txtnPod = document.getElementById('txtnPod');
         //brElPodnizova = Math.floor(vrNasumicnogBroja);
-        brElPodnizova = vrNasumicnogBroja;
-        brElPodnizovaTekst += brElPodnizova + '\n';
 
+        //brElPodnizova = vrNasumicnogBroja;
+        //Novo rešenje
+        brElPodnizova = podnizR.length;
+        brElPodnizovaTekst += brElPodnizova + '\n';
+        
         //Zbir svakog podniza
         txtZbirPod = document.getElementById('txtZbirPod');
         zbirPodniza = podnizR.reduce((x,y) => x + y);
@@ -744,7 +754,6 @@ const podelaNniza = () => {
 
     }
     */
-
 };
 
 //18.5.2021. Uto. Početak drugog dela projekta
