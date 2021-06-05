@@ -1193,7 +1193,7 @@ const pro = () => {
 
     //Hurstov parametar: 
     H_ = Number((s*sumaLognLogRS - sumaLogn*sumaLogRS)/(s*sumaLogn_2 - sumaLogn*sumaLogn));
-    H = Number(H_.toFixed(2));
+    H = Number(H_.toFixed(3));
 
     infoHtxt = document.getElementById('infoHtxt');
 
