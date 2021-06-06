@@ -1255,11 +1255,16 @@ const podelaNniza = () => {
         txtWpod.value = 'Pokušajte ponovo sa generisanjem podnizova...';
         }
 
+        /*Reset*/
+        txtHurst.value = null;
+        infoHtxt = document.getElementById('infoHtxt');
+        infoHtxt.innerHTML = '';
+
     }
 
     //console.log(N);
     //console.log(brojPodnizova2);
-    console.log(noviNeNultiNiz);
+    //console.log(noviNeNultiNiz);
 
     document.getElementById('brPodnizova').innerHTML = `Broj podnizova je sada: ${brojPodnizova2}`;
 
@@ -1623,7 +1628,10 @@ const proA = () => {
     H_ = Number((s*sumaLognLogRS - sumaLogn*sumaLogRS)/(s*sumaLogn_2 - sumaLogn*sumaLogn));
     H = Number(H_.toFixed(2));
 
+    /*
     infoHtxt = document.getElementById('infoHtxt');
+    infoHtxt.innerHTML = '';
+    */
 
     if(H >= 0 && H <= 1 && typeof(H) !== 'NaN'){
 
@@ -1635,31 +1643,23 @@ const proA = () => {
 
     } else {
 
-        txtHurst.value = 'Desila se neuobičajena greška. Klikinite na dugme Obrisati i pokušajte ponovo. Neki od mogućih uzroka su pojava više NaN vrednosti ili semantičke greške u kodu.';
+        txtHurst.value = H;
         console.log(`Desila se neuobičajena greška. Klikinite na dugme Obrisati i pokušajte ponovo. Neki od mogućih uzroka su pojava više NaN vrednosti ili semantičke greške u kodu.`);
         console.log(`Vrednost H parametra je:  ${H}`);
 
         infoHtxt.innerHTML = `
-        Desila se neuobičajena greška u izračunavanju H parametra. 
+        Desila se neuobičajena greška pri izračunavanju H parametra. 
         </br>
-        Hurstov parametar je: ˘${H}
+        Hurstov parametar je: ${H}
+        </br>1
         </br>
-        Klikinite na dugme Obrisati i pokušajte ponovo. 
+        Program ima dosta NaN vrednosti, pa je i rezultat NaN.
         </br>
+        One nastaju ako su svi elementi podniza sastavljena od nula.
         </br>
-        Neki od mogućih uzroka su: 
+        Tako je R = 0; S = 0, a odnos R/S = 0/0, tj. vrednost je NaN.
         </br>
-        </br>
-         - pojava više NaN vrednosti
-        </br>
-         - semantičke greške u kodu
-        </br>
-         - neodgovarajući opseg vrednosti vremenske serije
-        </br>
-        </br>
-        Proverite unos vremenske serije ili izvršite određene izmene na njoj.
-        </br>
-        Proverite tačnost *.json niza. 
+        <b>Bolja opcija je filtriranje niza. </br>
         `;
         
     }

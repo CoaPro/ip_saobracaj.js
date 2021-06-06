@@ -105,3 +105,8 @@ input:hover, #btnPrikazNiza:hover, #btnPrikazNeNulaElemenataNiza:hover, #btnBris
 #infoTxt, #infoHtxt, #infoTxtV{
     font-size: 70%;
 }
+
+#btnProracunA {
+    margin-bottom: 0.4em;
+    background-color: coral;
+}
