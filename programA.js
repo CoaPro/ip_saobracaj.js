@@ -118,6 +118,7 @@ const brisanje = ()  => {
     window.location.reload(true); 
 };
 
+
 const prikazNiza = () => {
     /*Globalna promenljiva*/
     niz = JSON.parse(txtA.value);
@@ -177,9 +178,17 @@ const fNoviNiz = () => {
 
 // Podela niza sa svim elementima na podnizove sa NASUMIČNIM brojem elemenata
 
+/*
+6.6.2021. Ned. 
+Novo proširenje programa 
+*/
+
 function podelaNiza(){
 
-        /*NOVOOOOOOOOO */
+        /*
+        NOVOOOOOOOOO 
+        6.6.2021. Ned. 
+        */
 
         /*Globalna promenljiva*/
     
@@ -282,9 +291,6 @@ function podelaNiza(){
        //filtriraniNiz = nNizz.filter(x => x > 0);
 
        
-
-        
-        
         podnizR = new Array();
     
         nasumicniBroj = (min, max) => {
