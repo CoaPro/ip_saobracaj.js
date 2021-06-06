@@ -68,7 +68,10 @@ Uvid u greške i početak ispravljanja pojedinih delova koda...
     brElPodnizova = podnizR.length;
 
 6.6.2021. Ned. 
-    Ažuriranja i dodatna porširenja programa...    
+    Ažuriranja i dodatna proširenja programa:
+        Pičetak uvođenja mogućnosti proračuna i prikaza niza sa svim elementima, 
+        tj. nefiltriranog niza. 
+        ...    
         
 */
 //Odabir fajla tj. JSON niza i prikaz u txtA
