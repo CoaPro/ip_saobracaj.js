@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP saobraćaj | Aleksandar Luković</title>
+    <link rel="stylesheet" href="css/stil.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
+</head>
+<body>
+    <div class="container">
+
+        <div class="div-a a0">
+
+            <div>
+            <p>Odaberite JSON niz | Vrednosti IP paketa Wireshark I/O grafika: </p>
+            </div> 
+
+            <div>
+
+            <input type="file">
+            <textarea id="txtA"></textarea>
+
+            </div>  
+
+            <div class="dugmad">
+
+            <button id="btnPrikazNiza" onclick="prikazNiza()">Prikaz niza</button>
+            <button id="btnPrikazNeNulaElemenataNiza" onclick="prikazNeNulaElemenata()">Prikaz elemenata različitih od nule</button>
+            <button id="btnBrisanje" onclick="brisanje()">Brisanje</button>
+
+            </div>
+
+        </div>
+
+        <div class="div-a a1">
+
+            <p>Elementi JSON niza | Vrednosti Wireshark I/O grafika: </p>
+            <textarea id="txtB"></textarea>
+            <p id="brElNiza"></p>
+            <hr>
+
+        </div>
+
+        <div class="div-a a2">
+
+            <div >
+
+                <ul class="dugmad2">
+
+                    <li id="liNoviNiz" onclick="fNoviNiz()">Niz svih elemenata</li>
+                    <li id="liPodelaNiza" onclick="podelaNiza()">Nasumučna podela niza</li>
+
+                    <li id="linNniz" onclick="nNiz()">Niz elemenata različitih od nule</li>
+                    <li id="linPodelaNniza" onclick="podelaNniza()">Podela niza elemenata različitih od nule</li>
+
+                </ul>
+                
+            </div>
+
+            <div>
+
+                <p>Niz sa datim vrednostima paketa tj. celokupna vremenska serija:  </p>
+                <textarea id="txtC"></textarea>
+                <p id="brPodnizova"></p>
+                
+            </div>
+
+            <hr>
+
+        </div>
+
+        <div class="div-a a3">
+
+                <div>
+                <p>Izračunavanje Hurstovog parametra</p>
+                <button id="btnProracun" onclick="pro()">Proračun</button>
+                <button id="btnProracun" onclick="proA()">Proračun A</button>
+                <hr>
+
+                </div>
+
+                <div id="podaci">
+                    
+                    <div>
+                        <p>Broj elemenata vremenske serije (N): </p>
+                        <input  id="txtN" type="text"></input>
+                    </div>
+
+                    <div>
+                        <p>Zbir svih elemenata vremenske serije: </p>
+                        <input  id="txtZbir" type="text"></input>
+                    </div>
+
+                    <div>
+                        <p>Srednja vrednost elemenata celokupne vremenske serije: </p>
+                        <input  id="txtSrVr" type="text"></input>
+                    </div>
+
+                    <div>
+                        <p>Broj podnizova - grupa (A) je: </p>
+                        <input  id="txtBrPod" type="text"></input>
+                    </div>
+
+                    <div>
+                        <p>Prikaz broja članova podnizova (n): </p>
+                        <textarea  id="txtnPod" type="text"></textarea>
+                    </div>
+
+                    <div>
+                        <p>Prikaz zbira podnizova: </p>
+                        <textarea  id="txtZbirPod" type="text"></textarea>
+                    </div>
+
+                    <div>
+                        <p>Prikaz srednjih vrednosti podnizova: </p>
+                        <textarea  id="txtSrVrPod" type="text"></textarea>
+                    </div>
+
+                    <div>
+                        <p>Prikaz kumulativnih devijacija svakog podniza (w): </p>
+                        <!-- <p id="infoTxt">Vrednosti su filtrirane (> 0)* </p> -->
+                        <textarea  id="txtWpod" type="text"></textarea>
+                    </div>
+
+                    <div>
+                        <p>Prikaz opsega podnizova (R): </p>
+                        <textarea  id="txtRpod" type="text"></textarea>
+                    </div>
+
+                    <div>
+                        <p>Prikaz standardne devijacije podnizova (S): </p>
+                        <textarea  id="txtSpod" type="text"></textarea>
+                    </div>
+
+                    <div>
+                        <p>Prikaz R/S odnosa podnizova: </p>
+                        <textarea  id="txtRSpod" type="text"></textarea>
+                    </div>
+
+                    <div>
+                        <p>Prikaz logaritamskog R/S odnosa podnizova: </p>
+                        <textarea  id="txtLogRSpod" type="text"></textarea>
+                    </div>
+
+                    <div>
+                        <p>Usrednjavanje R/S odnosa: </p>
+                        <input  id="txtUsrednjavanje" type="text">
+                    </div>
+
+                    <div>
+                        <p>Najbliža celobrojna vrednost (s) za logN:  </p>
+                        <p id="infoTxt">Osnova za logN je 2</p>
+                        <input  id="txtNajCelVred" type="text">
+                    </div>
+
+                    <div>
+                        <p>Prikaz logaritamskih vrednosti broja (n) elemenata grupa: </p>
+                        <textarea id="txtLogn" type="text"></textarea>
+                    </div>
+
+                    <div>
+                        <p>Prikaz kvadrata logaritamskih vrednosti broja (n) elemenata grupa: </p>
+                        <textarea id="txtLogn_2" type="text"></textarea>
+                        <p id="infoTxt">Vrednosti suma su filtrirane - različite su od tipa NaN (!== NaN)* </p>
+                    </div>
+
+                    <div>
+                        <p>Hurstov parametar: </p>
+                        <input id="txtHurst" type="text">
+                        <p id="infoHtxt"></p>
+                    </div>
+                    
+                </div>
+                
+        </div>
+
+        <div class="div-a a4">
+
+            <p>Vizuelizacija podataka - RS dijagram:  </p>
+
+            <p id="infoTxtV"></p>
+        
+            <canvas id="grafik" width="300" height="300"></canvas>
+
+
+        </div>
+
+        <div class="div-a a5">
+
+                <p>Vizuelizacija podataka - prikaz svih vrednosti: </p>
+
+                <p id="infoTxtV"></p>
+        
+                <canvas id="grafik2" width="300" height="300"></canvas>
+                
+        </div>
+
+    </div>
+
+    <!-- <script src="programDemo.js"></script> -->
+     <script src="programA.js"></script>
+</body>
+</html>
