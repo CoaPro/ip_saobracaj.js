@@ -59,7 +59,6 @@ Deo JavaScript koda za generisanje nasumičnog broja:
 U okviru ovog niza su obuhvaćeni i elementi čija je vrednost paketa nula. 
 
 Korisnik ima mogućnost filtriranja datog niza i prikaza niza elemenata različitih od nule, pritiskom na instoimeno dugme. 
-**U ovom programu biće razmatran samo niz elemenata različitih od nule.**
 Upravo je taj niz, u stvari vremenska serija za koju je potrebno odrediti **Hurstov parametar**. 
 Podnizovi (grupe) vremenske serije su nasumično određeni funkcijom *Random()*, a imaju od dva do četiri elemenata. 
 <br/>
