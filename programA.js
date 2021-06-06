@@ -69,7 +69,7 @@ Uvid u greške i početak ispravljanja pojedinih delova koda...
 
 6.6.2021. Ned. 
     Ažuriranja i dodatna proširenja programa:
-        Pičetak uvođenja mogućnosti proračuna i prikaza niza sa svim elementima, 
+        Početak uvođenja mogućnosti proračuna i prikaza niza sa svim elementima, 
         tj. nefiltriranog niza. 
         ...    
         
