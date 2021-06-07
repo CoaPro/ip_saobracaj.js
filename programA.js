@@ -71,7 +71,11 @@ Uvid u greške i početak ispravljanja pojedinih delova koda...
     Ažuriranja i dodatna proširenja programa:
         Početak uvođenja mogućnosti proračuna i prikaza niza sa svim elementima, 
         tj. nefiltriranog niza. 
-        ...    
+        ...   
+        
+7.6.2021. Pon. 
+    Ažuriranja i dodatna proširenja programa:
+    Chart.js | myChart.destroy();      
         
 */
 //Odabir fajla tj. JSON niza i prikaz u txtA
@@ -1309,8 +1313,8 @@ function RSstatistika(){
     <br/> 
     y - osa: logRS`;
 
-    let graf = document.getElementById('grafik').getContext('2d');
-    let vizuelizacijaPodataka = new Chart(graf, {
+    grafA = document.getElementById('grafik').getContext('2d');
+    RSstat = new Chart(grafA, {
         type: 'line',
         data: {
             labels: lognSortiraniNiz, //ceoNizLogn, testAniz
@@ -1350,7 +1354,9 @@ function RSstatistika(){
             }
 
         }
-    });   
+    });  
+
+    //RSstat.destroy();
 
 }
 
@@ -1361,8 +1367,9 @@ function vizuelizacijaSvihPodataka(){
     </br> 
     y - osa: logRS`;
 
-    let graf = document.getElementById('grafik2').getContext('2d');
-    let vizuelizacijaPodataka = new Chart(graf, {
+    graf = document.getElementById('grafik2').getContext('2d');
+    
+    vizuelizacijaPodataka = new Chart(graf, {
         type: 'bar',
         data: {
             labels: ceoNizLogn, //ceoNizLogn, testAniz
@@ -1397,8 +1404,167 @@ function vizuelizacijaSvihPodataka(){
         }
     });
 
+    //vizuelizacijaPodataka.destroy(); 
+
 }
 
+//Proračun celog niza
+const proA = () => {
+
+    /* Definisanje promenljivih: */
+
+    /*Globalna promenljiva*/
+    //let niz = JSON.parse(txtA.value);
+    //let noviNiz = niz.map(({'All Packets': element}) => element);
+
+ 
+    //let noviNeNultiNiz = noviNiz.filter(neNulti);
+
+    txtN = document.getElementById('txtN');
+    txtZbir = document.getElementById('txtZbir');
+    txtSrVr = document.getElementById('txtSrVr');
+
+    //Ukupan broj elemenata nenultog niza je: 
+    txtN.value = Na;
+
+    //Zbir svih elemenata nenultog niza je: 
+    //zbirVS, srVrVS;
+
+    zbirVS = noviNiz.filter(a => a >= 0).reduce((a, b) => a + b, 0);
+    txtZbir.value = zbirVS;
+    srVrVS = Number((zbirVS / Na).toFixed(2));
+    txtSrVr.value = srVrVS;
+
+    //Broj podnizova je: 
+    //brPodnizova;
+
+    //console.log(brojPodnizova2);
+    txtBrPod.value = brojPodnizova2;
+
+    //console.log(nNizz);
+    console.log(noviNiz);
+
+    //Prikaz broja elemenata(članova) svakog podniza
+    txtnPod.value = brElPodnizovaTekst;
+
+    //Prikaz zbira svakog podniza
+    txtZbirPod.value = zbirPodnizaTekst;
+
+    //Prikaz srednje vrednosti svakog podniza;
+    txtSrVrPod.value = srVrPodTekst;
+
+    //Prikaz kumulativnih devijacija podnizova
+    txtWpod.value = wTxt;
+
+    //Prikaz opsega svake grupe
+    txtRpod.value = opsegRtxt;
+
+    //Prikaz standardne devijacije svake grupe
+    txtSpod.value = vrStxt; 
+
+    //Prikaz R/S opsega svake grupe
+    txtRSpod.value = vrRStxt;
+
+    //Prikaz logaritamskog R/S opsega svake grupe
+    txtLogRSpod.value = logRStxt;
+
+    //Usrednjavanje R/S odnosa
+    sumaUsrednjavanje = Number((nizUsrednjavanjeF.filter(x => x >= 0).reduce((x, y) => x + y, 0)).toFixed(2));
+    sumaUsrednjavanjeA = Number((sumaUsrednjavanje / A).toFixed(2));
+    txtUsrednjavanje.value = sumaUsrednjavanjeA;
+
+    //console.log(A);
+    //console.log(Number(usrednjavanje));
+    //console.log(usrednjavanjeA);
+
+    //Prikaz najbliže celobrojne vrednosti s za logN, gde je osnova logaritma 2
+    txtNajCelVred.value = s;
+
+    //Prikaz logaritamskih vrednosti broja (n) elemenata grupa
+    txtLogn.value = lognTxt; 
+
+    //Prikaz kvadrata logaritamskih vrednosti broja (n) elemenata grupa
+    txtLogn_2.value = logn_2Txt;
+
+    //Hurstov parametar: 
+    H_ = Number((s*sumaLognLogRS - sumaLogn*sumaLogRS)/(s*sumaLogn_2 - sumaLogn*sumaLogn));
+    H = Number(H_.toFixed(2));
+
+    /*
+    infoHtxt = document.getElementById('infoHtxt');
+    infoHtxt.innerHTML = '';
+    */
+
+    if(H >= 0 && H <= 1 && typeof(H) !== 'NaN'){
+
+    console.log(`Hurstov parametar je: ${H}`);
+    txtHurst.value = H;
+    
+    /*
+    
+    7.6.2021. Pon. 
+    Resetovanje grafika 
+    
+    */
+    //RSstat;
+    //vizuelizacijaPodataka;
+
+    RSstatistika();
+    vizuelizacijaSvihPodataka();
+
+    } else {
+
+        txtHurst.value = H;
+        console.log(`Desila se neuobičajena greška. Klikinite na dugme Obrisati i pokušajte ponovo. Neki od mogućih uzroka su pojava više NaN vrednosti ili semantičke greške u kodu.`);
+        console.log(`Vrednost H parametra je:  ${H}`);
+
+        infoHtxt.innerHTML = `
+        Desila se neuobičajena greška pri izračunavanju H parametra. 
+        </br>
+        Hurstov parametar je: ${H}
+        </br>1
+        </br>
+        Program ima dosta NaN vrednosti, pa je i rezultat NaN.
+        </br>
+        One nastaju ako su svi elementi podniza sastavljena od nula.
+        </br>
+        Tako je R = 0; S = 0, a odnos R/S = 0/0, tj. vrednost je NaN.
+        </br>
+        <b>Bolja opcija je filtriranje niza. </br>
+        `;
+        
+    }
+
+    /*
+    console.log(`NizUsrednjavanje:  ${nizUsrednjavanje}`);
+    console.log(`NizUsrednjavanjeF:  ${nizUsrednjavanjeF}`);
+    console.log(`sumaUsrednjavanje:  ${sumaUsrednjavanje}`);
+    console.log(`A:  ${A}`);
+    console.log(`sumaUsrednjavanjeA:  ${sumaUsrednjavanjeA}`);
+    */
+
+   //H_ = (s*sumaLognLogRS - sumaLogn*sumaLogRS)/(s*sumaLogn_2 - sumaLogn*sumaLogn);
+
+   console.log(`sumaLognLogRS: ${sumaLognLogRS}`);
+   console.log(`sumaLogn: ${sumaLogn}`);
+   console.log(`sumaLogRS: ${sumaLogRS}`);
+   console.log(`sumaLogn_2: ${sumaLogn_2}`);
+
+   //console.log(`Ceo Niz Logn ${ceoNizLogn} i dužina niza ${ceoNizLogn.length}`);
+   //console.log(`F Ceo Niz Logn ${fCeoNizLogn} i dužina niza ${fCeoNizLogn.length}`);
+
+   console.log(nizJedinstvenihElemenata); 
+   console.log(`x - osa: ${lognNizJedinstvenihElemenata}`);
+   console.log(`y - osa: ${logRSnizJedinstvenihElemenata}`);
+
+   console.log(`nizSumaLogn: ${nizSumaLogn}`);
+   console.log(`SumaLogn: ${sumaLogn}`);
+   console.log(`nizSumaLogn_2: ${nizSumaLogn_2}`);
+   console.log(`sumaLogn_2: ${sumaLogn_2}`);
+  
+};
+
+//Proračun nenultog niza
 const pro = () => {
 
     /* Definisanje promenljivih: */
@@ -1476,8 +1642,8 @@ const pro = () => {
     txtLogn_2.value = logn_2Txt;
 
     //Hurstov parametar: 
-   H_ = Number((s*sumaLognLogRS - sumaLogn*sumaLogRS)/(s*sumaLogn_2 - sumaLogn*sumaLogn));
-   H = Number(H_.toFixed(2));
+    H_ = Number((s*sumaLognLogRS - sumaLogn*sumaLogRS)/(s*sumaLogn_2 - sumaLogn*sumaLogn));
+    H = Number(H_.toFixed(2));
 
     infoHtxt = document.getElementById('infoHtxt');
 
@@ -1485,7 +1651,17 @@ const pro = () => {
 
     console.log(`Hurstov parametar je: ${H}`);
     txtHurst.value = H;
+
+    /*
     
+    7.6.2021. Pon. 
+    Resetovanje grafika 
+    
+    */
+
+    RSstat.destroy();
+    vizuelizacijaPodataka.destroy();
+
     RSstatistika();
     vizuelizacijaSvihPodataka();
 
@@ -1549,149 +1725,4 @@ const pro = () => {
   
 };
 
-const proA = () => {
 
-    /* Definisanje promenljivih: */
-
-    /*Globalna promenljiva*/
-    //let niz = JSON.parse(txtA.value);
-    //let noviNiz = niz.map(({'All Packets': element}) => element);
-
- 
-    //let noviNeNultiNiz = noviNiz.filter(neNulti);
-
-    txtN = document.getElementById('txtN');
-    txtZbir = document.getElementById('txtZbir');
-    txtSrVr = document.getElementById('txtSrVr');
-
-    //Ukupan broj elemenata nenultog niza je: 
-    txtN.value = Na;
-
-    //Zbir svih elemenata nenultog niza je: 
-    //zbirVS, srVrVS;
-
-    
-    zbirVS = noviNiz.filter(a => a > 0).reduce((a, b) => a + b, 0);
-    txtZbir.value = zbirVS;
-    srVrVS = Number((zbirVS / Na).toFixed(2));
-    txtSrVr.value = srVrVS;
-
-    //Broj podnizova je: 
-    //brPodnizova;
-
-    //console.log(brojPodnizova2);
-    txtBrPod.value = brojPodnizova2;
-
-    //console.log(nNizz);
-    console.log(noviNiz);
-
-    //Prikaz broja elemenata(članova) svakog podniza
-    txtnPod.value = brElPodnizovaTekst;
-
-    //Prikaz zbira svakog podniza
-    txtZbirPod.value = zbirPodnizaTekst;
-
-    //Prikaz srednje vrednosti svakog podniza;
-    txtSrVrPod.value = srVrPodTekst;
-
-    //Prikaz kumulativnih devijacija podnizova
-    txtWpod.value = wTxt;
-
-    //Prikaz opsega svake grupe
-    txtRpod.value = opsegRtxt;
-
-    //Prikaz standardne devijacije svake grupe
-    txtSpod.value = vrStxt; 
-
-    //Prikaz R/S opsega svake grupe
-    txtRSpod.value = vrRStxt;
-
-    //Prikaz logaritamskog R/S opsega svake grupe
-    txtLogRSpod.value = logRStxt;
-
-    //Usrednjavanje R/S odnosa
-    sumaUsrednjavanje = Number((nizUsrednjavanjeF.reduce((x, y) => x + y)).toFixed(2));
-    sumaUsrednjavanjeA = Number((sumaUsrednjavanje / A).toFixed(2));
-    txtUsrednjavanje.value = sumaUsrednjavanjeA;
-
-    //console.log(A);
-    //console.log(Number(usrednjavanje));
-    //console.log(usrednjavanjeA);
-
-    //Prikaz najbliže celobrojne vrednosti s za logN, gde je osnova logaritma 2
-    txtNajCelVred.value = s;
-
-    //Prikaz logaritamskih vrednosti broja (n) elemenata grupa
-    txtLogn.value = lognTxt; 
-
-    //Prikaz kvadrata logaritamskih vrednosti broja (n) elemenata grupa
-    txtLogn_2.value = logn_2Txt;
-
-    //Hurstov parametar: 
-    H_ = Number((s*sumaLognLogRS - sumaLogn*sumaLogRS)/(s*sumaLogn_2 - sumaLogn*sumaLogn));
-    H = Number(H_.toFixed(2));
-
-    /*
-    infoHtxt = document.getElementById('infoHtxt');
-    infoHtxt.innerHTML = '';
-    */
-
-    if(H >= 0 && H <= 1 && typeof(H) !== 'NaN'){
-
-    console.log(`Hurstov parametar je: ${H}`);
-    txtHurst.value = H;
-    
-    RSstatistika();
-    vizuelizacijaSvihPodataka();
-
-    } else {
-
-        txtHurst.value = H;
-        console.log(`Desila se neuobičajena greška. Klikinite na dugme Obrisati i pokušajte ponovo. Neki od mogućih uzroka su pojava više NaN vrednosti ili semantičke greške u kodu.`);
-        console.log(`Vrednost H parametra je:  ${H}`);
-
-        infoHtxt.innerHTML = `
-        Desila se neuobičajena greška pri izračunavanju H parametra. 
-        </br>
-        Hurstov parametar je: ${H}
-        </br>1
-        </br>
-        Program ima dosta NaN vrednosti, pa je i rezultat NaN.
-        </br>
-        One nastaju ako su svi elementi podniza sastavljena od nula.
-        </br>
-        Tako je R = 0; S = 0, a odnos R/S = 0/0, tj. vrednost je NaN.
-        </br>
-        <b>Bolja opcija je filtriranje niza. </br>
-        `;
-        
-    }
-
-    /*
-    console.log(`NizUsrednjavanje:  ${nizUsrednjavanje}`);
-    console.log(`NizUsrednjavanjeF:  ${nizUsrednjavanjeF}`);
-    console.log(`sumaUsrednjavanje:  ${sumaUsrednjavanje}`);
-    console.log(`A:  ${A}`);
-    console.log(`sumaUsrednjavanjeA:  ${sumaUsrednjavanjeA}`);
-    */
-
-   //H_ = (s*sumaLognLogRS - sumaLogn*sumaLogRS)/(s*sumaLogn_2 - sumaLogn*sumaLogn);
-
-   console.log(`sumaLognLogRS: ${sumaLognLogRS}`);
-   console.log(`sumaLogn: ${sumaLogn}`);
-   console.log(`sumaLogRS: ${sumaLogRS}`);
-   console.log(`sumaLogn_2: ${sumaLogn_2}`);
-
-   //console.log(`Ceo Niz Logn ${ceoNizLogn} i dužina niza ${ceoNizLogn.length}`);
-   //console.log(`F Ceo Niz Logn ${fCeoNizLogn} i dužina niza ${fCeoNizLogn.length}`);
-
-   console.log(nizJedinstvenihElemenata); 
-   console.log(`x - osa: ${lognNizJedinstvenihElemenata}`);
-   console.log(`y - osa: ${logRSnizJedinstvenihElemenata}`);
-
-   console.log(`nizSumaLogn: ${nizSumaLogn}`);
-   console.log(`SumaLogn: ${sumaLogn}`);
-   console.log(`nizSumaLogn_2: ${nizSumaLogn_2}`);
-   console.log(`sumaLogn_2: ${sumaLogn_2}`);
-  
-};
