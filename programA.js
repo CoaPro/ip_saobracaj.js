@@ -1503,45 +1503,44 @@ const proA = () => {
     
     */
 
-    RSstatistika();
-    vizuelizacijaSvihPodataka();
-
-    RSstat.destroy();
-    vizuelizacijaPodataka.destroy();
 
     RSstatistika();
     vizuelizacijaSvihPodataka();
 
-    RSstat.destroy();
-    vizuelizacijaPodataka.destroy();
+    //RSstat.destroy();
+    //vizuelizacijaPodataka.destroy();
 
-    RSstatistika();
-    vizuelizacijaSvihPodataka();
-
-    RSstat.destroy();
-    vizuelizacijaPodataka.destroy();
-
-    RSstatistika();
-    vizuelizacijaSvihPodataka();
-
-    RSstat.destroy();
-    vizuelizacijaPodataka.destroy();
-
-    RSstatistika();
-    vizuelizacijaSvihPodataka();
-
-    RSstat.destroy();
-    vizuelizacijaPodataka.destroy();
-
-    RSstatistika();
-    vizuelizacijaSvihPodataka();
     
-    RSstat.destroy();
-    vizuelizacijaPodataka.destroy();
+    /*
 
-    RSstatistika();
-    vizuelizacijaSvihPodataka();
+    for(let i = 0; i < nekiBroj; i++){
 
+        RSstatistika();
+        vizuelizacijaSvihPodataka();
+
+        RSstat.update();
+        vizuelizacijaPodataka.update();
+    
+        RSstat.destroy();
+        vizuelizacijaPodataka.destroy(); 
+
+    }
+    */
+
+    /*
+    for(let i = 0; i < 100; i++){
+
+        RSstatistika();
+        vizuelizacijaSvihPodataka();
+    
+        RSstat.destroy();
+        vizuelizacijaPodataka.destroy();
+    
+        RSstatistika();
+        vizuelizacijaSvihPodataka();
+
+    }
+    */
 
     } else {
 
