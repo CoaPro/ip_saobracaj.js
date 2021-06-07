@@ -353,7 +353,7 @@ function podelaNiza(){
         
             //Zbir svakog podniza
             txtZbirPod = document.getElementById('txtZbirPod');
-            zbirPodniza = podnizR.reduce((x,y) => x + y);
+            zbirPodniza = podnizR.filter(x => x >= 0).reduce((x,y) => x + y, 0);
             zbirPodnizaTekst += zbirPodniza + '\n';
             //txtZbirPod.value = zbirPodnizovaTekst;
     
@@ -417,7 +417,7 @@ function podelaNiza(){
                 opsegRtxt += R + '\n';
     
                 //Proračun standardne devijacije svake grupe
-                S_ = Math.sqrt((1/brElPodnizova)*((x1 - srVrPod)**2 + (x2 - srVrPod)**2));
+                S_ = Math.sqrt((1 / brElPodnizova)*((x1 - srVrPod)**2 + (x2 - srVrPod)**2));
                 S = Number(S_.toFixed(2));
                 
                 vrStxt += S + '\n'; 
@@ -524,7 +524,7 @@ function podelaNiza(){
                 opsegRtxt += R + '\n';
     
                 //Proračun standardne devijacije svake grupe
-                S_ = Math.sqrt((1/brElPodnizova)*((x1 - srVrPod)**2 + (x2 - srVrPod)**2 + (x3 - srVrPod)**2));
+                S_ = Math.sqrt((1 / brElPodnizova)*((x1 - srVrPod)**2 + (x2 - srVrPod)**2 + (x3 - srVrPod)**2));
                 S = Number(S_.toFixed(2)); 
     
                 vrStxt += S + '\n'; 
@@ -629,7 +629,7 @@ function podelaNiza(){
                 opsegRtxt += R + '\n';
     
                 //Proračun standardne devijacije svake grupe
-                S_ = Math.sqrt((1/brElPodnizova)*((x1 - srVrPod)**2 + (x2 - srVrPod)**2 + (x3 - srVrPod)**2 + (x4 - srVrPod)**2));
+                S_ = Math.sqrt((1 / brElPodnizova)*((x1 - srVrPod)**2 + (x2 - srVrPod)**2 + (x3 - srVrPod)**2 + (x4 - srVrPod)**2));
                 S = Number(S_.toFixed(2)); 
     
                 vrStxt += S + '\n'; 
@@ -1432,7 +1432,7 @@ const proA = () => {
     //Zbir svih elemenata nenultog niza je: 
     //zbirVS, srVrVS;
 
-    zbirVS = noviNiz.filter(a => a >= 0).reduce((a, b) => a + b, 0);
+    zbirVS = noviNiz.filter(a => a > 0).reduce((a, b) => a + b, 0);
     txtZbir.value = zbirVS;
     srVrVS = Number((zbirVS / Na).toFixed(2));
     txtSrVr.value = srVrVS;
