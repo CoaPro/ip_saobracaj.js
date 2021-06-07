@@ -448,7 +448,7 @@ function podelaNiza(){
                 logn_2 = Number((logn**2).toFixed(2));
                 logn_2Txt += logn_2 + '\n';
     
-                //Proračun suma potrebnh za određivanje Hurstovog parametra
+                //Proračun suma potrebnih za određivanje Hurstovog parametra
     
                 //Suma elemenata logn i logn*logn
     
@@ -458,27 +458,29 @@ function podelaNiza(){
                 //**fCeoNizLogn = ceoNizLogn.filter(x => x >= 0);
     
                 nizSumaLogn = ceoNizLogn.slice(0, s);
-                sumaLogn = Number((nizSumaLogn.reduce((x, y) => x + y)).toFixed(2));
+                sumaLogn = Number((nizSumaLogn.filter(x => x >= 0).reduce((x, y) => x + y, 0)).toFixed(2));
                 nizSumaLogn_2 = nizSumaLogn.map(x => x*x);
-                sumaLogn_2 = Number((nizSumaLogn_2.reduce((x, y) => x + y)).toFixed(2));
+                sumaLogn_2 = Number((nizSumaLogn_2.filter(x => x >= 0).reduce((x, y) => x + y, 0)).toFixed(2));
     
                 //Suma elemenata logRS
     
                 //Niz sastavnjen od svih logRS vrednosti
                 ceoNizLogRS.push(logRS);
                 //Filtriranje niza v3
-                //fCeoNizLogRS = ceoNizLogRS.filter(x => x >= 0);
-                nizSumaLogRS = ceoNizLogRS.slice(0, s);
+                //+7.6.2021. 
+                fCeoNizLogRS = ceoNizLogRS.filter(x => x >= 0);
+                nizSumaLogRS = fCeoNizLogRS.slice(0, s);
     
-                sumaLogRS = Number((nizSumaLogRS.reduce((x, y) => x + y)).toFixed(2));
+                sumaLogRS = Number((nizSumaLogRS.filter(x => x >= 0).reduce((x, y) => x + y, 0)).toFixed(2));
     
                 //Suma elemenata logn*logRS
                 vrLognLogRS = Number((logn * logRS).toFixed(2));
                 ceoNizSumaLognLogRS.push(vrLognLogRS);
                 //Filtriranje niza v3
-                //fCeoNizSumaLognLogRS = ceoNizSumaLognLogRS.filter(x => x >= 0);
-                nizSumaLognLogRS = ceoNizSumaLognLogRS.slice(0, s);
-                sumaLognLogRS = Number((nizSumaLognLogRS.reduce((x, y) => x + y)).toFixed(2));
+                //+7.6.2021. 
+                fCeoNizSumaLognLogRS = ceoNizSumaLognLogRS.filter(x => x >= 0);
+                nizSumaLognLogRS = fCeoNizSumaLognLogRS.slice(0, s);
+                sumaLognLogRS = Number((nizSumaLognLogRS.filter(x => x >= 0).reduce((x, y) => x + y, 0)).toFixed(2));
     
 
                 /* AAAA
@@ -553,37 +555,39 @@ function podelaNiza(){
                 logn_2 = Number((logn**2).toFixed(2));
                 logn_2Txt += logn_2 + '\n';
     
-                //Proračun suma potrebnh za određivanje Hurstovog parametra
+                //Proračun suma potrebnih za određivanje Hurstovog parametra
     
                 //Suma elemenata logn i logn*logn
     
                 //Niz sastavljen od svih logn vrednosti
                 ceoNizLogn.push(logn);
                 //Filtriranje niza v3
-                //fCeoNizLogn = ceoNizLogn.filter(x => x >= 0);
+                //**fCeoNizLogn = ceoNizLogn.filter(x => x >= 0);
     
                 nizSumaLogn = ceoNizLogn.slice(0, s);
-                sumaLogn = Number((nizSumaLogn.reduce((x, y) => x + y)).toFixed(2));
+                sumaLogn = Number((nizSumaLogn.filter(x => x >= 0).reduce((x, y) => x + y, 0)).toFixed(2));
                 nizSumaLogn_2 = nizSumaLogn.map(x => x*x);
-                sumaLogn_2 = Number((nizSumaLogn_2.reduce((x, y) => x + y)).toFixed(2));
+                sumaLogn_2 = Number((nizSumaLogn_2.filter(x => x >= 0).reduce((x, y) => x + y, 0)).toFixed(2));
     
                 //Suma elemenata logRS
     
                 //Niz sastavnjen od svih logRS vrednosti
                 ceoNizLogRS.push(logRS);
                 //Filtriranje niza v3
-                //fCeoNizLogRS = ceoNizLogRS.filter(x => x >= 0);
-                nizSumaLogRS = ceoNizLogRS.slice(0, s);
+                //+7.6.2021. 
+                fCeoNizLogRS = ceoNizLogRS.filter(x => x >= 0);
+                nizSumaLogRS = fCeoNizLogRS.slice(0, s);
     
-                sumaLogRS = Number((nizSumaLogRS.reduce((x, y) => x + y)).toFixed(2));
+                sumaLogRS = Number((nizSumaLogRS.filter(x => x >= 0).reduce((x, y) => x + y, 0)).toFixed(2));
     
                 //Suma elemenata logn*logRS
                 vrLognLogRS = Number((logn * logRS).toFixed(2));
                 ceoNizSumaLognLogRS.push(vrLognLogRS);
                 //Filtriranje niza v3
-                //fCeoNizSumaLognLogRS = ceoNizSumaLognLogRS.filter(x => x >= 0);
-                nizSumaLognLogRS = ceoNizSumaLognLogRS.slice(0, s);
-                sumaLognLogRS = Number((nizSumaLognLogRS.reduce((x, y) => x + y)).toFixed(2));
+                //+7.6.2021. 
+                fCeoNizSumaLognLogRS = ceoNizSumaLognLogRS.filter(x => x >= 0);
+                nizSumaLognLogRS = fCeoNizSumaLognLogRS.slice(0, s);
+                sumaLognLogRS = Number((nizSumaLognLogRS.filter(x => x >= 0).reduce((x, y) => x + y, 0)).toFixed(2));
                 
                 /* AAAA
 
@@ -656,37 +660,39 @@ function podelaNiza(){
                 logn_2 = Number((logn**2).toFixed(2));
                 logn_2Txt += logn_2 + '\n';
             
-                //Proračun suma potrebnh za određivanje Hurstovog parametra
+                //Proračun suma potrebnih za određivanje Hurstovog parametra
     
                 //Suma elemenata logn i logn*logn
     
                 //Niz sastavljen od svih logn vrednosti
                 ceoNizLogn.push(logn);
                 //Filtriranje niza v3
-                //fCeoNizLogn = ceoNizLogn.filter(x => x >= 0);
+                //**fCeoNizLogn = ceoNizLogn.filter(x => x >= 0);
     
                 nizSumaLogn = ceoNizLogn.slice(0, s);
-                sumaLogn = Number((nizSumaLogn.reduce((x, y) => x + y)).toFixed(2));
+                sumaLogn = Number((nizSumaLogn.filter(x => x >= 0).reduce((x, y) => x + y, 0)).toFixed(2));
                 nizSumaLogn_2 = nizSumaLogn.map(x => x*x);
-                sumaLogn_2 = Number((nizSumaLogn_2.reduce((x, y) => x + y)).toFixed(2));
+                sumaLogn_2 = Number((nizSumaLogn_2.filter(x => x >= 0).reduce((x, y) => x + y, 0)).toFixed(2));
     
                 //Suma elemenata logRS
     
                 //Niz sastavnjen od svih logRS vrednosti
                 ceoNizLogRS.push(logRS);
                 //Filtriranje niza v3
-                //fCeoNizLogRS = ceoNizLogRS.filter(x => x >= 0);
-                nizSumaLogRS = ceoNizLogRS.slice(0, s);
+                //+7.6.2021. 
+                fCeoNizLogRS = ceoNizLogRS.filter(x => x >= 0);
+                nizSumaLogRS = fCeoNizLogRS.slice(0, s);
     
-                sumaLogRS = Number((nizSumaLogRS.reduce((x, y) => x + y)).toFixed(2));
+                sumaLogRS = Number((nizSumaLogRS.filter(x => x >= 0).reduce((x, y) => x + y, 0)).toFixed(2));
     
                 //Suma elemenata logn*logRS
                 vrLognLogRS = Number((logn * logRS).toFixed(2));
                 ceoNizSumaLognLogRS.push(vrLognLogRS);
                 //Filtriranje niza v3
-                //fCeoNizSumaLognLogRS = ceoNizSumaLognLogRS.filter(x => x >= 0);
-                nizSumaLognLogRS = ceoNizSumaLognLogRS.slice(0, s);
-                sumaLognLogRS = Number((nizSumaLognLogRS.reduce((x, y) => x + y)).toFixed(2));
+                //+7.6.2021. 
+                fCeoNizSumaLognLogRS = ceoNizSumaLognLogRS.filter(x => x >= 0);
+                nizSumaLognLogRS = fCeoNizSumaLognLogRS.slice(0, s);
+                sumaLognLogRS = Number((nizSumaLognLogRS.filter(x => x >= 0).reduce((x, y) => x + y, 0)).toFixed(2));
                 
                 /* AAAA
 
