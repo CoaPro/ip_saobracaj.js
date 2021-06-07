@@ -1356,8 +1356,6 @@ function RSstatistika(){
         }
     });  
 
-    //RSstat.destroy();
-
 }
 
 function vizuelizacijaSvihPodataka(){
@@ -1403,8 +1401,6 @@ function vizuelizacijaSvihPodataka(){
             }
         }
     });
-
-    //vizuelizacijaPodataka.destroy(); 
 
 }
 
@@ -1506,11 +1502,46 @@ const proA = () => {
     Resetovanje grafika 
     
     */
-    //RSstat;
-    //vizuelizacijaPodataka;
 
     RSstatistika();
     vizuelizacijaSvihPodataka();
+
+    RSstat.destroy();
+    vizuelizacijaPodataka.destroy();
+
+    RSstatistika();
+    vizuelizacijaSvihPodataka();
+
+    RSstat.destroy();
+    vizuelizacijaPodataka.destroy();
+
+    RSstatistika();
+    vizuelizacijaSvihPodataka();
+
+    RSstat.destroy();
+    vizuelizacijaPodataka.destroy();
+
+    RSstatistika();
+    vizuelizacijaSvihPodataka();
+
+    RSstat.destroy();
+    vizuelizacijaPodataka.destroy();
+
+    RSstatistika();
+    vizuelizacijaSvihPodataka();
+
+    RSstat.destroy();
+    vizuelizacijaPodataka.destroy();
+
+    RSstatistika();
+    vizuelizacijaSvihPodataka();
+    
+    RSstat.destroy();
+    vizuelizacijaPodataka.destroy();
+
+    RSstatistika();
+    vizuelizacijaSvihPodataka();
+
 
     } else {
 
