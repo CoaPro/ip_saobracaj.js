@@ -1,0 +1,222 @@
+[
+    {
+      "level": 0,
+      "parent": "",
+      "Topic ": {
+         " Item": "Packet Lengths"
+      },
+      "Count": 4863,
+      "Average": "720",
+      "Min Val": "21",
+      "Max Val": "42",
+      "Rate (ms)": 1474,
+      "Percent": 0,
+      "Burst Rate": 396,
+      "Burst Start": "100%",
+      "FIELD12": "1",
+      "FIELD13": "9300",
+      "FIELD14": 25,
+      "FIELD15": 58,
+      "FIELD16": null
+   },
+    {
+      "level": 1,
+      "parent": "/Packet Lengths",
+      "Topic ": {
+         " Item": "0-19"
+      },
+      "Count": 0,
+      "Average": "-",
+      "Min Val": "-",
+      "Max Val": "-",
+      "Rate (ms)": 0,
+      "Percent": 0,
+      "Burst Rate": 0,
+      "Burst Start": "00%",
+      "FIELD12": "-",
+      "FIELD13": "-",
+      "FIELD14": null,
+      "FIELD15": null,
+      "FIELD16": null
+   },
+    {
+      "level": 1,
+      "parent": "/Packet Lengths",
+      "Topic ": {
+         " Item": "20-39"
+      },
+      "Count": 0,
+      "Average": "-",
+      "Min Val": "-",
+      "Max Val": "-",
+      "Rate (ms)": 0,
+      "Percent": 0,
+      "Burst Rate": 0,
+      "Burst Start": "00%",
+      "FIELD12": "-",
+      "FIELD13": "-",
+      "FIELD14": null,
+      "FIELD15": null,
+      "FIELD16": null
+   },
+    {
+      "level": 1,
+      "parent": "/Packet Lengths",
+      "Topic ": {
+         " Item": "40-79"
+      },
+      "Count": 1744,
+      "Average": "54",
+      "Min Val": "60",
+      "Max Val": "42",
+      "Rate (ms)": 78,
+      "Percent": 0,
+      "Burst Rate": 142,
+      "Burst Start": "35",
+      "FIELD12": "86%",
+      "FIELD13": "0",
+      "FIELD14": 5800,
+      "FIELD15": 25,
+      "FIELD16": 67
+   },
+    {
+      "level": 1,
+      "parent": "/Packet Lengths",
+      "Topic ": {
+         " Item": "80-159"
+      },
+      "Count": 155,
+      "Average": "104",
+      "Min Val": "37",
+      "Max Val": "81",
+      "Rate (ms)": 157,
+      "Percent": 0,
+      "Burst Rate": 13,
+      "Burst Start": "3",
+      "FIELD12": "19%",
+      "FIELD13": "0",
+      "FIELD14": 500,
+      "FIELD15": 0,
+      "FIELD16": 719
+   },
+    {
+      "level": 1,
+      "parent": "/Packet Lengths",
+      "Topic ": {
+         " Item": "160-319"
+      },
+      "Count": 400,
+      "Average": "221",
+      "Min Val": "11",
+      "Max Val": "178",
+      "Rate (ms)": 310,
+      "Percent": 0,
+      "Burst Rate": 33,
+      "Burst Start": "8",
+      "FIELD12": "23%",
+      "FIELD13": "0",
+      "FIELD14": 800,
+      "FIELD15": 1,
+      "FIELD16": 199
+   },
+    {
+      "level": 1,
+      "parent": "/Packet Lengths",
+      "Topic ": {
+         " Item": "320-639"
+      },
+      "Count": 434,
+      "Average": "483",
+      "Min Val": "30",
+      "Max Val": "322",
+      "Rate (ms)": 632,
+      "Percent": 0,
+      "Burst Rate": 35,
+      "Burst Start": "8",
+      "FIELD12": "92%",
+      "FIELD13": "0",
+      "FIELD14": 600,
+      "FIELD15": 1,
+      "FIELD16": 226
+   },
+    {
+      "level": 1,
+      "parent": "/Packet Lengths",
+      "Topic ": {
+         " Item": "640-1279"
+      },
+      "Count": 49,
+      "Average": "908",
+      "Min Val": "29",
+      "Max Val": "643",
+      "Rate (ms)": 1269,
+      "Percent": 0,
+      "Burst Rate": 4,
+      "Burst Start": "1",
+      "FIELD12": "01%",
+      "FIELD13": "0",
+      "FIELD14": 500,
+      "FIELD15": 1,
+      "FIELD16": 222
+   },
+    {
+      "level": 1,
+      "parent": "/Packet Lengths",
+      "Topic ": {
+         " Item": "1280-2559"
+      },
+      "Count": 2081,
+      "Average": "1464",
+      "Min Val": "81",
+      "Max Val": "1286",
+      "Rate (ms)": 1474,
+      "Percent": 0,
+      "Burst Rate": 170,
+      "Burst Start": "42",
+      "FIELD12": "79%",
+      "FIELD13": "1",
+      "FIELD14": 3600,
+      "FIELD15": 25,
+      "FIELD16": 43
+   },
+    {
+      "level": 1,
+      "parent": "/Packet Lengths",
+      "Topic ": {
+         " Item": "2560-5119"
+      },
+      "Count": 0,
+      "Average": "-",
+      "Min Val": "-",
+      "Max Val": "-",
+      "Rate (ms)": 0,
+      "Percent": 0,
+      "Burst Rate": 0,
+      "Burst Start": "00%",
+      "FIELD12": "-",
+      "FIELD13": "-",
+      "FIELD14": null,
+      "FIELD15": null,
+      "FIELD16": null
+   },
+    {
+      "level": 1,
+      "parent": "/Packet Lengths",
+      "Topic ": {
+         " Item": "5120 and greater"
+      },
+      "Count": 0,
+      "Average": "-",
+      "Min Val": "-",
+      "Max Val": "-",
+      "Rate (ms)": 0,
+      "Percent": 0,
+      "Burst Rate": 0,
+      "Burst Start": "00%",
+      "FIELD12": "-",
+      "FIELD13": "-",
+      "FIELD14": null,
+      "FIELD15": null,
+      "FIELD16": null
+   }
+   ]

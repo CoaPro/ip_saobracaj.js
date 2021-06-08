@@ -1,0 +1,197 @@
+[
+  {
+    "Protocol": "Frame",
+    "Percent Packets": "100",
+    "Packets": 772,
+    "Percent Bytes": "100",
+    "Bytes": 229837,
+    "Bits": {
+       "s": "15014.903407172764"
+    },
+    "End Packets": 0,
+    "End Bytes": 0,
+    "End Bits": {
+       "s": "0"
+    }
+ },
+  {
+    "Protocol": "Ethernet",
+    "Percent Packets": "100",
+    "Packets": 772,
+    "Percent Bytes": "4.702463049900581",
+    "Bytes": 10808,
+    "Bits": {
+       "s": "706.0702847005626"
+    },
+    "End Packets": 0,
+    "End Bytes": 0,
+    "End Bits": {
+       "s": "0"
+    }
+ },
+  {
+    "Protocol": "Internet Protocol Version 4",
+    "Percent Packets": "98.18652849740933",
+    "Packets": 758,
+    "Percent Bytes": "6.595978889386826",
+    "Bytes": 15160,
+    "Bits": {
+       "s": "990.3798589989387"
+    },
+    "End Packets": 0,
+    "End Bytes": 0,
+    "End Bits": {
+       "s": "0"
+    }
+ },
+  {
+    "Protocol": "User Datagram Protocol",
+    "Percent Packets": "4.274611398963731",
+    "Packets": 33,
+    "Percent Bytes": "0.11486401232177587",
+    "Bytes": 264,
+    "Bits": {
+       "s": "17.246720499717668"
+    },
+    "End Packets": 0,
+    "End Bytes": 0,
+    "End Bits": {
+       "s": "0"
+    }
+ },
+  {
+    "Protocol": "Domain Name System",
+    "Percent Packets": "4.274611398963731",
+    "Packets": 33,
+    "Percent Bytes": "1.876982383167201",
+    "Bytes": 4314,
+    "Bits": {
+       "s": "281.8270918022046"
+    },
+    "End Packets": 33,
+    "End Bytes": 4314,
+    "End Bits": {
+       "s": "281.8270918022046"
+    }
+ },
+  {
+    "Protocol": "Transmission Control Protocol",
+    "Percent Packets": "93.9119170984456",
+    "Packets": 725,
+    "Percent Bytes": "86.53915601056401",
+    "Bytes": 198899,
+    "Bits": {
+       "s": "12993.770684368728"
+    },
+    "End Packets": 502,
+    "End Bytes": 118104,
+    "End Bits": {
+       "s": "7715.5555981009675"
+    }
+ },
+  {
+    "Protocol": "Transport Layer Security",
+    "Percent Packets": "27.590673575129532",
+    "Packets": 213,
+    "Percent Bytes": "68.3884666089446",
+    "Bytes": 157182,
+    "Bits": {
+       "s": "10268.46220297963"
+    },
+    "End Packets": 208,
+    "End Bytes": 137343,
+    "End Bits": {
+       "s": "8972.410354517893"
+    }
+ },
+  {
+    "Protocol": "Malformed Packet",
+    "Percent Packets": "0.12953367875647667",
+    "Packets": 1,
+    "Percent Bytes": "0",
+    "Bytes": 0,
+    "Bits": {
+       "s": "0"
+    },
+    "End Packets": 1,
+    "End Bytes": 0,
+    "End Bits": {
+       "s": "0"
+    }
+ },
+  {
+    "Protocol": "Hypertext Transfer Protocol",
+    "Percent Packets": "0.7772020725388601",
+    "Packets": 6,
+    "Percent Bytes": "3.7143714893598507",
+    "Bytes": 8537,
+    "Bits": {
+       "s": "557.7092913109459"
+    },
+    "End Packets": 3,
+    "End Bytes": 825,
+    "End Bits": {
+       "s": "53.89600156161771"
+    }
+ },
+  {
+    "Protocol": "eXtensible Markup Language",
+    "Percent Packets": "0.12953367875647667",
+    "Packets": 1,
+    "Percent Bytes": "1.8491365619982858",
+    "Bytes": 4250,
+    "Bits": {
+       "s": "277.6460686507579"
+    },
+    "End Packets": 1,
+    "End Bytes": 4591,
+    "End Bits": {
+       "s": "299.9230826295599"
+    }
+ },
+  {
+    "Protocol": "Data",
+    "Percent Packets": "0.25906735751295334",
+    "Packets": 2,
+    "Percent Bytes": "1.2195599490073399",
+    "Bytes": 2803,
+    "Bits": {
+       "s": "183.1157483360175"
+    },
+    "End Packets": 2,
+    "End Bytes": 2975,
+    "End Bits": {
+       "s": "194.35224805553054"
+    }
+ },
+  {
+    "Protocol": "Data",
+    "Percent Packets": "1.0362694300518134",
+    "Packets": 8,
+    "Percent Bytes": "0.00348072764611442",
+    "Bytes": 8,
+    "Bits": {
+       "s": "0.5226278939308384"
+    },
+    "End Packets": 8,
+    "End Bytes": 8,
+    "End Bits": {
+       "s": "0.5226278939308384"
+    }
+ },
+  {
+    "Protocol": "Address Resolution Protocol",
+    "Percent Packets": "1.8134715025906736",
+    "Packets": 14,
+    "Percent Bytes": "0.1705556546596066",
+    "Bytes": 392,
+    "Bits": {
+       "s": "25.608766802611083"
+    },
+    "End Packets": 14,
+    "End Bytes": 392,
+    "End Bits": {
+       "s": "25.608766802611083"
+    }
+ }
+ ]
