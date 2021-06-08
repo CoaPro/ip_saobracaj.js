@@ -437,7 +437,9 @@ function podelaNiza(){
                 //***nizUsrednjavanjeF = nizUsrednjavanje.filter(x => x >= 0);
              
                 //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
-                s = Math.floor(Math.log2(Na));
+                /*8.6.2021. Uto. */
+                //s = Math.floor(Math.log2(Na));
+                s = Math.ceil(Math.log2(Na));
     
                 //Progračun logaritamskih vrednosti broja (n) elemenata grupa
                 logn = Number((Math.log10(brElPodnizova)).toFixed(2));
@@ -544,7 +546,9 @@ function podelaNiza(){
                 nizUsrednjavanjeF = nizUsrednjavanje.filter(x => x >= 0);
     
                 //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
-                s = Math.floor(Math.log2(Na)); 
+                /*8.6.2021. Uto. */
+                //s = Math.floor(Math.log2(Na));
+                s = Math.ceil(Math.log2(Na));
                 
                 //Progračun logaritamskih vrednosti broja (n) elemenata grupa
                 logn = Number((Math.log10(brElPodnizova)).toFixed(2));
@@ -649,7 +653,9 @@ function podelaNiza(){
                 nizUsrednjavanjeF = nizUsrednjavanje.filter(x => x >= 0);
             
                 //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
-                s = Math.floor(Math.log2(Na)); 
+                /*8.6.2021. Uto. */
+                //s = Math.floor(Math.log2(Na));
+                s = Math.ceil(Math.log2(Na));
                 
                 //Progračun logaritamskih vrednosti broja (n) elemenata grupa
                 logn = Number((Math.log10(brElPodnizova)).toFixed(2));
