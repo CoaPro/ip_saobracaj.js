@@ -1738,6 +1738,9 @@ const pro = () => {
     console.log(`Hurstov parametar je: ${H}`);
     txtHurst.value = H;
 
+    RSstatistika();
+    vizuelizacijaSvihPodataka();
+
     /*
     
     7.6.2021. Pon. 
