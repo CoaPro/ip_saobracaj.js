@@ -75,7 +75,15 @@ Uvid u greške i početak ispravljanja pojedinih delova koda...
         
 7.6.2021. Pon. 
     Ažuriranja i dodatna proširenja programa:
-    Chart.js | myChart.destroy();      
+    Chart.js | myChart.destroy();  
+    
+8.6.2021. Uto. 
+Izrada Electron.js desktop aplikacije 
+
+7.6.2021. Pon. 
+    Ažuriranja i dodatna proširenja programa:
+    Izrada Electron.js desktop aplikacije 
+    Chart.js | myChart.destroy(); 
         
 */
 //Odabir fajla tj. JSON niza i prikaz u txtA
@@ -311,12 +319,13 @@ function podelaNiza(){
             return Number(((a+b)/n).toFixed(2));
         }
     
-    
+        
         //vrNasumicnogBroja = Math.floor(nasumicniBroj(2, 5));
-    
-    
-        /* AAAAA
-        sortiraniNiz = noviNiz.sort((x,y) => x - y);
+        
+        //Sortiranje i filtriranje nizova
+        //9.6.2021. v2
+
+        //sortiraniNiz = noviNiz.sort((x,y) => x - y);
     
         function uklanjanjeDuplikataElemenata(niz){
             const jedan = [];
@@ -328,8 +337,7 @@ function podelaNiza(){
             return jedan;
         }
     
-        nizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(sortiraniNiz);
-        */
+        //nizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(sortiraniNiz);
 
         while(noviNiz.length > 1){
     
@@ -484,24 +492,20 @@ function podelaNiza(){
                 nizSumaLognLogRS = fCeoNizSumaLognLogRS.slice(0, s);
                 sumaLognLogRS = Number((nizSumaLognLogRS.filter(x => x >= 0).reduce((x, y) => x + y, 0)).toFixed(2));
     
-
-                /* AAAA
-
                 //Vrednosti potrebne za RS statistiku 
-    
+                //9.6.2021. v2
+
                 //x - osa logn 
                 //y - osa logRS
     
                 //lognSortiraniNiz = [], lognNizJedinstvenihElemenata = [];
-                lognSortiraniNiz = fCeoNizLogn.sort((x, y) => x - y);
+                lognSortiraniNiz = ceoNizLogn.sort((x, y) => x - y);
                 lognNizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(lognSortiraniNiz);
     
                 //logRSsortiraniNiz = [], logRSnizJedinstvenihElemenata = [];
-                logRSsortiraniNiz = fCeoNizLogRS.sort((x, y) => x - y);
+                logRSsortiraniNiz = ceoNizLogRS.sort((x, y) => x - y);
                 logRSnizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(logRSsortiraniNiz);
 
-                */
-                
                 
             } else if (brElPodnizova === 3){
     
@@ -593,19 +597,24 @@ function podelaNiza(){
                 nizSumaLognLogRS = fCeoNizSumaLognLogRS.slice(0, s);
                 sumaLognLogRS = Number((nizSumaLognLogRS.filter(x => x >= 0).reduce((x, y) => x + y, 0)).toFixed(2));
                 
-                /* AAAA
+               
 
                 //Vrednosti potrebne za RS statistiku 
-    
+                //9.6.2021. v2
+
                 //x - osa logn 
                 //y - osa logRS
+
+                //lognSortiraniNiz = [], lognNizJedinstvenihElemenata = [];
+                lognSortiraniNiz = ceoNizLogn.sort((x, y) => x - y);
+                lognNizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(lognSortiraniNiz);
     
                 //logRSsortiraniNiz = [], logRSnizJedinstvenihElemenata = [];
     
                 logRSsortiraniNiz = ceoNizLogRS.sort((x, y) => x - y);
                 logRSnizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(logRSsortiraniNiz);
 
-                */
+                
     
             } else if (brElPodnizova === 4){
     
@@ -700,19 +709,22 @@ function podelaNiza(){
                 nizSumaLognLogRS = fCeoNizSumaLognLogRS.slice(0, s);
                 sumaLognLogRS = Number((nizSumaLognLogRS.filter(x => x >= 0).reduce((x, y) => x + y, 0)).toFixed(2));
                 
-                /* AAAA
 
                 //Vrednosti potrebne za RS statistiku 
-    
+                //9.6.2021. v2
+
                 //x - osa logn 
                 //y - osa logRS
+
+                //lognSortiraniNiz = [], lognNizJedinstvenihElemenata = [];
+                lognSortiraniNiz = ceoNizLogn.sort((x, y) => x - y);
+                lognNizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(lognSortiraniNiz);
     
                 //logRSsortiraniNiz = [], logRSnizJedinstvenihElemenata = [];
     
-                logRSsortiraniNiz = fCeoNizLogRS.sort((x, y) => x - y);
+                logRSsortiraniNiz = ceoNizLogRS.sort((x, y) => x - y);
                 logRSnizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(logRSsortiraniNiz);  
                 
-                */
     
             } else
             {
@@ -1329,10 +1341,10 @@ function RSstatistika(){
     RSstat = new Chart(grafA, {
         type: 'line',
         data: {
-            labels: lognSortiraniNiz, //ceoNizLogn, testAniz
+            labels: lognNizJedinstvenihElemenata, //ceoNizLogn, testAniz
             datasets: [{
                 label: 'Vrednost',
-                data: logRSsortiraniNiz, //ceoNizLogRS
+                data: logRSnizJedinstvenihElemenata, //ceoNizLogRS
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
