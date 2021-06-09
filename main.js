@@ -25,5 +25,5 @@ mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'program.html'),
     protocol: 'file:', 
     slashes: true
-})); // file://dirname/mainWindow.html
+})); // file://dirname/program.html
 });
