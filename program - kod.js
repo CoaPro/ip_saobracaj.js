@@ -80,7 +80,7 @@ Uvid u greške i početak ispravljanja pojedinih delova koda...
 8.6.2021. Uto. 
 Izrada Electron.js desktop aplikacije 
 
-7.6.2021. Pon. 
+9.6.2021. Sre. 
     Ažuriranja i dodatna proširenja programa:
     Izrada Electron.js desktop aplikacije 
     Chart.js | myChart.destroy(); 

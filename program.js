@@ -75,7 +75,15 @@ Uvid u greške i početak ispravljanja pojedinih delova koda...
         
 7.6.2021. Pon. 
     Ažuriranja i dodatna proširenja programa:
-    Chart.js | myChart.destroy();      
+    Chart.js | myChart.destroy(); 
+
+8.6.2021. Uto. 
+    Izrada Electron.js desktop aplikacije 
+
+9.6.2021. Sre. 
+    Ažuriranja i dodatna proširenja programa:
+    Izrada Electron.js desktop aplikacije 
+    Chart.js | myChart.destroy();    
         
 */
 //Odabir fajla tj. JSON niza i prikaz u txtA
@@ -193,7 +201,7 @@ Novo proširenje programa
 function podelaNiza(){
 
         /*
-        NOVOOOOOOOOO 
+        Novo
         6.6.2021. Ned. 
         */
 
@@ -439,7 +447,10 @@ function podelaNiza(){
                 //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
                 /*8.6.2021. Uto. */
                 //s = Math.floor(Math.log2(Na));
-                s = Math.ceil(Math.log2(Na));
+                //s = Math.ceil(Math.log2(Na));
+
+                 /*9.6.2021. Sre. */
+                 s = Math.round(Math.log2(Na));
     
                 //Progračun logaritamskih vrednosti broja (n) elemenata grupa
                 logn = Number((Math.log10(brElPodnizova)).toFixed(2));
@@ -548,7 +559,12 @@ function podelaNiza(){
                 //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
                 /*8.6.2021. Uto. */
                 //s = Math.floor(Math.log2(Na));
-                s = Math.ceil(Math.log2(Na));
+                /*8.6.2021. Uto. */
+                //s = Math.floor(Math.log2(Na));
+                //s = Math.ceil(Math.log2(Na));
+
+                 /*9.6.2021. Sre. */
+                 s = Math.round(Math.log2(Na));
                 
                 //Progračun logaritamskih vrednosti broja (n) elemenata grupa
                 logn = Number((Math.log10(brElPodnizova)).toFixed(2));
@@ -655,7 +671,12 @@ function podelaNiza(){
                 //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
                 /*8.6.2021. Uto. */
                 //s = Math.floor(Math.log2(Na));
-                s = Math.ceil(Math.log2(Na));
+                /*8.6.2021. Uto. */
+                //s = Math.floor(Math.log2(Na));
+                //s = Math.ceil(Math.log2(Na));
+
+                 /*9.6.2021. Sre. */
+                 s = Math.round(Math.log2(Na));
                 
                 //Progračun logaritamskih vrednosti broja (n) elemenata grupa
                 logn = Number((Math.log10(brElPodnizova)).toFixed(2));
@@ -1016,7 +1037,12 @@ const podelaNniza = () => {
             nizUsrednjavanjeF = nizUsrednjavanje.filter(x => x >= 0);
          
             //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
-            s = Math.floor(Math.log2(N));
+                /*8.6.2021. Uto. */
+                //s = Math.floor(Math.log2(Na));
+                //s = Math.ceil(Math.log2(Na));
+
+                /*9.6.2021. Sre. */
+             s = Math.round(Math.log2(N));
 
             //Progračun logaritamskih vrednosti broja (n) elemenata grupa
             logn = Number((Math.log10(brElPodnizova)).toFixed(2));
@@ -1117,7 +1143,12 @@ const podelaNniza = () => {
             nizUsrednjavanjeF = nizUsrednjavanje.filter(x => x >= 0);
 
             //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
-            s = Math.floor(Math.log2(N)); 
+            /*8.6.2021. Uto. */
+            //s = Math.floor(Math.log2(Na));
+            //s = Math.ceil(Math.log2(Na));
+
+            /*9.6.2021. Sre. */
+            s = Math.round(Math.log2(N)); 
             
             //Progračun logaritamskih vrednosti broja (n) elemenata grupa
             logn = Number((Math.log10(brElPodnizova)).toFixed(2));
@@ -1216,7 +1247,12 @@ const podelaNniza = () => {
             nizUsrednjavanjeF = nizUsrednjavanje.filter(x => x >= 0);
         
             //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
-            s = Math.floor(Math.log2(N)); 
+            /*8.6.2021. Uto. */
+            //s = Math.floor(Math.log2(Na));
+            //s = Math.ceil(Math.log2(Na));
+
+            /*9.6.2021. Sre. */
+            s = Math.round(Math.log2(N)); 
             
             //Progračun logaritamskih vrednosti broja (n) elemenata grupa
             logn = Number((Math.log10(brElPodnizova)).toFixed(2));
@@ -1423,7 +1459,7 @@ const proA = () => {
 
     /*Globalna promenljiva*/
     //let niz = JSON.parse(txtA.value);
-    //let noviNiz = niz.map(({'All Packets': element}) => element);
+    noviNiz = niz.map(({'All Packets': element}) => element);
 
  
     //let noviNeNultiNiz = noviNiz.filter(neNulti);
