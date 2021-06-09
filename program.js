@@ -1196,6 +1196,10 @@ const podelaNniza = () => {
             //x - osa logn 
             //y - osa logRS
 
+            //lognSortiraniNiz = [], lognNizJedinstvenihElemenata = [];
+            lognSortiraniNiz = fCeoNizLogn.sort((x, y) => x - y);
+            lognNizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(lognSortiraniNiz);
+
             //logRSsortiraniNiz = [], logRSnizJedinstvenihElemenata = [];
 
             logRSsortiraniNiz = fCeoNizLogRS.sort((x, y) => x - y);
@@ -1300,6 +1304,10 @@ const podelaNniza = () => {
             //x - osa logn 
             //y - osa logRS
 
+            //lognSortiraniNiz = [], lognNizJedinstvenihElemenata = [];
+            lognSortiraniNiz = fCeoNizLogn.sort((x, y) => x - y);
+            lognNizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(lognSortiraniNiz);            
+
             //logRSsortiraniNiz = [], logRSnizJedinstvenihElemenata = [];
 
             logRSsortiraniNiz = fCeoNizLogRS.sort((x, y) => x - y);
@@ -1365,10 +1373,10 @@ function RSstatistika(){
     RSstat = new Chart(grafA, {
         type: 'line',
         data: {
-            labels: lognSortiraniNiz, //ceoNizLogn, testAniz
+            labels: lognSortiraniNiz, //lognSortiraniNiz, //ceoNizLogn, testAniz
             datasets: [{
                 label: 'Vrednost',
-                data: logRSsortiraniNiz, //ceoNizLogRS
+                data: logRSsortiraniNiz, //logRSsortiraniNiz, //ceoNizLogRS
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -1737,11 +1745,13 @@ const pro = () => {
     
     */
 
+    /*
     RSstat.destroy();
     vizuelizacijaPodataka.destroy();
 
     RSstatistika();
     vizuelizacijaSvihPodataka();
+    */
 
     } else {
 
