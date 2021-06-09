@@ -75,7 +75,15 @@ Uvid u greške i početak ispravljanja pojedinih delova koda...
         
 7.6.2021. Pon. 
     Ažuriranja i dodatna proširenja programa:
-    Chart.js | myChart.destroy();      
+    Chart.js | myChart.destroy();  
+    
+8.6.2021. Uto. 
+Izrada Electron.js desktop aplikacije 
+
+7.6.2021. Pon. 
+    Ažuriranja i dodatna proširenja programa:
+    Izrada Electron.js desktop aplikacije 
+    Chart.js | myChart.destroy(); 
         
 */
 //Odabir fajla tj. JSON niza i prikaz u txtA
@@ -311,12 +319,13 @@ function podelaNiza(){
             return Number(((a+b)/n).toFixed(2));
         }
     
-    
+        
         //vrNasumicnogBroja = Math.floor(nasumicniBroj(2, 5));
-    
-    
-        /* AAAAA
-        sortiraniNiz = noviNiz.sort((x,y) => x - y);
+        
+        //Sortiranje i filtriranje nizova
+        //9.6.2021. v2
+
+        //sortiraniNiz = noviNiz.sort((x,y) => x - y);
     
         function uklanjanjeDuplikataElemenata(niz){
             const jedan = [];
@@ -328,8 +337,7 @@ function podelaNiza(){
             return jedan;
         }
     
-        nizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(sortiraniNiz);
-        */
+        //nizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(sortiraniNiz);
 
         while(noviNiz.length > 1){
     
@@ -439,8 +447,12 @@ function podelaNiza(){
                 //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
                 /*8.6.2021. Uto. */
                 //s = Math.floor(Math.log2(Na));
-                s = Math.ceil(Math.log2(Na));
-    
+                //s = Math.ceil(Math.log2(Na));
+                
+                /*9.6.2021. Sre. */
+                //s = Math.round(Math.log2(Na));
+                s = Math.floor(Math.log2(Na));
+
                 //Progračun logaritamskih vrednosti broja (n) elemenata grupa
                 logn = Number((Math.log10(brElPodnizova)).toFixed(2));
     
@@ -450,8 +462,12 @@ function podelaNiza(){
                 logn_2 = Number((logn**2).toFixed(2));
                 logn_2Txt += logn_2 + '\n';
     
-                //Proračun suma potrebnih za određivanje Hurstovog parametra
+            //Proračun suma potrebnih za određivanje Hurstovog parametra
+            /*9.6.2021. Sre. Nova verzija proračuna*/
+            //Suma elemenata logn i logn*logn
     
+            //Proračun suma potrebnh za određivanje Hurstovog parametra
+
                 //Suma elemenata logn i logn*logn
     
                 //Niz sastavljen od svih logn vrednosti
@@ -484,24 +500,20 @@ function podelaNiza(){
                 nizSumaLognLogRS = fCeoNizSumaLognLogRS.slice(0, s);
                 sumaLognLogRS = Number((nizSumaLognLogRS.filter(x => x >= 0).reduce((x, y) => x + y, 0)).toFixed(2));
     
-
-                /* AAAA
-
                 //Vrednosti potrebne za RS statistiku 
-    
+                //9.6.2021. v2
+
                 //x - osa logn 
                 //y - osa logRS
     
                 //lognSortiraniNiz = [], lognNizJedinstvenihElemenata = [];
-                lognSortiraniNiz = fCeoNizLogn.sort((x, y) => x - y);
+                lognSortiraniNiz = ceoNizLogn.sort((x, y) => x - y);
                 lognNizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(lognSortiraniNiz);
     
                 //logRSsortiraniNiz = [], logRSnizJedinstvenihElemenata = [];
-                logRSsortiraniNiz = fCeoNizLogRS.sort((x, y) => x - y);
+                logRSsortiraniNiz = ceoNizLogRS.sort((x, y) => x - y);
                 logRSnizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(logRSsortiraniNiz);
 
-                */
-                
                 
             } else if (brElPodnizova === 3){
     
@@ -548,8 +560,12 @@ function podelaNiza(){
                 //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
                 /*8.6.2021. Uto. */
                 //s = Math.floor(Math.log2(Na));
-                s = Math.ceil(Math.log2(Na));
-                
+                //s = Math.ceil(Math.log2(Na)); 
+
+                /*9.6.2021. Sre. */
+                //s = Math.round(Math.log2(Na));
+                s = Math.floor(Math.log2(Na));
+
                 //Progračun logaritamskih vrednosti broja (n) elemenata grupa
                 logn = Number((Math.log10(brElPodnizova)).toFixed(2));
     
@@ -558,8 +574,6 @@ function podelaNiza(){
                 //Progračun kvadrata logaritamskih vrednosti broja (n) elemenata grupa
                 logn_2 = Number((logn**2).toFixed(2));
                 logn_2Txt += logn_2 + '\n';
-    
-                //Proračun suma potrebnih za određivanje Hurstovog parametra
     
                 //Suma elemenata logn i logn*logn
     
@@ -593,20 +607,21 @@ function podelaNiza(){
                 nizSumaLognLogRS = fCeoNizSumaLognLogRS.slice(0, s);
                 sumaLognLogRS = Number((nizSumaLognLogRS.filter(x => x >= 0).reduce((x, y) => x + y, 0)).toFixed(2));
                 
-                /* AAAA
-
                 //Vrednosti potrebne za RS statistiku 
-    
+                //9.6.2021. v2
+
                 //x - osa logn 
                 //y - osa logRS
+
+                //lognSortiraniNiz = [], lognNizJedinstvenihElemenata = [];
+                lognSortiraniNiz = ceoNizLogn.sort((x, y) => x - y);
+                lognNizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(lognSortiraniNiz);
     
                 //logRSsortiraniNiz = [], logRSnizJedinstvenihElemenata = [];
     
                 logRSsortiraniNiz = ceoNizLogRS.sort((x, y) => x - y);
                 logRSnizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(logRSsortiraniNiz);
 
-                */
-    
             } else if (brElPodnizova === 4){
     
                 x1 = podnizR[0];
@@ -655,7 +670,10 @@ function podelaNiza(){
                 //Proračun za najbližu celobrojnu vrednost s za logN, gde je osnova logaritma 2
                 /*8.6.2021. Uto. */
                 //s = Math.floor(Math.log2(Na));
-                s = Math.ceil(Math.log2(Na));
+                //s = Math.ceil(Math.log2(Na)); 
+
+                /*9.6.2021. Sre. */
+                s = Math.floor(Math.log2(Na));                
                 
                 //Progračun logaritamskih vrednosti broja (n) elemenata grupa
                 logn = Number((Math.log10(brElPodnizova)).toFixed(2));
@@ -666,8 +684,6 @@ function podelaNiza(){
                 logn_2 = Number((logn**2).toFixed(2));
                 logn_2Txt += logn_2 + '\n';
             
-                //Proračun suma potrebnih za određivanje Hurstovog parametra
-    
                 //Suma elemenata logn i logn*logn
     
                 //Niz sastavljen od svih logn vrednosti
@@ -699,20 +715,22 @@ function podelaNiza(){
                 fCeoNizSumaLognLogRS = ceoNizSumaLognLogRS.filter(x => x >= 0);
                 nizSumaLognLogRS = fCeoNizSumaLognLogRS.slice(0, s);
                 sumaLognLogRS = Number((nizSumaLognLogRS.filter(x => x >= 0).reduce((x, y) => x + y, 0)).toFixed(2));
-                
-                /* AAAA
 
                 //Vrednosti potrebne za RS statistiku 
-    
+                //9.6.2021. v2
+
                 //x - osa logn 
                 //y - osa logRS
+
+                //lognSortiraniNiz = [], lognNizJedinstvenihElemenata = [];
+                lognSortiraniNiz = ceoNizLogn.sort((x, y) => x - y);
+                lognNizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(lognSortiraniNiz);
     
                 //logRSsortiraniNiz = [], logRSnizJedinstvenihElemenata = [];
     
-                logRSsortiraniNiz = fCeoNizLogRS.sort((x, y) => x - y);
+                logRSsortiraniNiz = ceoNizLogRS.sort((x, y) => x - y);
                 logRSnizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(logRSsortiraniNiz);  
                 
-                */
     
             } else
             {
@@ -1329,10 +1347,10 @@ function RSstatistika(){
     RSstat = new Chart(grafA, {
         type: 'line',
         data: {
-            labels: lognSortiraniNiz, //ceoNizLogn, testAniz
+            labels: lognNizJedinstvenihElemenata, //ceoNizLogn, testAniz
             datasets: [{
                 label: 'Vrednost',
-                data: logRSsortiraniNiz, //ceoNizLogRS
+                data: logRSnizJedinstvenihElemenata, //ceoNizLogRS
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -1423,7 +1441,7 @@ const proA = () => {
 
     /*Globalna promenljiva*/
     //let niz = JSON.parse(txtA.value);
-    //let noviNiz = niz.map(({'All Packets': element}) => element);
+    noviNiz = niz.map(({'All Packets': element}) => element);
 
  
     //let noviNeNultiNiz = noviNiz.filter(neNulti);
@@ -1700,12 +1718,14 @@ const pro = () => {
     Resetovanje grafika 
     
     */
-
+    
+    /*
     RSstat.destroy();
     vizuelizacijaPodataka.destroy();
 
     RSstatistika();
     vizuelizacijaSvihPodataka();
+    */
 
     } else {
 
