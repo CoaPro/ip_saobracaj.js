@@ -83,8 +83,10 @@ Uvid u greške i početak ispravljanja pojedinih delova koda...
 9.6.2021. Sre. 
     Ažuriranja i dodatna proširenja programa:
     Izrada Electron.js desktop aplikacije 
-    Chart.js | myChart.destroy();    
-        
+    Chart.js | myChart.destroy(); 
+    
+10.6.2021. Čet. 
+    Ažuriranja - Chart.js 
 */
 //Odabir fajla tj. JSON niza i prikaz u txtA
 
@@ -323,8 +325,8 @@ function podelaNiza(){
         //vrNasumicnogBroja = Math.floor(nasumicniBroj(2, 5));
     
     
-        /* AAAAA
-        sortiraniNiz = noviNiz.sort((x,y) => x - y);
+        
+        //sortiraniNiz = noviNiz.sort((x,y) => x - y);
     
         function uklanjanjeDuplikataElemenata(niz){
             const jedan = [];
@@ -336,8 +338,8 @@ function podelaNiza(){
             return jedan;
         }
     
-        nizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(sortiraniNiz);
-        */
+        //nizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(sortiraniNiz);
+
 
         while(noviNiz.length > 1){
     
@@ -512,6 +514,14 @@ function podelaNiza(){
                 logRSnizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(logRSsortiraniNiz);
 
                 */
+
+            //lognSortiraniNiz = [], lognNizJedinstvenihElemenata = [];
+            lognSortiraniNiz = fCeoNizLogn.sort((x, y) => x - y);
+            lognNizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(lognSortiraniNiz);
+
+            //logRSsortiraniNiz = [], logRSnizJedinstvenihElemenata = [];
+            logRSsortiraniNiz = fCeoNizLogRS.sort((x, y) => x - y);
+            logRSnizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(logRSsortiraniNiz);
                 
                 
             } else if (brElPodnizova === 3){
@@ -622,6 +632,14 @@ function podelaNiza(){
                 logRSnizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(logRSsortiraniNiz);
 
                 */
+
+            //lognSortiraniNiz = [], lognNizJedinstvenihElemenata = [];
+            lognSortiraniNiz = fCeoNizLogn.sort((x, y) => x - y);
+            lognNizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(lognSortiraniNiz);
+
+            //logRSsortiraniNiz = [], logRSnizJedinstvenihElemenata = [];
+            logRSsortiraniNiz = fCeoNizLogRS.sort((x, y) => x - y);
+            logRSnizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(logRSsortiraniNiz);
     
             } else if (brElPodnizova === 4){
     
@@ -734,6 +752,14 @@ function podelaNiza(){
                 logRSnizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(logRSsortiraniNiz);  
                 
                 */
+
+            //lognSortiraniNiz = [], lognNizJedinstvenihElemenata = [];
+            lognSortiraniNiz = fCeoNizLogn.sort((x, y) => x - y);
+            lognNizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(lognSortiraniNiz);
+
+            //logRSsortiraniNiz = [], logRSnizJedinstvenihElemenata = [];
+            logRSsortiraniNiz = fCeoNizLogRS.sort((x, y) => x - y);
+            logRSnizJedinstvenihElemenata = uklanjanjeDuplikataElemenata(logRSsortiraniNiz);
     
             } else
             {
