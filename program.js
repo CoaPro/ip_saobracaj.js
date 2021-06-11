@@ -87,6 +87,22 @@ Uvid u greške i početak ispravljanja pojedinih delova koda...
     
 10.6.2021. Čet. 
     Ažuriranja - Chart.js 
+
+11.6.2021. Pet. 
+
+    Projekat prikazan u radu na master studijama.
+
+    Tema projektnog zadatka: 
+    Analiza IP saobraćaja korišćenjem
+    programa Wireshark i realizacija
+    softverskog rešenja za proračun Hurstovog
+    parametra primenom programskog jezika
+    JavaScript
+
+    Predmet: Internet protokol saobraćaj 
+
+    Program će povremeno biti ažuriran...
+
 */
 //Odabir fajla tj. JSON niza i prikaz u txtA
 
